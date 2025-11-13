@@ -1,0 +1,6 @@
+chunk_id: ENG_GRAM_01
+source_id: khan_eng_grammar
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:digital-sat-grammar-practice/x0d47bcec73eb6c4b:fss-sva/a/fss-grammar-guide-subject-verb-agreement
+text:
+Subject-verb agreement requires the subject and verb to match in number (singular/plural). Example: "Apples are different from oranges." If the subject is singular, use a singular verb (e.g., 'is'); if plural, use a plural verb (e.g., 'are').
+notes: definition + simple example

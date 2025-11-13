@@ -1,0 +1,7 @@
+chunk_id: MATH_QD_01
+source_id: khan_math_quadratics
+url: https://www.khanacademy.org/math/algebra-home/alg-quadratics
+text:
+Square root basics: sqrt(25) = 5 because 5^2 = 25. Solving x^2 = 36 yields x = ±6 since both 6 and -6 square to 36. For (x-2)^2=49, take square roots: x-2 = ±7 so x = 2 ± 7 giving x = 9 and x = -5.
+The ± symbol indicates the two possible square roots for a positive number.
+notes: square roots and solving simple quadratic-by-square examples

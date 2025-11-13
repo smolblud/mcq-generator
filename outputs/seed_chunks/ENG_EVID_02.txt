@@ -1,0 +1,6 @@
+chunk_id: ENG_EVID_02
+source_id: khan_eng_evidence
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:foundations-information-and-ideas/x0d47bcec73eb6c4b:command-of-evidence-textual/a/command-of-evidence-textual-lesson
+text:
+Scientific evidence item strategy: Identify the hypothesis, rephrase it as a simple test phrase (e.g., "sail = quicker movement"), then eliminate choices that do not match the test phrase. Choose the result that most directly supports the hypothesis.
+notes: approach for experimental/scientific evidence items

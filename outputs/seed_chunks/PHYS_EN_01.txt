@@ -1,0 +1,6 @@
+chunk_id: PHYS_EN_01
+source_id: khan_phys_energy
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:energy
+text:
+Energy is a scalar measured in joules (J). Kinetic energy for a translational object is K = 1/2 m v^2 (depends on speed, not direction). Potential energy depends on configuration (e.g., gravitational potential energy depends on height). Energy values depend on the observer's reference frame because speed depends on frame.
+notes: definitions, K = 1/2 mv^2, scalar nature, frame dependence

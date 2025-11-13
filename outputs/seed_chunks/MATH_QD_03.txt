@@ -1,0 +1,7 @@
+chunk_id: MATH_QD_03
+source_id: khan_math_quadratics
+url: https://www.khanacademy.org/math/algebra-home/alg-quadratics
+text:
+Difference of squares: a^2 - b^2 = (a+b)(a-b). Example: x^2 - 16 = (x+4)(x-4). Solving (x-1)(x+3)=0 gives x=1 or x=-3 by setting each factor to zero.
+Factoring by grouping: e.g., 2x^2+8x+3x+12 = 2x(x+4)+3(x+4) = (x+4)(2x+3).
+notes: difference of squares, zero-product property, grouping example

@@ -1,0 +1,6 @@
+chunk_id: ENG_WORD_03
+source_id: khan_eng_words
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:advanced-craft-and-structure/x0d47bcec73eb6c4b:words-in-context-3/a/words-in-context-lesson
+text:
+Connotation tip: words with similar denotations can have different emotional tones. Example: 'promising' (positive) vs 'ominous' (negative). If the sentence is positive, eliminate negative-connotation choices even if denotation is close.
+notes: connotation guidance and example

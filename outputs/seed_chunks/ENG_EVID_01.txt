@@ -1,0 +1,6 @@
+chunk_id: ENG_EVID_01
+source_id: khan_eng_evidence
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:foundations-information-and-ideas/x0d47bcec73eb6c4b:command-of-evidence-textual/a/command-of-evidence-textual-lesson
+text:
+What are "textual evidence" questions? These ask you to identify which piece of evidence best supports a stated claim — either a scientific hypothesis or a literary interpretation. Everything you need is provided in the prompt/passage.
+notes: definition of textual-evidence questions (science & literary)

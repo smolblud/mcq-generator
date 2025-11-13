@@ -1,0 +1,6 @@
+chunk_id: MATH_MAT_03
+source_id: khan_math_matrices
+url: https://www.khanacademy.org/math/algebra-home/alg-matrices
+text:
+Other row ops: multiply a row by nonzero scalar (e.g., 3 R2 -> R2), and add one row to another (e.g., R1+R2 -> R2). Example: [ [6 6 1],[2 3 0],[4 5 9] ] after 3R2->R2 becomes [ [6 6 1],[6 9 0],[4 5 9] ]. Adding rows: [ [2 3 4],[0 8 1] ] with R1+R2 -> R2 becomes [ [2 3 4],[2 11 5] ].
+notes: scaling and row-addition examples

@@ -1,0 +1,8 @@
+chunk_id: ENG_GRAM_03
+source_id: khan_eng_grammar
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:digital-sat-grammar-practice/x0d47bcec73eb6c4b:fss-sva/a/fss-grammar-guide-subject-verb-agreement
+
+text:
+Inverted sentences: The subject may come after the verb ("Separating the roads was a concrete median"). Strategy: mentally flip the subject and verb to test agreement. Also watch for collective nouns, indefinite pronouns, and tricky cases like "none" or "each."
+
+notes: inverted-sentence structures and other non-standard subject-verb patterns

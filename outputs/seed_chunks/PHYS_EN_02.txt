@@ -1,0 +1,6 @@
+chunk_id: PHYS_EN_02
+source_id: khan_phys_energy
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:energy
+text:
+Work is energy transferred by a force acting through a displacement: W = F d cosθ. If force and displacement are parallel, cosθ=1 and W=Fd (positive work); opposite → negative work; perpendicular → zero work. Power is the rate of doing work: P = dW/dt or average P = W/Δt.
+notes: work definition, sign via cosθ, power

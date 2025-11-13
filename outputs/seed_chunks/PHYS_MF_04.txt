@@ -1,0 +1,6 @@
+chunk_id: PHYS_MF_04
+source_id: khan_phys_motion
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:motion-and-forces
+text:
+Weight near Earth's surface: for an object in free fall the acceleration magnitude is g ≈ 9.8 m/s^2. From a = F_g/m and a = g we obtain F_g = mg. Weight is a vector (downward) of magnitude mg. The weight may be balanced by a normal force (object at rest) or unbalanced (object accelerating).
+notes: derivation F_g = mg, meaning of weight, sample uses

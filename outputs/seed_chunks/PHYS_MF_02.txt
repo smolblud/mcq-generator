@@ -1,0 +1,6 @@
+chunk_id: PHYS_MF_02
+source_id: khan_phys_motion
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:motion-and-forces
+text:
+Newton's second law gives the magnitude and direction of acceleration: a = ΣF / m (vector form). The acceleration vector points in the same direction as the net force. If you apply an upward force greater than gravity to a falling box, the net force becomes upward and the box accelerates upward (it slows if its velocity was downward). Mass acts as inertia: more mass → less acceleration for the same net force.
+notes: F=ma, vector direction, examples with upward applied force, role of mass

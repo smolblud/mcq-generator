@@ -1,0 +1,8 @@
+chunk_id: MATH_CN_01
+source_id: khan_math_complex
+url: https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:complex
+text:
+The imaginary unit is the backbone of the complex number system: i = sqrt(-1) and i^2 = -1.
+This shows i is a solution to x^2 = -1, which makes the previously unsolvable equation solvable by introducing i.
+An imaginary number is any complex number of the form bi where b is a nonzero real number; examples: 3i, i*sqrt(5), -12i.
+notes: definition of imaginary unit and pure imaginary numbers

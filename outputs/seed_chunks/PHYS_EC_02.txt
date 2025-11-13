@@ -1,0 +1,6 @@
+chunk_id: PHYS_EC_02
+source_id: khan_phys_elec
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:electrostatics
+text:
+Electric field E is defined as force per unit charge at a point: E = F/q_test. Fields allow forces to act at a distance. Most macroscopic objects are neutral, but friction or contact can give net charge. A neutral object can be attracted to a charged object via induced polarization of atoms.
+notes: electric field definition, polarization, neutrality vs. charge

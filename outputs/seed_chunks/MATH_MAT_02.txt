@@ -1,0 +1,6 @@
+chunk_id: MATH_MAT_02
+source_id: khan_math_matrices
+url: https://www.khanacademy.org/math/algebra-home/alg-matrices
+text:
+Row operations produce equivalent systems. Swap rows: R1 <-> R2. Example: [[4 8 3],[2 4 5],[7 1 2]] with R1<->R2 becomes [[2 4 5],[4 8 3],[7 1 2]]. This interchanges the corresponding equations.
+notes: row swap example and meaning

@@ -1,0 +1,6 @@
+chunk_id: ENG_WORD_04
+source_id: khan_eng_words
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:advanced-craft-and-structure/x0d47bcec73eb6c4b:words-in-context-3/a/words-in-context-lesson
+text:
+Practice passage (Fitzgerald excerpt): "This quality was continually breaking through his punctilious manner in the shape of restlessness." 'Quality' here means 'characteristic' (an attribute of Gatsby's manner). Use nearby referents to pin down precise meaning.
+notes: short practice passage + explanation (word senses)

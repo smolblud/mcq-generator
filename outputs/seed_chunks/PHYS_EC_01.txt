@@ -1,0 +1,6 @@
+chunk_id: PHYS_EC_01
+source_id: khan_phys_elec
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:electrostatics
+text:
+Coulomb's law: the electrostatic force between two point charges q1 and q2 separated by distance r is F_e = k q1 q2 / r^2 (inverse-square law). Like charges repel; opposite charges attract. The magnitude depends on the product of the charges and inversely on r^2.
+notes: Coulomb's law, inverse-square, sign indicates attraction/repulsion

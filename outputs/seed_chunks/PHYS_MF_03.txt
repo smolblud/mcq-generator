@@ -1,0 +1,6 @@
+chunk_id: PHYS_MF_03
+source_id: khan_phys_motion
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:motion-and-forces
+text:
+Forces in two dimensions are treated by components. Typical forces: gravity (vertical, F_g), normal force (vertical, F_n), applied force (may have horizontal and vertical parts), and friction (horizontal opposite motion). Solve independently per axis: ΣF_x = m a_x, ΣF_y = m a_y. Free-body diagrams and consistent sign convention are important when adding vector components.
+notes: components, typical forces, free-body diagrams, axis separation

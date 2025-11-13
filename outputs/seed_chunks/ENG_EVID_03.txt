@@ -1,0 +1,6 @@
+chunk_id: ENG_EVID_03
+source_id: khan_eng_evidence
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:foundations-information-and-ideas/x0d47bcec73eb6c4b:command-of-evidence-textual/a/command-of-evidence-textual-lesson
+text:
+Literary evidence item strategy: Identify the claim about a literary work (tone, theme, characterization), then test each quotation offered to see which one directly supports the claim. The best quotation will be explicit evidence that makes the claim true.
+notes: approach for literary-evidence items

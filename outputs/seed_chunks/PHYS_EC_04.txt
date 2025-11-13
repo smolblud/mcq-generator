@@ -1,0 +1,6 @@
+chunk_id: PHYS_EC_04
+source_id: khan_phys_elec
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:electrostatics
+text:
+Superposition: net electric force or field from multiple charges is the vector sum of contributions from each charge. Coulomb forces and fields are vectors; direction matters. Units: F in newtons (N), E in N/C; k ≈ 8.99×10^9 N·m^2/C^2.
+notes: superposition principle, vector nature, units and k constant

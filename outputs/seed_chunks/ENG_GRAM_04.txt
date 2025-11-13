@@ -1,0 +1,12 @@
+chunk_id: ENG_GRAM_04
+source_id: khan_eng_grammar
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:digital-sat-grammar-practice/x0d47bcec73eb6c4b:fss-sva/a/fss-grammar-guide-subject-verb-agreement
+
+text:
+Top tips for subject–verb agreement: 
+1. Read the subject and verb together, ignoring extra words. 
+2. Remove prepositional phrases to reveal the real subject. 
+3. Beware of “proximity illusion,” where a nearby plural noun distracts from a singular subject. 
+Practice by mentally substituting pronouns or simplified forms to check agreement.
+
+notes: quick grammar heuristics and error-spotting checklist

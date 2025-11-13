@@ -1,0 +1,6 @@
+chunk_id: PHYS_EN_04
+source_id: khan_phys_energy
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:energy
+text:
+Work with angled motion: when displacement is not parallel to a force, use W = F d cosθ to take the parallel component. For changing forces, compute work via an integral W = ∫ F·ds or use force–displacement graphs. Energy conservation: in an isolated system total energy is constant—mechanical energy converts between kinetic and potential forms when nonconservative forces are negligible.
+notes: angled work, calculus for variable forces, conservation principle

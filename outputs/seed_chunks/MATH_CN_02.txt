@@ -1,0 +1,7 @@
+chunk_id: MATH_CN_02
+source_id: khan_math_complex
+url: https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:complex
+text:
+Squaring pure imaginary numbers shows how they relate to real numbers. Example: (3i)^2 = 3^2 i^2 = 9 i^2 = 9(-1) = -9.
+Hence 3i is a square root of -9. In general, for a>0, sqrt(-a) = i sqrt(a), so sqrt(-9) = 3i, sqrt(-5) = i sqrt(5), etc.
+notes: squaring pure imaginary numbers; sqrt(-a)=i sqrt(a)

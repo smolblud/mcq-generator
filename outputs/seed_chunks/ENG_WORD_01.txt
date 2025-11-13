@@ -1,0 +1,6 @@
+chunk_id: ENG_WORD_01
+source_id: khan_eng_words
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:advanced-craft-and-structure/x0d47bcec73eb6c4b:words-in-context-3/a/words-in-context-lesson
+text:
+What are "words in context" questions? These SAT items ask you to choose the most logical and precise word or phrase given the surrounding passage. The correct word will often be restated or paraphrased in the nearby text (Statement. Restatement pattern). Look for context clues and connotation (positive/negative tone) to select a word that exactly matches the idea in that context.
+notes: definition and high-level approach (context + connotation)

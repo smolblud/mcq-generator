@@ -1,0 +1,10 @@
+subject,topic_id,topic_name,planned_items,notes
+Math,MATH_CN,"""Complex numbers: modulus, conjugate, Argand diagram""",4,Khan Academy: Complex numbers pages
+Math,MATH_MAT,"""Matrices & Determinants: 2x2 determinant",4,Khan Academy: Matrices
+Math,MATH_SEQ,"""Quadratic Equations: Quadratic Formula, Completing Square, """,4,Khan Academy: Quadratic Equations
+Physics,PHYS_MF,"""Motion & Forces: kinematics and Newton's laws""",4,Khan Academy: Motion & Forces
+Physics,PHYS_EN,"""Energy: kinetic/potential, conservation, work & power""",3,Khan Academy: Energy
+Physics,PHYS_ES,"""Electrostatics: Coulomb's law, static charge basics""",3,Khan Academy: Electrostatics
+English,ENG_WORD,"""Words in Context: vocab-in-passage items""",3,Khan Academy: Words in Context
+English,ENG_EVID,"""Command of Evidence: using textual evidence""",3,Khan Academy: Command of Evidence
+English,ENG_GRAM,"""Grammar: subject-verb agreement, verb forms""",2,Khan Academy: SAT Grammar practice

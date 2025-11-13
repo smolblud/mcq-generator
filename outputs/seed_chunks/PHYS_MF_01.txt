@@ -1,0 +1,7 @@
+
+chunk_id: PHYS_MF_01
+source_id: khan_phys_motion
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:motion-and-forces
+text:
+Newton's first law (law of inertia): if the net force on a system is zero (ΣF = 0), the system's velocity remains constant (a = 0). Examples: a box at rest on the porch or a box moving at constant velocity in a truck both have ΣF = 0 and a = 0 because gravity and the normal force (and other forces) balance. Whether an object is at rest or moving depends on the chosen inertial reference frame. In inertial frames (non-accelerating observers) Newton's first law holds.
+notes: law of inertia, balanced forces, inertial frames, examples

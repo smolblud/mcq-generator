@@ -1,0 +1,6 @@
+chunk_id: PHYS_EC_03
+source_id: khan_phys_elec
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:electrostatics
+text:
+Parameter dependence: F_e is directly proportional to q1 and q2: increasing either increases force (direct relation). F_e is inversely proportional to r^2: increasing distance decreases force (inverse relation). Use proportional reasoning to predict changes.
+notes: direct vs inverse relations, how changing q or r affects F_e

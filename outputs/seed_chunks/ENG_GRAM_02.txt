@@ -1,0 +1,6 @@
+chunk_id: ENG_GRAM_02
+source_id: khan_eng_grammar
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:digital-sat-grammar-practice/x0d47bcec73eb6c4b:fss-sva/a/fss-grammar-guide-subject-verb-agreement
+text:
+Common traps: intervening phrases (prepositional phrases) and inverted constructions hide the true subject. Example: "The color of its flames indicates the chemical composition..." The true subject is 'color' (singular), not 'flames' (inside preposition phrase).
+notes: traps and how to isolate subject

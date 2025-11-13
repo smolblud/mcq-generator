@@ -1,0 +1,11 @@
+subject,topic_id,topic_name,planned_items_full,notes
+Math,MATH_CN,"""Complex numbers""",10,"""Modulus, conjugate, Argand"""
+Math,MATH_MAT,"""Matrices & Determinants""",10,"""Matrices up to 3x3, determinants, inverse"""
+Math,MATH_NS,"""Number systems & real numbers""",6,"""Full syllabus topic"""
+Math,MATH_SETS,"""Sets",6,"""Set operations, functions, groups"""
+Math,MATH_QUAD,"""Quadratic equations & roots relations""",6,""""""
+Math,MATH_PF,"""Partial fractions & rational expressions""",4,""""""
+Math,MATH_SEQ,"""Sequence & Series (AP, GP, HP)""",8,""""""
+Math,MATH_COMB,"""Permutations, Combinations & Probability""",6,""""""
+Math,MATH_BIN,"""Binomial theorem & induction""",6,""""""
+Math,MATH_TRIG,"""Trigonometry fundamentals & identities""",8,""""""

@@ -1,0 +1,6 @@
+chunk_id: PHYS_EN_03
+source_id: khan_phys_energy
+url: https://www.khanacademy.org/science/highschool-physics/x6679aa2c65c01e53:energy
+text:
+Work–kinetic energy theorem: the net work done on an object equals its change in kinetic energy: ΣW_i = ΔK = 1/2 m v^2 - 1/2 m v_0^2. Example derivation: a satellite starting from rest that experiences net work d(F_n - F_g) across displacement d will have 1/2 m v^2 = d(F_n - F_g), so v = sqrt(2d/m (F_n - F_g)).
+notes: ΔK = ΣW, derivation for v expression, application to satellite example

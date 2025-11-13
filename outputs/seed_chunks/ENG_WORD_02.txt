@@ -1,0 +1,6 @@
+chunk_id: ENG_WORD_02
+source_id: khan_eng_words
+url: https://www.khanacademy.org/test-prep/sat-reading-and-writing/x0d47bcec73eb6c4b:advanced-craft-and-structure/x0d47bcec73eb6c4b:words-in-context-3/a/words-in-context-lesson
+text:
+Strategy: Step 1: summarize the text in your own words. Step 2: identify the key idea or phrase that the blank must match. Step 3: select the word whose exact meaning and connotation match that idea. Example: "pleasant musical quality" → choose 'melodic' rather than 'jarring' or 'scholarly'.
+notes: step-by-step method and worked example

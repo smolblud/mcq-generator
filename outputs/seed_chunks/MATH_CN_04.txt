@@ -1,0 +1,8 @@
+chunk_id: MATH_CN_04
+source_id: khan_math_complex
+url: https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:complex
+text:
+A complex number has form a + b i where a and b are real. a is the real part and b the imaginary part.
+Plotting: represent a+bi as the point (a,b) in the complex plane: the horizontal axis is the real axis, vertical is the imaginary axis. Example: 3 - 5i corresponds to (3,-5).
+Operations: multiply a real number by a complex number by distributing; example -4(13+5i) = -52 - 20i.
+notes: classification, complex plane, plotting, multiplying real*complex

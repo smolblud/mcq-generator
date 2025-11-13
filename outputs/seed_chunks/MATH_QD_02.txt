@@ -1,0 +1,7 @@
+chunk_id: MATH_QD_02
+source_id: khan_math_quadratics
+url: https://www.khanacademy.org/math/algebra-home/alg-quadratics
+text:
+Example: solve 3x^2 - 7 = 5. Rearrange: 3x^2 = 12, x^2 = 4, x = ±2. Factoring trinomials: x^2 + 5x + 6 factors as (x+2)(x+3) because 2*3 = 6 and 2+3 = 5.
+Use factoring to convert quadratics into products of binomials and solve via zero-product property.
+notes: quadratic solving by isolation and factoring example

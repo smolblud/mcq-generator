@@ -1,0 +1,7 @@
+chunk_id: MATH_QD_04
+source_id: khan_math_quadratics
+url: https://www.khanacademy.org/math/algebra-home/alg-quadratics
+text:
+Completing the square and quadratic formula. For ax^2 + bx + c = 0, rearrange and complete square: (x + b/(2a))^2 = (b^2 - 4ac)/(4a^2). Taking square roots and solving yields x = [-b ± sqrt(b^2 - 4ac)]/(2a).
+This derivation shows the quadratic formula and gives the solutions in terms of a, b, c.
+notes: completing the square derivation leading to quadratic formula
