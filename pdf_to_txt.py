@@ -12,12 +12,13 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 # ---------- END CONFIG ----------
 
 pdf_files = [
-    r"C:\Projects\React Projects\mcq-generator\data\physics\v3-11-physics-book-2025.pdf",
-    r"C:\Projects\React Projects\mcq-generator\data\physics\v2-12-physics-book-2025.pdf",
-    r"C:\Projects\React Projects\mcq-generator\data\math\v3-11-maths-book-2025.pdf",
-    r"C:\Projects\React Projects\mcq-generator\data\math\v2-12-maths-book-2025.pdf",
-    r"C:\Projects\React Projects\mcq-generator\data\english\v2-12-english-book-2025.pdf",
-    r"C:\Projects\React Projects\mcq-generator\data\english\v2-11-english-2025.pdf"
+    # r"C:\Projects\React Projects\mcq-generator\data\physics\v3-11-physics-book-2025.pdf",
+    # r"C:\Projects\React Projects\mcq-generator\data\physics\v2-12-physics-book-2025.pdf",
+    # r"C:\Projects\React Projects\mcq-generator\data\math\v3-11-maths-book-2025.pdf",
+    # r"C:\Projects\React Projects\mcq-generator\data\math\v2-12-maths-book-2025.pdf",
+    # r"C:\Projects\React Projects\mcq-generator\data\english\v2-12-english-book-2025.pdf",
+    # r"C:\Projects\React Projects\mcq-generator\data\english\v2-11-english-2025.pdf"
+    r"C:\Projects\React Projects\mcq-generator\data\english\the-complete-guide-to-sat-reading_compress.pdf"
 ]
 
 # Small test cap — set to None to process all pages
