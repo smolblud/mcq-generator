@@ -1,0 +1,16 @@
+pdf2image
+pytesseract
+pillow
+pandas
+numpy
+scipy
+sentence-transformers
+faiss-cpu
+langchain
+langchain-community
+langchain-google-genai
+openai
+python-dotenv
+tiktoken
+hf_xet
+

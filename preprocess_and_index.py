@@ -13,7 +13,7 @@ CHUNK_SIZE = 300         # smaller chunk size for better accuracy
 CHUNK_OVERLAP = 50       # overlap between chunks
 INDEX_DIR = Path("index")  # where FAISS index & metadata will be saved
 EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"  # better embeddings
-TOPIC_BLUEPRINT_CSV = Path(r"C:\Users\User\OneDrive\Desktop\mcq-generator-main\mcq-generator\final_topic_blueprint.csv")
+TOPIC_BLUEPRINT_CSV = Path(r"docs\a.csv")
 # ----------------------------------------
 
 def load_topic_blueprint(csv_path):
@@ -61,7 +61,7 @@ def chunk_text_by_pages(text, subject, filename, blueprint_df):
             chunk_text = " ".join(chunk_words)
 
             topic_clean = re.sub(r"[^A-Za-z0-9]+", "_", topic)[:40]
-            chunk_label = f"{subject.upper()}_{topic_clean}_{chunk_id:03d}"
+            chunk_label = f"{subject.upper()}{topic_clean}{chunk_id:03d}"
 
             chunks.append({
                 "id": chunk_label,

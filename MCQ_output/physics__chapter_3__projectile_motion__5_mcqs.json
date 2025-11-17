@@ -1,0 +1,77 @@
+[
+  {
+    "stem": "In projectile motion, neglecting air resistance, what is the acceleration in the horizontal direction?",
+    "options": {
+      "A": "It is equal to the acceleration due to gravity.",
+      "B": "It is constant and non-zero.",
+      "C": "It is zero.",
+      "D": "It varies depending on the angle of projection."
+    },
+    "answer": "C",
+    "solution_latex": "The context states that 'There is no horizontal acceleration' in projectile motion when air resistance is neglected. [physics_book_projectile_motion]",
+    "difficulty": "Easy",
+    "citations": [
+      "physics_book_projectile_motion"
+    ]
+  },
+  {
+    "stem": "A projectile is launched with an initial velocity $v_0$ at an angle $\\theta$ with the horizontal. What is the vertical component of its initial velocity?",
+    "options": {
+      "A": "$v_0 \\cos\\theta$",
+      "B": "$v_0 \\sin\\theta$",
+      "C": "$v_0 / \\cos\\theta$",
+      "D": "$v_0 / \\sin\\theta$"
+    },
+    "answer": "B",
+    "solution_latex": "The initial velocity $v_0$ is resolved into horizontal and vertical components. The vertical component is given by $v_{iy} = v_0 \\sin\\theta$. [physics_book_projectile_motion]",
+    "difficulty": "Easy",
+    "citations": [
+      "physics_book_projectile_motion"
+    ]
+  },
+  {
+    "stem": "For a projectile launched on level ground, what launch angle maximizes the horizontal range?",
+    "options": {
+      "A": "0°",
+      "B": "30°",
+      "C": "45°",
+      "D": "90°"
+    },
+    "answer": "C",
+    "solution_latex": "The range of a projectile is given by $R = \\frac{v_0^2 \\sin(2\\theta)}{g}$. The range is maximum when $\\sin(2\\theta) = 1$, which occurs when $2\\theta = 90^{\\circ}$, so $\\theta = 45^{\\circ}$. [physics_book_projectile_motion]",
+    "difficulty": "Medium",
+    "citations": [
+      "physics_book_projectile_motion"
+    ]
+  },
+  {
+    "stem": "A projectile is launched horizontally with a speed of 12.0 m/s from a height of 24.6 m. What is the horizontal displacement of the projectile when it hits the ground?",
+    "options": {
+      "A": "12.0 m",
+      "B": "24.6 m",
+      "C": "26.9 m",
+      "D": "29.4 m"
+    },
+    "answer": "C",
+    "solution_latex": "First, find the time of flight using the vertical motion: $y = v_{iy}t + \\frac{1}{2}a_yt^2$. Since it's launched horizontally, $v_{iy} = 0$ and $a_y = g = 9.8$ m/s$^2$. So, $24.6 = 0 \\cdot t + \\frac{1}{2}(9.8)t^2$. Solving for $t$, we get $t = \\sqrt{\\frac{2 \\times 24.6}{9.8}} \\approx 2.24$ s. Then, find the horizontal displacement: $x = v_{ix}t + \\frac{1}{2}a_xt^2$. Since $a_x = 0$, $x = v_{ix}t = (12.0 \\text{ m/s}) \\times (2.24 \\text{ s}) = 26.88$ m, which is approximately 26.9 m. [physics_book_projectile_motion]",
+    "difficulty": "Hard",
+    "citations": [
+      "physics_book_projectile_motion"
+    ]
+  },
+  {
+    "stem": "What is the vertical component of velocity of a projectile at its maximum height?",
+    "options": {
+      "A": "It is equal to the initial vertical component of velocity.",
+      "B": "It is zero.",
+      "C": "It is equal to the acceleration due to gravity.",
+      "D": "It is equal to the horizontal component of velocity."
+    },
+    "answer": "B",
+    "solution_latex": "At the maximum height of its trajectory, a projectile momentarily stops moving upwards before it starts to fall. Therefore, its vertical component of velocity is zero at this instant. [physics_book_projectile_motion]",
+    "difficulty": "Medium",
+    "citations": [
+      "physics_book_projectile_motion"
+    ]
+  }
+]

@@ -1,0 +1,54 @@
+subject,unit,topic,start_page,end_page,source_file
+Physics,Ch# 1,Physical Quantities and Measurements,7,21,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 2,Vectors,22,31,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 3,Translatory Motion,32,52,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 4,Rotational and Circular Motion,53,76,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 5,Work and Kinetic Energy,77,87,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 6,Fluid Mechanics,88,111,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 7,Physics of Solids,112,126,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 8,Heat and Thermodynamics,127,153,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 9,Waves,154,183,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 10,Electrostatics,184,196,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 11,Electricity,197,218,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 12,Magnetism,219,245,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 13,Relativity,246,256,data\physics\v3-11-physics-book-2025.txt
+Physics,Ch# 14,Particle Physics,257,283,data\physics\v3-11-physics-book-2025.txt
+Physics,Unit# 15,Gravitation,7,25,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 16,Statistical Mechanics and Thermodynamics,26,43,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 17,Simple Harmonic Motion,44,69,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 18,Diffraction and Interference,70,85,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 19,Electric Potential and Capacitor,86,105,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 20,Alternating Current,106,123,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 21,Quantum Physics,124,140,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 22,Nuclear Physics,141,169,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 23,Cosmology,170,182,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 24,Earth's Climate,183,200,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 25,Medical Imaging,201,210,data\physics\v2-12-physics-book-2025.txt
+Physics,Unit# 26,Nature of Science: A Debate,211,220,data\physics\v2-12-physics-book-2025.txt
+Math,Unit 1,Complex Numbers,5,29,data\math\v3-11-maths-book-2025.txt
+Math,Unit 2,Matrices and Determinants,30,72,data\math\v3-11-maths-book-2025.txt
+Math,Unit 3,Vectors,73,115,data\math\v3-11-maths-book-2025.txt
+Math,Unit 4,Sequences and Series,116,149,data\math\v3-11-maths-book-2025.txt
+Math,Unit 5,Division of Polynomials,150,161,data\math\v3-11-maths-book-2025.txt
+Math,Unit 6,Permutation and Combination,162,174,data\math\v3-11-maths-book-2025.txt
+Math,Unit 7,Mathematical Induction and Binomial Theorem,175,194,data\math\v3-11-maths-book-2025.txt
+Math,Unit 8,Fundamental Laws of Trigonometry,195,215,data\math\v3-11-maths-book-2025.txt
+Math,Unit 9,Trigonometric Functions,216,249,data\math\v3-11-maths-book-2025.txt
+Math,Unit 1,Functions and Graphs,7,42,data\math\v2-12-maths-book-2025.txt
+Math,Unit 2,"Limit, Continuity and Derivative",43,88,data\math\v2-12-maths-book-2025.txt
+Math,Unit 3,Integration,89,119,data\math\v2-12-maths-book-2025.txt
+Math,Unit 4,Differential Equations,120,139,data\math\v2-12-maths-book-2025.txt
+Math,Unit 5,Kinematics of Motion in a Straight Line,140,159,data\math\v2-12-maths-book-2025.txt
+Math,Unit 6,Analytical Geometry,160,181,data\math\v2-12-maths-book-2025.txt
+English SAT,Chapter 1,Vocabulary in Context,43,64,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 2,Making the Leap: From Concrete to Abstract,65,78,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 3,The Big Picture,79,116,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 4,Supporting Evidence,117,130,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 5,"Literal Comprehension: Same Idea, Different Words",131,157,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 6,Reasonable Inferences,158,188,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 7,Extended Reasoning and Analogies,189,202,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 8,Reading for Function,203,231,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 9,Tone and Attitude,232,254,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 10,Rhetorical Strategy,255,275,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 11,Paired Passages,276,299,data\english-sat\v1-sat-reading-book-2025.txt
+English SAT,Chapter 12,Graphics and Data Analysis,300,334,data\english-sat\v1-sat-reading-book-2025.txt
