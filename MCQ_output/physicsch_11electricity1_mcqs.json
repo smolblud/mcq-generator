@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "A 10 $\\\\Omega$ resistor is connected across the terminals of a 10 V battery. What is the power dissipation of the resistor?",
+    "options": {
+      "A": "100 W",
+      "B": "50 W",
+      "C": "25 W",
+      "D": "10 W"
+    },
+    "answer": "A",
+    "solution_latex": "The power dissipation P of a resistor can be calculated using the formula $P = \\\\frac{V^2}{R}$, where V is the voltage across the resistor and R is its resistance. Given V = 10 V and R = 10 $\\\\Omega$, we have $P = \\\\frac{(10 \\\\text{ V})^2}{10 \\\\text{ } \\\\Omega} = \\\\frac{100 \\\\text{ V}^2}{10 \\\\text{ } \\\\Omega} = 100 \\\\text{ W}$.",
+    "difficulty": "Easy",
+    "citations": [
+      "v3_11_physics_book_2025_electricity"
+    ]
+  }
+]

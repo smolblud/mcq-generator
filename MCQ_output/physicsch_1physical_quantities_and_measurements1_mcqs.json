@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "According to the principle of homogeneity of dimensions, for an equation to be physically correct, the dimensions of the terms on both sides must be:",
+    "options": {
+      "A": "Different",
+      "B": "The same",
+      "C": "Related by a constant factor",
+      "D": "Independent of each other"
+    },
+    "answer": "B",
+    "solution_latex": "The principle of homogeneity of dimensions states that for an equation to be physically correct, the dimensions of all terms on both sides of the equation must be identical. This is because quantities can only be added or subtracted if they have the same dimensions.",
+    "difficulty": "Easy",
+    "citations": [
+      "v3_11_physics_book_2025_physical_quantities_and_measurements"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "If the gravitational force between two identical balls of mass 1 kg each, separated by a distance of 1 m between their centers, is calculated, what is the approximate value of this force?",
+    "options": {
+      "A": "6.67 x 10^-11 N",
+      "B": "6.67 x 10^-7 N",
+      "C": "6.67 x 10^7 N",
+      "D": "6.67 x 10^11 N"
+    },
+    "answer": "A",
+    "solution_latex": "Using Newton's law of gravitation, $F = G \\\\frac{m_1 m_2}{r^2}$. Given $m_1 = 1$ kg, $m_2 = 1$ kg, and $r = 1$ m. The gravitational constant $G = 6.67 \\\\times 10^{-11} \\\\text{ N m}^2 \\\\text{ kg}^{-2}$. \\\\\\\\ Therefore, $F = (6.67 \\\\times 10^{-11} \\\\text{ N m}^2 \\\\text{ kg}^{-2}) \\\\times \\\\frac{(1 \\\\text{ kg})(1 \\\\text{ kg})}{(1 \\\\text{ m})^2} = 6.67 \\\\times 10^{-11} \\\\text{ N}$.",
+    "difficulty": "Easy",
+    "citations": [
+      "v2_12_physics_book_2025_gravitation"
+    ]
+  }
+]

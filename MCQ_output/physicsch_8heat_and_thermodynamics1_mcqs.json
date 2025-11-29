@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "According to the first law of thermodynamics, when heat is added to a system, what are the two possible outcomes?",
+    "options": {
+      "A": "It decreases the internal energy and no work is done.",
+      "B": "It increases the internal energy and work is done on the environment.",
+      "C": "It decreases the internal energy and work is done by the environment.",
+      "D": "It increases the internal energy and no work is done."
+    },
+    "answer": "B",
+    "solution_latex": "The first law of thermodynamics states that $\\\\Delta U = Q - W$, where $\\\\Delta U$ is the change in internal energy, $Q$ is the heat added to the system, and $W$ is the work done by the system. If heat is added to the system ($Q > 0$), the internal energy can increase ($\\\\\\\\Delta U > 0$) and/or work can be done by the system ($W > 0$). Therefore, when heat is added to a system, it increases the internal energy of the system plus work is done on the environment.",
+    "difficulty": "Medium",
+    "citations": [
+      "v3_11_physics_book_2025_heat_and_thermodynamics"
+    ]
+  }
+]

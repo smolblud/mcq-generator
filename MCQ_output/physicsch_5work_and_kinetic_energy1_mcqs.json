@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "An iron ball with a mass of 1.0 kg is moving with a speed of 2.0 m/s. What is its kinetic energy?",
+    "options": {
+      "A": "1.0 J",
+      "B": "2.0 J",
+      "C": "4.0 J",
+      "D": "0.5 J"
+    },
+    "answer": "B",
+    "solution_latex": "The kinetic energy (KE) of an object is given by the formula $KE = \\\\frac{1}{2}mv^2$, where $m$ is the mass and $v$ is the speed. \\\\\\\\\\nGiven: $m = 1.0$ kg, $v = 2.0$ m/s. \\\\\\\\\\n$KE = \\\\frac{1}{2} \\\\times 1.0 \\\\text{ kg} \\\\times (2.0 \\\\text{ m/s})^2 \\\\\\\\\\nKE = \\\\frac{1}{2} \\\\times 1.0 \\\\times 4.0 \\\\text{ J} \\\\\\\\\\nKE = 2.0 \\\\text{ J}",
+    "difficulty": "Easy",
+    "citations": [
+      "v3_11_physics_book_2025_diffraction_and_interference"
+    ]
+  }
+]

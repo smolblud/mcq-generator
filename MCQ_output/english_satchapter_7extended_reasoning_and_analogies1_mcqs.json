@@ -1,0 +1,15 @@
+[
+  {
+    "question_type": "reading",
+    "stem": "According to the passage, which of the following best describes the primary difference between typical inference questions and extended reasoning questions?",
+    "options": {
+      "A": "Inference questions require rephrasing passage information, while extended reasoning questions require applying passage information to new situations.",
+      "B": "Inference questions focus on explicit statements, while extended reasoning questions focus on implied meanings.",
+      "C": "Inference questions are always accompanied by supporting evidence questions, while extended reasoning questions are not.",
+      "D": "Inference questions deal with analogies, while extended reasoning questions deal with hypothetical scenarios."
+    },
+    "answer": "A",
+    "evidence_span": "The vast majority of inference questions that appear on the SAT are similar to the ones we looked at in the previous chapter - that is, their correct answers either rephrase the information in the passage from a different angle, or directly state information that the passage implies but does not explicitly convey. In a small number of cases, however, you may be asked to make larger inferences, ones that require you to extend your reasoning beyond the passage itself. These questions take two major forms: The first type asks you to use the information from the passage to determine how a figure discussed in the passage would mostly likely respond to a hypothetical situation - that is, one not discussed in the passage. These are essentially assumption questions taken one step further: you must be able to identify the underlying logic in order to apply it to a new situation.",
+    "citations": []
+  }
+]

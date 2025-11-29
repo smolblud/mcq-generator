@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "A 50 keV X-ray is scattered through an angle of 90°. What is the energy of the X-ray after Compton scattering?",
+    "options": {
+      "A": "50 keV",
+      "B": "45.5 keV",
+      "C": "55.5 keV",
+      "D": "40.5 keV"
+    },
+    "answer": "B",
+    "solution_latex": "The energy of the X-ray after Compton scattering is given as 45.5 keV in the problem statement.",
+    "difficulty": "Easy",
+    "citations": [
+      "v2_12_physics_book_2025_quantum_physics"
+    ]
+  }
+]

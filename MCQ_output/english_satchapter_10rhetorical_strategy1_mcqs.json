@@ -1,0 +1,17 @@
+[
+  {
+    "question_type": "reading",
+    "stem": "According to the passage, which of the following is the most effective strategy for answering questions about the overall organization of a passage?",
+    "options": {
+      "A": "Labeling each section of the passage as you read it.",
+      "B": "Focusing on the end of the introduction and the first sentence of each subsequent paragraph.",
+      "C": "Identifying all transition words within each paragraph.",
+      "D": "Skimming the entire passage for key ideas and arguments before reading closely."
+    },
+    "answer": "B",
+    "evidence_span": "If a question asks about the overall organization of a passage, you should focus on the end of the introduction and the first sentence of each subsequent paragraph.",
+    "citations": [
+      "the_complete_guide_to_sat_reading_compress_general"
+    ]
+  }
+]

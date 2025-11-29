@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "What is the domain of the inverse cosine function, $y = \\\\text{Cos}^{-1}(x)$?",
+    "options": {
+      "A": "[0, \\\\pi]",
+      "B": "[-1, 1]",
+      "C": "(- \\\\infty, \\\\infty)",
+      "D": "[0, 1]"
+    },
+    "answer": "B",
+    "solution_latex": "The context states: 'For the inverse cosine function $y = \\\\text{Cos}^{-1}(x)$ Domain = [-1, 1] and Range = [0, \\\\pi]'. Therefore, the domain is [-1, 1].",
+    "difficulty": "Easy",
+    "citations": [
+      "v2_12_maths_book_2025_trigonometric_functions"
+    ]
+  }
+]

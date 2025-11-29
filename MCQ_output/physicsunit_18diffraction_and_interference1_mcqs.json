@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "In a double-slit experiment, if the wavelength of light is 500 nm and the distance between the slits and the screen is 1 m, what is the separation between the slits if the fringe spacing between the central maximum and the first minimum is 2 mm?",
+    "options": {
+      "A": "0.5 mm",
+      "B": "0.25 mm",
+      "C": "0.1 mm",
+      "D": "0.05 mm"
+    },
+    "answer": "B",
+    "solution_latex": "The distance between the central maximum and the first minimum ($y_1$) is given by $y_1 = \\\\frac{\\\\lambda L}{d}$, where $\\\\lambda$ is the wavelength of light, $L$ is the distance between the slits and the screen, and $d$ is the slit separation. We are given $y_1 = 2.0 \\\\text{ mm} = 0.002 \\\\text{ m}$, $\\\\lambda = 500 \\\\text{ nm} = 5.00 \\\\times 10^{-7} \\\\text{ m}$, and $L = 1.0 \\\\text{ m}$. Rearranging the formula to solve for $d$: $d = \\\\frac{\\\\lambda L}{y_1} = \\\\frac{(5.00 \\\\times 10^{-7} \\\\text{ m})(1.0 \\\\text{ m})}{0.002 \\\\text{ m}} = 0.00025 \\\\text{ m} = 0.25 \\\\text{ mm}$.",
+    "difficulty": "Medium",
+    "citations": [
+      "v2_12_physics_book_2025_diffraction_and_interference"
+    ]
+  }
+]

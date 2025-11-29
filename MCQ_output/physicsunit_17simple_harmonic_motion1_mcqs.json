@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "A particle is executing simple harmonic motion. Which of the following relationships between its acceleration 'a' and displacement 'x' from the equilibrium position is correct?",
+    "options": {
+      "A": "a = 0.7x",
+      "B": "a = -200x^2",
+      "C": "a = -10x",
+      "D": "a = 100x"
+    },
+    "answer": "C",
+    "solution_latex": "The context states that for simple harmonic motion, the acceleration 'a' is proportional to the displacement 'x' and directed opposite to the displacement from the mean position. This relationship is expressed as $a = -\\\\omega^2 x$. Option C, $a = -10x$, fits this form where $-10$ represents $-\\\\omega^2$.",
+    "difficulty": "Medium",
+    "citations": [
+      "v2_12_physics_book_2025_translatory_motion"
+    ]
+  }
+]

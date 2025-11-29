@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "According to Newton's thought experiment with the cannonball, if a cannonball is fired with sufficient horizontal velocity, what prevents it from falling to Earth?",
+    "options": {
+      "A": "The absence of gravitational acceleration.",
+      "B": "The combination of its orbital motion and inertia.",
+      "C": "The Earth's magnetic field deflecting its path.",
+      "D": "The lack of an external force acting upon it."
+    },
+    "answer": "B",
+    "solution_latex": "Newton's thought experiment suggests that the Moon, like a cannonball fired with sufficient velocity, does not fall to Earth due to the combination of its orbital motion and inertia. This prevents it from falling perfectly to Earth and also from flying away. \\\\\\\\ \\\\\\\\ \\\\\\\\text{See: } \\\\text{[v2_12_physics_book_2025_electricity]}",
+    "difficulty": "Medium",
+    "citations": [
+      "v2_12_physics_book_2025_electricity"
+    ]
+  }
+]

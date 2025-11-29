@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "An AC circuit consists of a pure resistance of 20 $\\\\Omega$ connected across an AC supply of 220 V, 50 Hz. What is the peak value of the current in this circuit?",
+    "options": {
+      "A": "15.55 A",
+      "B": "220 A",
+      "C": "311.1 A",
+      "D": "11 A"
+    },
+    "answer": "A",
+    "solution_latex": "Given R = 20 $\\\\Omega$, Vrms = 220 V, f = 50 Hz.\\nFirst, calculate the peak voltage (Vo) using the relation Vrms = Vo/$\\\\sqrt{2}$.\\nVo = Vrms * $\\\\sqrt{2}$ = 220 * $\\\\sqrt{2}$ = 311.1 V.\\nThen, calculate the peak current (Io) using Ohm's law: Io = Vo/R.\\nIo = 311.1 V / 20 $\\\\Omega$ = 15.55 A.",
+    "difficulty": "Medium",
+    "citations": [
+      "v2_12_physics_book_2025_fluid_mechanics"
+    ]
+  }
+]

@@ -58,9 +58,11 @@ llm = ChatGoogleGenerativeAI(
 # -----------------------------
 def slugify(text: str) -> str:
     text = str(text).strip().lower()
+    # Replace non-alphanumeric characters with underscores
     text = re.sub(r"[^a-z0-9]+", "_", text)
-    text = re.sub(r"+", "", text)
+    # Remove leading/trailing underscores
     return text.strip("_") or "na"
+
 
 def make_citation_key(meta: dict) -> str:
     source_file = str(meta.get("source_file", "unknown_source")).strip()
@@ -110,9 +112,6 @@ def save_mcqs_to_file(mcqs: list[dict], subject: str, chapter: str | None, topic
         json.dump(mcqs, f, indent=2, ensure_ascii=False)
     return out_path
 
-# -----------------------------
-# Prompt templates
-# -----------------------------
 mcq_prompt_stem = ChatPromptTemplate.from_template(
     """
 You are an exam MCQ generator for STEM subjects (Mathematics and Physics).
@@ -130,7 +129,7 @@ Requirements for EACH question:
 - 1 clear conceptual or computational stem
 - 4 options labeled A, B, C, D
 - Exactly ONE correct option
-- A worked solution written in LaTeX (no surrounding $$, just raw LaTeX)
+- A worked solution written in LaTeX (use double braces for any curly braces, e.g., {{x^2}})
 - A difficulty tag for that question: one of "Easy", "Medium", "Hard"
 - At least one citation using the EXACT citation_key shown in the context (without brackets).
 
@@ -141,7 +140,7 @@ Requirements for EACH question:
 Return the questions as a JSON array.
 Each element must have:
 - "stem": string
-- "options": {"A": "...", "B": "...", "C": "...", "D": "..."}
+- "options": {{"A": "...", "B": "...", "C": "...", "D": "..."}}
 - "answer": one of "A", "B", "C", "D"
 - "solution_latex": string
 - "difficulty": "Easy" | "Medium" | "Hard"
@@ -168,13 +167,34 @@ Return the questions as a JSON array.
 Each element must have:
 - "question_type": "reading" | "grammar" | "vocab"
 - "stem": string
-- "options": {"A": "...", "B": "...", "C": "...", "D": "..."}
+- "options": {{"A": "...", "B": "...", "C": "...", "D": "..."}}
 - "answer": one of "A", "B", "C", "D"
 - "evidence_span": string
 - "citations": list of citation keys
 Strictly output ONLY valid JSON.
 """
 )
+import json
+import re
+
+def safe_json_loads(raw: str):
+    # Strip leading/trailing whitespace
+    text = raw.strip()
+
+    # Optional: Remove leading text before first '[' (sometimes LLM adds commentary)
+    match = re.search(r'\[', text)
+    if match:
+        text = text[match.start():]
+
+    # Escape backslashes
+    text = text.replace("\\", "\\\\")
+    
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as e:
+        print("JSON parsing failed:", e)
+        print("Raw output:", text)
+        return []
 
 # -----------------------------
 # MCQ generation
@@ -200,29 +220,31 @@ def generate_mcqs(subject: str, chapter: str | None = None, topic: str | None = 
     )
     response = llm.invoke(messages)
     cleaned = clean_json_text(response.content)
-    parsed = json.loads(cleaned)
+    parsed = safe_json_loads(cleaned)
+
     if not isinstance(parsed, list):
         raise ValueError("Expected JSON array of MCQs.")
     return parsed
-
 if __name__ == "__main__":
     TOTAL_MCQS = 30
     df = pd.read_csv(CSV_PATH)
-    num_rows = len(df)
-
-    # Compute roughly equal number of MCQs per row
-    base_mcqs = TOTAL_MCQS // num_rows
-    extra = TOTAL_MCQS % num_rows  # distribute remainder
-
+    
+    # Shuffle rows randomly
+    df = df.sample(frac=1, random_state=49).reset_index(drop=True)
+    
     total_mcqs_generated = 0
+    row_idx = 0
 
-    for idx, row in df.iterrows():
+    while total_mcqs_generated < TOTAL_MCQS and row_idx < len(df):
+        row = df.iloc[row_idx]
         subject = row["subject"]
         chapter = row["unit"]
         topic = row["topic"] if not pd.isna(row["topic"]) else None
 
-        # Add 1 extra MCQ to the first 'extra' rows to reach exactly 30
-        n_questions = base_mcqs + (1 if idx < extra else 0)
+        # How many MCQs to generate in this iteration
+        remaining = TOTAL_MCQS - total_mcqs_generated
+        n_questions = min(1, remaining)  # Generate 1 MCQ at a time per row randomly
+        # You can also generate more per row if you want, e.g., n_questions = min(3, remaining)
 
         print(f"Generating {n_questions} MCQs for Subject='{subject}', Chapter='{chapter}', Topic='{topic or 'All'}'...")
         mcqs = generate_mcqs(subject, chapter, topic, difficulty="Medium", n_questions=n_questions)
@@ -230,5 +252,8 @@ if __name__ == "__main__":
 
         out_path = save_mcqs_to_file(mcqs, subject, chapter, topic, n_questions)
         print(f"Saved {len(mcqs)} MCQs to: {out_path.resolve()}\n")
+
+        # Move to next row randomly
+        row_idx += 1
 
     print(f"Total MCQs generated across all topics: {total_mcqs_generated}")

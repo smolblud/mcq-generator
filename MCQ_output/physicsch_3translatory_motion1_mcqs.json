@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "Which of the following equations represents the third equation of motion, relating initial velocity ($v_i$), final velocity ($v_f$), acceleration ($a$), and distance ($S$)?",
+    "options": {
+      "A": "$2aS = (v_i + v_f) \\\\times (v_f - v_i)$",
+      "B": "$v_f = v_i + at$",
+      "C": "$S = v_i t + \\\\frac{1}{2}at^2$",
+      "D": "$v_f^2 = v_i^2 + 2aS$"
+    },
+    "answer": "A",
+    "solution_latex": "The context states that the third equation of motion represents the relation between initial velocity, final velocity, acceleration, and distance. Equation (3.4) is given as $2aS = (v_i + v_f) \\\\times (v_f - v_i)$. This equation can also be written as $2aS = v_f^2 - v_i^2$, which is equivalent to $v_f^2 = v_i^2 + 2aS$. Therefore, option A correctly represents the third equation of motion as derived in the text.",
+    "difficulty": "Medium",
+    "citations": [
+      "v3_11_physics_book_2025_statistical_mechanics_and_thermodynamics"
+    ]
+  }
+]

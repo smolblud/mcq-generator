@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "If a vehicle number plate consists of four digits, and the digits must be distinct and chosen from the set {1, 2, 3, 4, 5, 6}, how many different number plates can be created?",
+    "options": {
+      "A": "120",
+      "B": "360",
+      "C": "24",
+      "D": "720"
+    },
+    "answer": "B",
+    "solution_latex": "For the first digit, there are 6 choices. Since the digits must be distinct, for the second digit there are 5 choices. For the third digit, there are 4 choices, and for the fourth digit, there are 3 choices. Therefore, the total number of different number plates is $6 \\\\times 5 \\\\times 4 \\\\times 3 = 360$.",
+    "difficulty": "Medium",
+    "citations": [
+      "v3_11_maths_book_2025_analytical_geometry"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "If a particle moves in a circle of radius 'r' and covers an arc length 'S', what is the relationship between the linear displacement 'S' and the angular displacement 'θ' (in radians)?",
+    "options": {
+      "A": "S = r / θ",
+      "B": "S = θ / r",
+      "C": "S = r * θ",
+      "D": "S = r + θ"
+    },
+    "answer": "C",
+    "solution_latex": "The relationship between linear displacement (arc length) $S$ and angular displacement $\\\\theta$ in radians for a particle moving in a circle of radius $r$ is given by $S = r\\\\theta$. This is derived from the definition of a radian, where 1 radian subtends an arc length equal to the radius.",
+    "difficulty": "Easy",
+    "citations": [
+      "v3_11_physics_book_2025_simple_harmonic_motion"
+    ]
+  }
+]

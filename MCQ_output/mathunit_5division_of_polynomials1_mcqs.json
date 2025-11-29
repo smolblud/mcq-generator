@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "If a polynomial p(x) is divided by x - c, what is the remainder?",
+    "options": {
+      "A": "p(c)",
+      "B": "p(-c)",
+      "C": "c",
+      "D": "0"
+    },
+    "answer": "A",
+    "solution_latex": "According to the Remainder Theorem, if a polynomial $p(x)$ is divided by $x-c$, the remainder is $p(c)$. This is derived from the division algorithm $p(x) = (x-c)q(x) + r$, where $q(x)$ is the quotient and $r$ is the remainder. Substituting $x=c$ gives $p(c) = (c-c)q(c) + r = 0 + r = r$.",
+    "difficulty": "Easy",
+    "citations": [
+      "v3_11_maths_book_2025_kinematics_of_motion_in_a_straight_line"
+    ]
+  }
+]

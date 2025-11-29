@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "Consider the sequence where the first term is 100,000 and each subsequent term increases by 10,000. What is the total amount saved in the first four months if this pattern represents monthly deposits?",
+    "options": {
+      "A": "Rs. 400,000",
+      "B": "Rs. 460,000",
+      "C": "Rs. 520,000",
+      "D": "Rs. 490,000"
+    },
+    "answer": "B",
+    "solution_latex": "This is an arithmetic series with the first term $a = 100,000$ and the common difference $d = 10,000$. We need to find the sum of the first 4 terms ($S_4$). The formula for the sum of an arithmetic series is $S_n = \\\\frac{n}{2}[2a + (n-1)d]$.\\nSubstituting the values:\\n$S_4 = \\\\frac{4}{2}[2(100,000) + (4-1)10,000]$\\n$S_4 = 2[200,000 + (3)10,000]$\\n$S_4 = 2[200,000 + 30,000]$\\n$S_4 = 2[230,000]$\\n$S_4 = 460,000$\\nTherefore, the amount saved in 4 months is Rs. 460,000.",
+    "difficulty": "Medium",
+    "citations": [
+      "v3_11_maths_book_2025_sequences_and_series"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "What is the magnitude of a point charge that would create an electric field of 1.00 N/C at a distance of 1.00 m away?",
+    "options": {
+      "A": "1.11 x 10^-10 C",
+      "B": "9.00 x 10^9 C",
+      "C": "1.00 x 10^-9 C",
+      "D": "1.00 C"
+    },
+    "answer": "A",
+    "solution_latex": "The electric field strength E due to a point charge is given by $E = k \\\\frac{Q}{r^2}$. We are given $E = 1.00$ N/C and $r = 1.00$ m. The constant $k$ is $9 \\\\times 10^9$ N m$^2$/C$^2$. Rearranging the formula to solve for Q: $Q = \\\\frac{E r^2}{k} = \\\\frac{(1.00 \\\\text{ N/C}) (1.00 \\\\text{ m})^2}{9 \\\\times 10^9 \\\\text{ N m}^2/\\text{C}^2} = \\\\frac{1.00}{9 \\\\times 10^9} \\\\text{ C} \\\\approx 1.11 \\\\times 10^{-10} \\\\text{ C}$.",
+    "difficulty": "Medium",
+    "citations": [
+      "v3_11_physics_book_2025_earth_s_climate"
+    ]
+  }
+]

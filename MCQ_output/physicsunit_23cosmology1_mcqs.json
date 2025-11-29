@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "According to Wien's displacement law, if a star's peak radiation is at a shorter wavelength, what does this imply about its surface temperature?",
+    "options": {
+      "A": "The star has a lower surface temperature.",
+      "B": "The star has a higher surface temperature.",
+      "C": "The star's surface temperature is unchanged.",
+      "D": "The star's surface temperature is inversely proportional to the wavelength."
+    },
+    "answer": "B",
+    "solution_latex": "Wien's displacement law states that $\\\\lambda_{max} T = \\\\text{constant}$. This means that the peak wavelength ($\\\\lambda_{max}$) is inversely proportional to the temperature (T). Therefore, if $\\\\lambda_{max}$ decreases (shorter wavelength), the temperature (T) must increase.",
+    "difficulty": "Medium",
+    "citations": [
+      "v2_12_physics_book_2025_waves"
+    ]
+  }
+]

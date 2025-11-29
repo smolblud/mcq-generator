@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "A vector can be completely expressed graphically by a line with an arrow head. What does the length of the line represent?",
+    "options": {
+      "A": "The direction of the vector",
+      "B": "The unit of the vector",
+      "C": "The magnitude of the vector",
+      "D": "The component of the vector"
+    },
+    "answer": "C",
+    "solution_latex": "The length of the line segment represents the magnitude of the vector according to a proper scale, while the arrow head indicates its direction.",
+    "difficulty": "Easy",
+    "citations": [
+      "v3_11_physics_book_2025_gravitation"
+    ]
+  }
+]

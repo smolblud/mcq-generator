@@ -1,0 +1,17 @@
+[
+  {
+    "question_type": "reading",
+    "stem": "Which choice provides the best evidence for the claim that supporting evidence questions are primarily paired with literal comprehension and inference questions?",
+    "options": {
+      "A": "Lines 5-7 (“This...declaration”)",
+      "B": "Lines 24-25 (“It...answers”)",
+      "C": "Lines 44-46 (“Between... past’)",
+      "D": "Lines 46-48 (“Still...issued”)"
+    },
+    "answer": "B",
+    "evidence_span": "Lines 24-25 (“It...answers”)",
+    "citations": [
+      "[the_complete_guide_to_sat_reading_compress_general]"
+    ]
+  }
+]

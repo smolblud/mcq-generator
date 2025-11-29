@@ -1,0 +1,115 @@
+{
+  "final_theta": -1.2,
+  "topics_asked": {
+    "imaging1": 1,
+    "motion1": 1,
+    "and_series1": 1,
+    "s_climate1": 1,
+    "current1": 1,
+    "and_combination1": 1,
+    "mcqs": 3,
+    "of_polynomials1": 1
+  },
+  "history": [
+    {
+      "step": 1,
+      "idx": 28,
+      "source_file": "physicsunit_25medical_imaging1_mcqs.json",
+      "topic": "imaging1",
+      "difficulty": "Medium",
+      "stem": "In an X-ray tube, electrons are accelerated through a potential difference of 10^6 volts. What is the minimum wavelength of the X-rays produced?",
+      "student_correct": false,
+      "theta_after": -0.15
+    },
+    {
+      "step": 2,
+      "idx": 16,
+      "source_file": "physicsch_3translatory_motion1_mcqs.json",
+      "topic": "motion1",
+      "difficulty": "Medium",
+      "stem": "Which of the following equations represents the third equation of motion, relating initial velocity ($v_i$), final velocity ($v_f$), acceleration ($a$), and distance ($S$)?",
+      "student_correct": true,
+      "theta_after": 0.0
+    },
+    {
+      "step": 3,
+      "idx": 6,
+      "source_file": "mathunit_4sequences_and_series1_mcqs.json",
+      "topic": "and_series1",
+      "difficulty": "Medium",
+      "stem": "Consider the sequence where the first term is 100,000 and each subsequent term increases by 10,000. What is the total amount saved in the first four months if this pattern represents monthly deposits?",
+      "student_correct": false,
+      "theta_after": -0.15
+    },
+    {
+      "step": 4,
+      "idx": 27,
+      "source_file": "physicsunit_24earth_s_climate1_mcqs.json",
+      "topic": "s_climate1",
+      "difficulty": "Medium",
+      "stem": "If the volume of change in storage of the hydrosphere, whose area is 30 km\u00b2, is 600,000 m\u00b3, and the volume of evapotranspiration is 1,500,000 m\u00b3, what is the net precipitation (P) if the runoff volume is 600,000 m\u00b3?",
+      "student_correct": false,
+      "theta_after": -0.3
+    },
+    {
+      "step": 5,
+      "idx": 23,
+      "source_file": "physicsunit_20alternating_current1_mcqs.json",
+      "topic": "current1",
+      "difficulty": "Medium",
+      "stem": "An AC circuit consists of a pure resistance of 20 $\\\\Omega$ connected across an AC supply of 220 V, 50 Hz. What is the peak value of the current in this circuit?",
+      "student_correct": false,
+      "theta_after": -0.44999999999999996
+    },
+    {
+      "step": 6,
+      "idx": 8,
+      "source_file": "mathunit_6permutation_and_combination1_mcqs.json",
+      "topic": "and_combination1",
+      "difficulty": "Medium",
+      "stem": "If a vehicle number plate consists of four digits, and the digits must be distinct and chosen from the set {1, 2, 3, 4, 5, 6}, how many different number plates can be created?",
+      "student_correct": false,
+      "theta_after": -0.6
+    },
+    {
+      "step": 7,
+      "idx": 5,
+      "source_file": "mathunit_3integration1_mcqs.json",
+      "topic": "mcqs",
+      "difficulty": "Easy",
+      "stem": "According to the properties of definite integrals, if the lower and upper limits of integration are equal, what is the value of the definite integral?",
+      "student_correct": false,
+      "theta_after": -0.75
+    },
+    {
+      "step": 8,
+      "idx": 7,
+      "source_file": "mathunit_5division_of_polynomials1_mcqs.json",
+      "topic": "of_polynomials1",
+      "difficulty": "Easy",
+      "stem": "If a polynomial p(x) is divided by x - c, what is the remainder?",
+      "student_correct": false,
+      "theta_after": -0.9
+    },
+    {
+      "step": 9,
+      "idx": 11,
+      "source_file": "physicsch_11electricity1_mcqs.json",
+      "topic": "mcqs",
+      "difficulty": "Easy",
+      "stem": "A 10 $\\\\Omega$ resistor is connected across the terminals of a 10 V battery. What is the power dissipation of the resistor?",
+      "student_correct": false,
+      "theta_after": -1.05
+    },
+    {
+      "step": 10,
+      "idx": 20,
+      "source_file": "physicsunit_15gravitation1_mcqs.json",
+      "topic": "mcqs",
+      "difficulty": "Easy",
+      "stem": "If the gravitational force between two identical balls of mass 1 kg each, separated by a distance of 1 m between their centers, is calculated, what is the approximate value of this force?",
+      "student_correct": false,
+      "theta_after": -1.2
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "In an X-ray tube, electrons are accelerated through a potential difference of 10^6 volts. What is the minimum wavelength of the X-rays produced?",
+    "options": {
+      "A": "1.24 x 10^-11 m",
+      "B": "6.63 x 10^-34 m",
+      "C": "3.00 x 10^8 m",
+      "D": "1.60 x 10^-19 m"
+    },
+    "answer": "A",
+    "solution_latex": "The minimum wavelength of X-rays produced is given by the equation $\\\\lambda_{min} = \\\\frac{hc}{eV}$, where $h$ is Planck's constant, $c$ is the speed of light, $e$ is the elementary charge, and $V$ is the accelerating potential difference. \\\\\\\\ Given $h = 6.63 \\\\times 10^{-34} \\\\text{ J s}$, $c = 3 \\\\times 10^8 \\\\text{ m/s}$, $e = 1.60 \\\\times 10^{-19} \\\\text{ C}$, and $V = 10^6 \\\\text{ V}$. \\\\\\\\ $\\\\lambda_{min} = \\\\frac{(6.63 \\\\times 10^{-34} \\\\text{ J s})(3 \\\\times 10^8 \\\\text{ m/s})}{(1.60 \\\\times 10^{-19} \\\\text{ C})(10^6 \\\\text{ V})} = \\\\frac{1.989 \\\\times 10^{-25}}{1.60 \\times 10^{-13}} \\\\text{ m} = 1.243125 \\\\times 10^{-11} \\\\text{ m} \\\\approx 1.24 \\\\times 10^{-11} \\\\text{ m}$.",
+    "difficulty": "Medium",
+    "citations": [
+      "v2_12_physics_book_2025_electricity"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "question_type": "reading",
+    "stem": "According to the passage, which of the following is true about data analysis questions involving graphics?",
+    "options": {
+      "A": "They often require outside knowledge to interpret correctly.",
+      "B": "They are always more complicated than they initially appear.",
+      "C": "All necessary information to answer them is typically provided within the graphic itself.",
+      "D": "They are best answered by reading the accompanying passage first."
+    },
+    "answer": "C",
+    "evidence_span": "No matter how unfamiliar the terminology may be, all of the information you need to answer these questions will be right in front of you. In fact, they are set up precisely so that you can figure them without outside knowledge.",
+    "citations": [
+      "[the_complete_guide_to_sat_reading_compress_general]"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "Calculate the energy released in the nuclear reaction: $^1_0n + ^{235}_{92}U \\\\rightarrow ^{141}_{56}Ba + ^{92}_{36}Kr + 3^1_0n + Q$. Given the following masses: Mass of uranium-235: 235.12142 u, Mass of barium-141: 140.883 u, Mass of krypton-92: 91.9262 u, Mass of neutron: 1.008665 u. Use the conversion factor 1 u = 931.5 MeV/c².",
+    "options": {
+      "A": "274.699 MeV/c²",
+      "B": "219955.188 MeV/c²",
+      "C": "219680.489 MeV/c²",
+      "D": "236.1301 MeV/c²"
+    },
+    "answer": "A",
+    "solution_latex": "Total mass on L.H.S = Mass of neutron + Mass of U-235 = $1.008665 \\\\text{ u} + 235.12142 \\\\text{ u} = 236.1301 \\\\text{ u}$\\nTotal mass on R.H.S = Mass of Ba-141 + Mass of Kr-92 + 3 * Mass of neutron = $140.883 \\\\text{ u} + 91.9262 \\\\text{ u} + (3 \\\\times 1.008665) \\\\text{ u} = 140.883 \\\\text{ u} + 91.9262 \\\\text{ u} + 3.025995 \\\\text{ u} = 235.835195 \\\\text{ u}$\\nEnergy released Q = (Total mass on L.H.S - Total mass on R.H.S) * 931.5 MeV/u\\nQ = $(236.1301 \\\\text{ u} - 235.835195 \\\\text{ u}) \\\\times 931.5 \\\\text{ MeV/u}$\\nQ = $0.294905 \\\\text{ u} \\\\times 931.5 \\\\text{ MeV/u}$\\nQ = $274.699 \\\\text{ MeV}$ (approximately)\\nNote: The context provides the calculation in MeV/c², but the question asks for energy. Assuming the conversion to MeV is implied.",
+    "difficulty": "Medium",
+    "citations": [
+      "v2_12_physics_book_2025_nuclear_physics"
+    ]
+  }
+]

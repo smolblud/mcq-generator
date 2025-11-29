@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "If the volume of change in storage of the hydrosphere, whose area is 30 km², is 600,000 m³, and the volume of evapotranspiration is 1,500,000 m³, what is the net precipitation (P) if the runoff volume is 600,000 m³?",
+    "options": {
+      "A": "30 mm",
+      "B": "60 mm",
+      "C": "90 mm",
+      "D": "120 mm"
+    },
+    "answer": "C",
+    "solution_latex": "The net precipitation (P) can be calculated using the water balance equation: \\\\(\\\\Delta S = P - E - Q\\\\), where \\\\(\\\\Delta S\\\\) is the change in storage, P is precipitation, E is evapotranspiration, and Q is runoff. \\\\newline We are given: \\\\(\\\\Delta S = 600,000 \\\\text{ m}^3\\\\), Area \\\\(A = 30 \\\\text{ km}^2 = 30 \\\\times 10^6 \\\\text{ m}^2\\\\), \\\\(E = 1,500,000 \\\\text{ m}^3\\\\), and \\\\(Q = 600,000 \\\\text{ m}^3\\\\). \\\\newline First, we need to find the change in storage in terms of depth: \\\\(\\\\Delta S_{\\\\text{depth}} = \\\\frac{\\\\Delta S}{A} = \\\\frac{600,000 \\\\text{ m}^3}{30 \\\\times 10^6 \\\\text{ m}^2} = 0.02 \\\\text{ m} = 20 \\\\text{ mm}\\\\). \\\\newline Similarly, we find the depth of evapotranspiration and runoff: \\\\(E_{\\\\text{depth}} = \\\\frac{E}{A} = \\\\frac{1,500,000 \\\\text{ m}^3}{30 \\\\times 10^6 \\\\text{ m}^2} = 0.05 \\\\text{ m} = 50 \\\\text{ mm}\\\\). \\\\(Q_{\\\\text{depth}} = \\\\frac{Q}{A} = \\\\frac{600,000 \\\\text{ m}^3}{30 \\\\times 10^6 \\\\text{ m}^2} = 0.02 \\\\text{ m} = 20 \\\\text{ mm}\\\\). \\\\newline Now, we rearrange the water balance equation to solve for P: \\\\(P = \\\\Delta S_{\\\\text{depth}} + E_{\\\\text{depth}} + Q_{\\\\text{depth}}\\\\). \\\\newline \\\\(P = 20 \\\\text{ mm} + 50 \\\\text{ mm} + 20 \\\\text{ mm} = 90 \\\\text{ mm}\\\\). \\\\newline Alternatively, using volumes directly: \\\\(P_{\\\\text{volume}} = \\\\Delta S + E + Q = 600,000 \\\\text{ m}^3 + 1,500,000 \\\\text{ m}^3 + 600,000 \\\\text{ m}^3 = 2,700,000 \\\\text{ m}^3\\\\). \\\\newline Then, convert to precipitation depth: \\\\(P = \\\\frac{P_{\\\\text{volume}}}{A} = \\\\frac{2,700,000 \\\\text{ m}^3}{30 \\\\times 10^6 \\\\text{ m}^2} = 0.09 \\\\text{ m} = 90 \\\\text{ mm}\\\\).",
+    "difficulty": "Medium",
+    "citations": [
+      "v2_12_physics_book_2025_earth_s_climate"
+    ]
+  }
+]

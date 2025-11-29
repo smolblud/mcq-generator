@@ -1,0 +1,17 @@
+[
+  {
+    "stem": "According to the properties of definite integrals, if the lower and upper limits of integration are equal, what is the value of the definite integral?",
+    "options": {
+      "A": "It is equal to the value of the function at the limit.",
+      "B": "It is equal to the derivative of the function at the limit.",
+      "C": "It is equal to zero.",
+      "D": "It is equal to infinity."
+    },
+    "answer": "C",
+    "solution_latex": "According to property (i) of definite integrals, if the lower and upper limits of integration are equal, then the integral is zero. \\\\\\\\ For example, $\\\\int_{a}^{a} f(x)dx = 0$.",
+    "difficulty": "Easy",
+    "citations": [
+      "v2_12_maths_book_2025_vectors"
+    ]
+  }
+]
