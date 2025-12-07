@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
 """
-adaptive_engine_full.py
+adaptive_engine.py
 
 Adaptive engine with:
  - theta updates
@@ -11,8 +10,8 @@ Adaptive engine with:
  - session logging to JSON
 
 Usage:
-  python adaptive_engine_full.py --simulate --steps 10
-  python adaptive_engine_full.py --interactive --steps 10
+  python adaptive_engine.py --simulate --steps 10
+  python adaptive_engine.py --interactive --steps 10
 """
 
 import os

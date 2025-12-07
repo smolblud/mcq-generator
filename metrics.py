@@ -5,9 +5,9 @@ Standalone module for computing pilot-test metrics for MCQ items.
 Includes calculation of p-values (difficulty), discrimination (point-biserial),
 and topic coverage.
 
-Assumes input data is provided as pandas DataFrames or lists of dictionaries.
-
-commit: Add preprocessing, CLI, NaN-handling, plot saving, and small-n flags to metrics.py
+Run using CLI:
+    Make sure generate_pilot_data.py has been run to create pilot_items.csv and pilot_responses.csv
+    python metrics.py --mcq pilot_items.csv --responses pilot_responses.csv --out pilot_metrics_output
 """
 
 import pandas as pd
