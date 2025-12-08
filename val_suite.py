@@ -137,38 +137,37 @@ if __name__ == "__main__":
             mcqs = json.load(f)
             all_mcqs.extend(mcqs)
 
-    results = run_validation(all_mcqs)
-
-    # -----------------------------
-    # Save JSON with metadata
-    # -----------------------------
-    output_file = "validation_results.json"
-
-    metadata = {
-        "description": "This file contains MCQs with validation results from the validation suite.",
-        "fields": {
-            "index": "Unique identifier of the MCQ in the dataset",
-            "stem": "The question text or prompt",
-            "duplicate": "Boolean indicating if the MCQ is a duplicate",
-            "duplicate_of": "List of indices of MCQs that this one duplicates (if any)",
-            "options_valid": "Boolean indicating if all answer options are valid",
-            "options_msg": "Message explaining any issues with options",
-            "distractor_plausible": "Boolean indicating if distractors are plausible",
-            "distractor_msg": "Message explaining distractor issues",
-            "math_physics_valid": "Boolean indicating if any math/physics calculations parse correctly",
-            "math_physics_msg": "Message explaining math/physics issues",
-            "citations_valid": "Boolean indicating if citation references are valid",
-            "reading_evidence_valid": "Boolean indicating if reading-based evidence supports the answer",
-            "reading_msg": "Message explaining any reading/evidence issues"
+    # --- Add two hardcoded wrong MCQs to test the suite ---
+    wrong_mcqs = [
+        # Duplicate stem (will trigger uniqueness)
+        {
+            "stem": all_mcqs[0]["stem"] if all_mcqs else "Duplicate stem example",
+            "options": {"A": "1", "B": "2", "C": "3", "D": "4"},
+            "answer": "A",
+            "solution_latex": "1",
+            "citations": ["dummy"]
+        },
+        # Wrong math answer (will trigger math issue)
+        {
+            "stem": "MCQ with wrong math answer",
+            "options": {"A": "1", "B": "2", "C": "3", "D": "4"},
+            "answer": "B",
+            "solution_latex": "3",
+            "citations": ["dummy"]
         }
-    }
+    ]
+    all_mcqs.extend(wrong_mcqs)
+    print(f"\n[DEBUG] Total MCQs including hardcoded wrong examples: {len(all_mcqs)}\n")
 
-    output_data = {
-        "metadata": metadata,
-        "mcqs": results
-    }
+    # Run validation
+    results = validate_mcqs(all_mcqs)
 
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(output_data, f, indent=2, ensure_ascii=False)
-
-    print(f"Validation complete. Detailed results with metadata saved to {output_file}")
+    # Print summary
+    print("\nValidation Results Summary:")
+    for key, issues in results.items():
+        if issues:
+            print(f"{key}: {len(issues)} issues")
+            for issue in issues:
+                print("  ", issue)
+        else:
+            print(f"{key}: No issues found ✅")
