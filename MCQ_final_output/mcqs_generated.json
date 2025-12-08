@@ -1,0 +1,142 @@
+[
+  {
+    "stem": "According to the provided context, which of the following can produce a magnetic field?",
+    "options": {
+      "A": "Only permanent magnets",
+      "B": "Only current-carrying conductors",
+      "C": "Both current-carrying conductors and permanent magnets",
+      "D": "Neither current-carrying conductors nor permanent magnets"
+    },
+    "answer": "C",
+    "explanation": "The text states that a magnetic field is an example of a field of force 'produced either by current-carrying conductors or by permanent magnets.'",
+    "citations": [
+      "v3-11-physics-book-2025_Magnetism"
+    ]
+  },
+  {
+    "stem": "When applying the Right-Hand Rule for a solenoid, what does the erect thumb indicate?",
+    "options": {
+      "A": "The direction of current flow",
+      "B": "The direction of the south pole",
+      "C": "The direction of the north pole",
+      "D": "The direction of the magnetic field lines outside the solenoid"
+    },
+    "answer": "C",
+    "explanation": "The Right-Hand Rule for a Solenoid states: 'Curl the fingers of right hand in the direction of current, the erect thumb will point in the direction of north pole.'",
+    "citations": [
+      "v3-11-physics-book-2025_Magnetism"
+    ]
+  },
+  {
+    "stem": "What happens to the strength of the magnetic field inside a solenoid when a ferrous material, such as an iron rod, is placed within it?",
+    "options": {
+      "A": "It decreases significantly.",
+      "B": "It remains unchanged.",
+      "C": "It increases significantly.",
+      "D": "It becomes zero."
+    },
+    "answer": "C",
+    "explanation": "The context explains that 'If a ferrous material (such as iron rod) is placed inside the solenoid... the strength of the magnetic field increases significantly.'",
+    "citations": [
+      "v3-11-physics-book-2025_Magnetism"
+    ]
+  },
+  {
+    "stem": "Under which condition will the magnetic flux through a plane area be maximum?",
+    "options": {
+      "A": "When the magnetic field is perpendicular to the plane area.",
+      "B": "When the magnetic field lies parallel to the plane area.",
+      "C": "When the area is held at an angle of 45° to the magnetic field.",
+      "D": "When the area is held at an angle of 60° to the magnetic field."
+    },
+    "answer": "A",
+    "explanation": "The text explicitly states: 'Magnetic flux will be maximum when: A. magnetic field is perpendicular to the plane area.'",
+    "citations": [
+      "v3-11-physics-book-2025_Magnetism"
+    ]
+  },
+  {
+    "stem": "What is the fundamental cause of induced electromotive force (emf)?",
+    "options": {
+      "A": "A constant magnetic flux.",
+      "B": "An increase in magnetic flux only.",
+      "C": "A decrease in magnetic flux only.",
+      "D": "A change in magnetic flux."
+    },
+    "answer": "D",
+    "explanation": "The context directly provides the answer: 'The cause of induced emf is: ... D. change in magnetic flux.'",
+    "citations": [
+      "v3-11-physics-book-2025_Magnetism"
+    ]
+  },
+  {
+    "stem": "According to the provided text, supporting evidence questions are primarily paired with which two other question types on the redesigned SAT?",
+    "options": {
+      "A": "Vocabulary in Context and Main Idea questions",
+      "B": "Literal comprehension and inference questions",
+      "C": "Author's Purpose and Rhetorical Strategy questions",
+      "D": "Data Analysis and Synthesis questions"
+    },
+    "answer": "B",
+    "explanation": "The text states, 'Supporting evidence questions are primarily paired with two other question types: literal comprehension (questions that ask what the passage states or indicates), and inference (questions that ask what the passage suggests or implies).' [the-complete-guide-to-sat-reading_compress_General]",
+    "citations": [
+      "the-complete-guide-to-sat-reading_compress_General"
+    ]
+  },
+  {
+    "stem": "What is a key characteristic that distinguishes single supporting evidence questions from paired supporting evidence questions?",
+    "options": {
+      "A": "Single questions always require identifying lines that contradict an idea.",
+      "B": "Single questions are part of paired sets but appear alone.",
+      "C": "Single questions' answers consist solely of line references and are not part of paired sets.",
+      "D": "Single questions appear more frequently than paired questions on the test."
+    },
+    "answer": "C",
+    "explanation": "The text explicitly states, 'First, these questions [single supporting evidence] are not part of paired sets but rather appear alone. Second, their answers consist solely of lines references; you must identify the lines that support an idea discussed within the passage.' [the-complete-guide-to-sat-reading_compress_General]",
+    "citations": [
+      "the-complete-guide-to-sat-reading_compress_General"
+    ]
+  },
+  {
+    "stem": "How does the passage describe the fundamental nature of paired supporting evidence questions?",
+    "options": {
+      "A": "They are two entirely separate questions that test different skills.",
+      "B": "They are a single question asked two different ways.",
+      "C": "They are designed to be intentionally complicated and time-consuming.",
+      "D": "They primarily test the ability to identify fallacies in reasoning."
+    },
+    "answer": "B",
+    "explanation": "The text clarifies, 'Next, the most important thing to understand is that paired questions are not really two questions at all but rather a single question asked two different ways.' [the-complete-guide-to-sat-reading_compress_General]",
+    "citations": [
+      "the-complete-guide-to-sat-reading_compress_General"
+    ]
+  },
+  {
+    "stem": "According to the provided context, what is the first step in the process for answering single supporting evidence questions?",
+    "options": {
+      "A": "Skip the question and return to it later if time permits.",
+      "B": "Determine what sort of information would support the claim.",
+      "C": "Identify the claim and rephrase it if necessary.",
+      "D": "Immediately look for line references that contradict the claim."
+    },
+    "answer": "C",
+    "explanation": "The passage outlines the process: 'The process for answering single supporting evidence questions can be broken into three main steps: 1) Identify the claim, and rephrase it if necessary.' [the-complete-guide-to-sat-reading_compress_General]",
+    "citations": [
+      "the-complete-guide-to-sat-reading_compress_General"
+    ]
+  },
+  {
+    "stem": "How do supporting evidence questions, when paired with inference questions, impact the difficulty of those inference questions?",
+    "options": {
+      "A": "They make inference questions significantly more challenging by adding an extra step.",
+      "B": "They have no impact on the difficulty of inference questions.",
+      "C": "They can actually make inference questions easier.",
+      "D": "They require the reader to make much larger leaps of inference."
+    },
+    "answer": "C",
+    "explanation": "The text states, 'As a result, the presence of supporting evidence questions can actually make inference questions easier.' [the-complete-guide-to-sat-reading_compress_General]",
+    "citations": [
+      "the-complete-guide-to-sat-reading_compress_General"
+    ]
+  }
+]

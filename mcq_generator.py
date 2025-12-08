@@ -22,7 +22,7 @@ FAISS_INDEX_PATH = "index/faiss_index.bin"
 CHUNKS_META_PATH = "index/metadata.json"
 
 # Topic blueprint CSV (with columns: subject, unit, topic, start_page, end_page, source_file)
-TOPIC_BLUEPRINT_CSV = Path("docs/a.csv")
+TOPIC_BLUEPRINT_CSV = Path("docs/topic_blueprint.csv")
 
 EMBED_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
 GEMINI_MODEL_NAME = "gemini-2.5-flash"
