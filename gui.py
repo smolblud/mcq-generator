@@ -46,7 +46,11 @@ def get_topic_from_selection(selected_topic_str):
 # ------------------------
 # Generate MCQs for selected topic
 # ------------------------
-def generate_mcqs_for_selected_topic(selected_topic_str, num_questions):
+def generate_mcqs_for_selected_topic(
+    selected_topic_str,
+    num_questions,
+    difficulty  # 👈 NEW
+):
     """Generate MCQs for a selected topic"""
     if not selected_topic_str:
         return "Please select a topic first.", []
@@ -57,20 +61,23 @@ def generate_mcqs_for_selected_topic(selected_topic_str, num_questions):
     
     try:
         num_q = int(num_questions) if num_questions else 5
-        print(f"[GUI] Generating {num_q} MCQs for {subject} - {topic}")
+        print(f"[GUI] Generating {num_q} MCQs for {subject} - {topic} at difficulty {difficulty}")
         
-        questions = generate_mcqs_for_topic(subject, topic, n_questions=num_q)
+        questions = generate_mcqs_for_topic(
+            subject,
+            topic,
+            n_questions=num_q,
+            difficulty=difficulty,  # 👈 pass it through
+        )
         
         if not questions:
             print(f"[GUI] WARNING: Empty questions list returned for {subject} - {topic}")
-            return f"No MCQs generated for {subject} - {topic}. Try a different topic or check the context.", []
+            return (
+                f"No MCQs generated for {subject} - {topic}. Try a different topic or check the context.",
+                []
+            )
         
-        # Ensure questions is a list
-        if not isinstance(questions, list):
-            print(f"[GUI] WARNING: questions is not a list, type: {type(questions)}")
-            return f"Error: Expected list of questions but got {type(questions)}", []
-        
-        # Validate questions structure
+        # (rest of your validation / saving logic stays the same)
         valid_questions = []
         for i, q in enumerate(questions):
             if not isinstance(q, dict):
@@ -83,9 +90,11 @@ def generate_mcqs_for_selected_topic(selected_topic_str, num_questions):
         
         if not valid_questions:
             print(f"[GUI] WARNING: No valid questions after validation")
-            return f"No valid MCQs generated for {subject} - {topic}. The LLM may have returned invalid format.", []
+            return (
+                f"No valid MCQs generated for {subject} - {topic}. The LLM may have returned invalid format.",
+                []
+            )
         
-        # Save to file
         out_file = Path(MCQ_FOLDER) / "mcqs_generated.json"
         with open(out_file, "w", encoding="utf-8") as f:
             json.dump(valid_questions, f, indent=2, ensure_ascii=False)
@@ -97,6 +106,7 @@ def generate_mcqs_for_selected_topic(selected_topic_str, num_questions):
         error_msg = f"Error generating MCQs: {str(e)}\n{traceback.format_exc()}"
         print(f"[GUI] Exception: {error_msg}")
         return error_msg, []
+
 
 
 # ------------------------
@@ -247,7 +257,7 @@ def update_answer(session, question_idx, selected_option):
 # ------------------------
 # Start quiz / Generate MCQs with progress updates
 # ------------------------
-def start_quiz_ui(selected_topic, num_questions):
+def start_quiz_ui(selected_topic, num_questions, difficulty):
     # Show loading message immediately
     loading_msg = "🔄 Generating MCQs... This may take 30-60 seconds. Please wait..."
     loading_html = (
@@ -271,7 +281,11 @@ def start_quiz_ui(selected_topic, num_questions):
     
     # Generate MCQs (this is the blocking operation)
     try:
-        msg, questions = generate_mcqs_for_selected_topic(selected_topic, num_questions)
+        msg, questions = generate_mcqs_for_selected_topic(
+            selected_topic,
+            num_questions,
+            difficulty,  # 👈 pass through
+        )
     except Exception as e:
         error_html = f"<div style='padding: 20px; color: red;'><h3>❌ Error</h3><p>{str(e)}</p></div>"
         yield (
@@ -761,7 +775,18 @@ with gr.Blocks() as demo:
                 value=None,
                 interactive=True
             )
-            num_q = gr.Number(value=5, label="Number of Questions", minimum=1, maximum=20)
+            num_q = gr.Number(
+                value=5,
+                label="Number of Questions",
+                minimum=1,
+                maximum=20
+            )
+            difficulty_dd = gr.Dropdown(              # 👈 NEW
+                choices=["Easy", "Medium", "Hard"],
+                value="Medium",
+                label="Difficulty",
+                interactive=True
+            )
         
         start_btn = gr.Button("Generate MCQs", variant="primary")
 
@@ -799,10 +824,11 @@ with gr.Blocks() as demo:
 
         # --- Click handlers ---
         start_btn.click(
-            start_quiz_ui,
-            inputs=[topic_dropdown, num_q],
-            outputs=[msg_box, session_state, questions_html, prev_btn, next_btn, page_indicator] + question_htmls + answer_radios
+        start_quiz_ui,
+        inputs=[topic_dropdown, num_q, difficulty_dd],  # 👈 NEW argument
+        outputs=[msg_box, session_state, questions_html, prev_btn, next_btn, page_indicator] + question_htmls + answer_radios
         )
+
 
         prev_btn.click(
             prev_page_ui,

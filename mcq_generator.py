@@ -119,17 +119,21 @@ Requirements for each question:
 - Exactly ONE correct option
 - A short explanation/solution
 - At least one citation referencing the source file and topic, formatted as: [SourceFile_Topic]
+- Set "difficulty" to exactly "{difficulty}" in the JSON.
 
 <context>
 {context}
 </context>
 
-Return the questions as a JSON array. Each element should have:
-- "stem": string
-- "options": {{"A": "...", "B": "...", "C": "...", "D": "..."}}
-- "answer": one of "A", "B", "C", "D"
-- "explanation": string
-- "citations": list of strings (e.g. ["chunk 1", "chunk 2"])
+    Return the questions as a JSON array. Each element should have:
+    - "stem": string
+    - "options": {{"A": "...", "B": "...", "C": "...", "D": "..."}}
+    - "answer": one of "A", "B", "C", "D"
+    - "explanation": string
+    - "citations": list of strings (e.g. ["chunk 1", "chunk 2"])
+    - "difficulty": string (exactly "{difficulty}")
+    
+    Strictly output ONLY valid JSON.
 
 Strictly output ONLY valid JSON.
 """
@@ -251,7 +255,12 @@ def parse_llm_json(raw: str) -> List[Dict[str, Any]]:
 # MCQ generation per topic
 # -----------------------------
 
-def generate_mcqs_for_topic(subject: str, topic: str, n_questions: int) -> List[Dict[str, Any]]:
+def generate_mcqs_for_topic(
+    subject: str,
+    topic: str,
+    n_questions: int,
+    difficulty: str | None = None  # 👈 NEW
+) -> List[Dict[str, Any]]:
     """
     Generate MCQs for a given subject/topic using Gemini + FAISS.
     Returns a list of question dicts.
@@ -262,10 +271,15 @@ def generate_mcqs_for_topic(subject: str, topic: str, n_questions: int) -> List[
         print(f"[WARN] No context retrieved for topic: {subject} – {topic}. Skipping.")
         return []
 
+    # Normalize difficulty
+    level = (difficulty or DEFAULT_DIFFICULTY).strip()
+    # If your prompt expects lowercase:
+    # level = level.lower()
+
     messages = mcq_prompt.format_messages(
         subject=subject,
         topic=topic,
-        difficulty=DEFAULT_DIFFICULTY,
+        difficulty=level,          # 👈 use UI-provided difficulty
         n_questions=n_questions,
         context=context,
     )
@@ -292,7 +306,9 @@ def generate_mcqs_for_topic(subject: str, topic: str, n_questions: int) -> List[
 # Main generator: 30 random MCQs from blueprint
 # -----------------------------
 
-def generate_random_mcqs_from_blueprint() -> List[Dict[str, Any]]:
+def generate_random_mcqs_from_blueprint(
+    difficulty: str = DEFAULT_DIFFICULTY,  # 👈 NEW
+) -> List[Dict[str, Any]]:
     """
     Load the topic blueprint and generate a total of 30 MCQs
     from randomly selected, different topics.
@@ -307,13 +323,14 @@ def generate_random_mcqs_from_blueprint() -> List[Dict[str, Any]]:
             break
 
         n_for_topic = min(MAX_QUESTIONS_PER_TOPIC, questions_remaining)
-        print(f"\n[INFO] Generating {n_for_topic} MCQs for: {subject} – {topic}")
+        print(f"\n[INFO] Generating {n_for_topic} MCQs for: {subject} – {topic} "
+              f"at difficulty {difficulty}")
         
-        # 🔧 FIX HERE:
         topic_questions = generate_mcqs_for_topic(
             subject,
             topic,
             n_questions=n_for_topic,
+            difficulty=difficulty,  # 👈 pass it through
         )
 
         all_questions.extend(topic_questions)
@@ -329,8 +346,8 @@ def generate_random_mcqs_from_blueprint() -> List[Dict[str, Any]]:
             f"from available topics, fewer than requested {TOTAL_QUESTIONS}."
         )
 
-    # Truncate to exactly TOTAL_QUESTIONS if we overshoot
     return all_questions[:TOTAL_QUESTIONS]
+
 
 
 # -----------------------------
@@ -338,8 +355,10 @@ def generate_random_mcqs_from_blueprint() -> List[Dict[str, Any]]:
 # -----------------------------
 
 if __name__ == "__main__":
-    print(f"Generating {TOTAL_QUESTIONS} MCQs from random topics in the blueprint...")
-    questions = generate_random_mcqs_from_blueprint()
+    difficulty = "Hard"   # or "Easy" / "Medium" or read from CLI/env
+    print(f"Generating {TOTAL_QUESTIONS} {difficulty} MCQs from random topics in the blueprint...")
+    questions = generate_random_mcqs_from_blueprint(difficulty=difficulty)
 
     print("\nFinal MCQ JSON array:\n")
     print(json.dumps(questions, indent=2, ensure_ascii=False))
+
