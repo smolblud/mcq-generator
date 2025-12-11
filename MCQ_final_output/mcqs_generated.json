@@ -1,72 +1,156 @@
 [
   {
-    "stem": "What is the primary principle behind the separation of materials using a centrifuge?",
+    "stem": "A vector characterized by zero magnitude and an arbitrary direction is known as a:",
     "options": {
-      "A": "Separation through spinning",
-      "B": "Separation of components at higher temperature",
-      "C": "Separation through evaporation",
-      "D": "Separation of components at lower temperature"
+      "A": "Unit vector",
+      "B": "Position vector",
+      "C": "Null vector",
+      "D": "Rectangular component"
+    },
+    "answer": "C",
+    "explanation": "A null vector is defined as a vector with zero magnitude and an arbitrary direction.",
+    "citations": [
+      "v3-11-physics-book-2025_Vectors"
+    ]
+  },
+  {
+    "stem": "If a point P is located at (3, 4) with respect to the origin, the magnitude of its position vector is:",
+    "options": {
+      "A": "3 units",
+      "B": "4 units",
+      "C": "5 units",
+      "D": "7 units"
+    },
+    "answer": "C",
+    "explanation": "The magnitude of a position vector r = ai + bj is given by r = √(a² + b²). For P(3,4), r = √(3² + 4²) = √(9 + 16) = √25 = 5 units.",
+    "citations": [
+      "v3-11-physics-book-2025_Vectors"
+    ]
+  },
+  {
+    "stem": "A vector A has a magnitude of 20 N and makes an angle of 60° with the horizontal. Its horizontal component (A_x) will be:",
+    "options": {
+      "A": "10 N",
+      "B": "17.32 N",
+      "C": "20 N",
+      "D": "0 N"
     },
     "answer": "A",
-    "explanation": "The context explicitly states that 'centrifugation' means separation through spinning and justifies how a centrifuge is used to separate materials using centripetal force. [v3-11-physics-book-2025_Rotational and Circular Motion]",
+    "explanation": "The horizontal component of a vector A is given by A_x = A cosθ. Here, A = 20 N and θ = 60°. So, A_x = 20 * cos(60°) = 20 * 0.5 = 10 N.",
     "citations": [
-      "v3-11-physics-book-2025_Rotational and Circular Motion"
+      "v3-11-physics-book-2025_Vectors"
     ]
   },
   {
-    "stem": "How can artificial gravity be produced in a satellite to counter weightlessness?",
+    "stem": "When the product of two vectors results in a scalar quantity, this product is called a:",
     "options": {
-      "A": "By increasing the satellite's mass significantly.",
-      "B": "By rotating the satellite about its axis.",
-      "C": "By decreasing the satellite's orbital speed.",
-      "D": "By using strong magnetic fields to attract objects."
+      "A": "Vector product",
+      "B": "Scalar product",
+      "C": "Cross product",
+      "D": "Null product"
     },
     "answer": "B",
-    "explanation": "The context states: 'Describe how artificial gravity be produced in a satellite to counter weightlessness' and provides an assignment where 'A space ship, having cylindrical shape, is rotated at a speed of 20 rpm about its axis in order to provide artificial gravity to its inhabitants.' [v3-11-physics-book-2025_Rotational and Circular Motion]",
+    "explanation": "The context states, 'When the product of two vectors gives us scalar quantity, such product is called scalar product, mathematically given as: A · B = A Bcosθ.'",
     "citations": [
-      "v3-11-physics-book-2025_Rotational and Circular Motion"
+      "v3-11-physics-book-2025_Vectors"
     ]
   },
   {
-    "stem": "Which of the following correctly defines torque?",
+    "stem": "The product of two vectors that yields a vector quantity is known as a:",
     "options": {
-      "A": "The rate at which an object changes the angle while moving on a circular path.",
-      "B": "The acceleration of an object moving in a circle, directed toward the center.",
-      "C": "The turning effectiveness of a force and is defined as product of moment of inertia and angular acceleration.",
-      "D": "The product of moment of inertia and angular velocity."
+      "A": "Scalar product",
+      "B": "Dot product",
+      "C": "Vector product",
+      "D": "Component product"
     },
     "answer": "C",
-    "explanation": "According to the summary, 'Torque: The turning effectiveness of a force and is defined as product of moment of inertia and angular acceleration (τ= Iα).' [v3-11-physics-book-2025_Rotational and Circular Motion]",
+    "explanation": "The context states, 'When the product of two vectors gives us vector quantity, such product is called vector product, mathematically given as: A x B = A Bsinθ n̂.'",
     "citations": [
-      "v3-11-physics-book-2025_Rotational and Circular Motion"
+      "v3-11-physics-book-2025_Vectors"
     ]
   },
   {
-    "stem": "A merryman on a turntable rotates with an initial angular velocity of 10 rad/s. If he brings his arms closer to his body, reducing his moment of inertia to one third of its initial value, what will be his new angular velocity?",
+    "stem": "Which of the following statements is true regarding the vector product of two vectors A and B?",
     "options": {
-      "A": "10 rad/s",
-      "B": "3.33 rad/s",
-      "C": "30 rad/s",
-      "D": "100 rad/s"
-    },
-    "answer": "C",
-    "explanation": "This problem involves the conservation of angular momentum (L = Iω). Since no external torque is applied, initial angular momentum equals final angular momentum (L_initial = L_final). So, I_initial * ω_initial = I_final * ω_final. Given ω_initial = 10 rad/s and I_final = I_initial / 3. Therefore, I_initial * 10 = (I_initial / 3) * ω_final. Solving for ω_final gives ω_final = 3 * 10 rad/s = 30 rad/s. This matches Numerical Problem 4.5. [v3-11-physics-book-2025_Rotational and Circular Motion]",
-    "citations": [
-      "v3-11-physics-book-2025_Rotational and Circular Motion"
-    ]
-  },
-  {
-    "stem": "What is the angular velocity of a flywheel that completes 3000 revolutions in one minute?",
-    "options": {
-      "A": "50 rad/s",
-      "B": "314 rad/s",
-      "C": "180000 rad/s",
-      "D": "50π rad/s"
+      "A": "A x B = B x A",
+      "B": "A x B = - (B x A)",
+      "C": "A x B = 0",
+      "D": "A x B = 1"
     },
     "answer": "B",
-    "explanation": "To find the angular velocity in rad/s, first convert revolutions per minute to revolutions per second: 3000 revolutions/minute = 3000 revolutions / 60 seconds = 50 revolutions/second. Since 1 revolution = 2π radians, the angular velocity ω = 50 rev/s * 2π rad/rev = 100π rad/s. Using π ≈ 3.14, ω = 100 * 3.14 = 314 rad/s. This matches Numerical Problem 4.1. [v3-11-physics-book-2025_Rotational and Circular Motion]",
+    "explanation": "The context explicitly states, 'A x B is not same as B x A. According to right hand rule, the direction of A x B is pointing upward given by n̂ and the direction of B x A is pointing downward given by -n̂.' This implies A x B = - (B x A).",
     "citations": [
-      "v3-11-physics-book-2025_Rotational and Circular Motion"
+      "v3-11-physics-book-2025_Vectors"
+    ]
+  },
+  {
+    "stem": "If two vectors A and B are parallel to each other, their vector product (A x B) will be a:",
+    "options": {
+      "A": "Maximum value",
+      "B": "Scalar quantity",
+      "C": "Null vector",
+      "D": "Unit vector"
+    },
+    "answer": "C",
+    "explanation": "The context states, 'Vector product of two parallel or anti-parallel vectors is null vector (a null vector has zero magnitude and arbitrary direction). i.e., A x B = AB sin 0° n̂ = 0.'",
+    "citations": [
+      "v3-11-physics-book-2025_Vectors"
+    ]
+  },
+  {
+    "stem": "The vector product of unit vectors i and j (i x j) is equal to:",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "k",
+      "D": "-k"
+    },
+    "answer": "C",
+    "explanation": "For mutually perpendicular unit vectors, the context shows i x j = k.",
+    "citations": [
+      "v3-11-physics-book-2025_Vectors"
+    ]
+  },
+  {
+    "stem": "What is the dot product of two mutually perpendicular unit vectors, such as i · j?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "k",
+      "D": "-k"
+    },
+    "answer": "A",
+    "explanation": "The scalar product A · B = AB cosθ. For unit vectors, A=1, B=1. For mutually perpendicular vectors, θ = 90°. So, i · j = (1)(1)cos(90°) = 1 * 0 = 0. This is also implied by the short question 2.2 asking to find dot product of unit vectors at 90°.",
+    "citations": [
+      "v3-11-physics-book-2025_Vectors"
+    ]
+  },
+  {
+    "stem": "For which angle between two vectors A and B is the magnitude of their dot product equal to the magnitude of their cross product, i.e., |A · B| = |A x B|?",
+    "options": {
+      "A": "30°",
+      "B": "45°",
+      "C": "60°",
+      "D": "90°"
+    },
+    "answer": "B",
+    "explanation": "We need |AB cosθ| = |AB sinθ|. This simplifies to |cosθ| = |sinθ|. This condition is met when θ = 45° (since cos 45° = sin 45° = 1/√2). This is directly from example question 6 in the context.",
+    "citations": [
+      "v3-11-physics-book-2025_Vectors"
+    ]
+  },
+  {
+    "stem": "If the magnitude of the cross product between two vectors is √3 times the magnitude of their dot product, what is the angle between them?",
+    "options": {
+      "A": "30°",
+      "B": "45°",
+      "C": "60°",
+      "D": "90°"
+    },
+    "answer": "C",
+    "explanation": "Given |A x B| = √3 |A · B|. This means |AB sinθ| = √3 |AB cosθ|. Assuming A and B are non-zero, we can divide by AB: |sinθ| = √3 |cosθ|. Dividing by |cosθ| (assuming cosθ ≠ 0), we get |tanθ| = √3. The angle for which tanθ = √3 is 60°. This is directly from Numerical Problem 2.1 in the context.",
+    "citations": [
+      "v3-11-physics-book-2025_Vectors"
     ]
   }
 ]
