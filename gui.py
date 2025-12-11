@@ -115,53 +115,45 @@ def generate_mcqs_for_selected_topic(
 # ------------------------
 # Format a single question for display
 # ------------------------
-def format_single_question(q, q_num, user_answer=None, show_feedback=False):  # <<< CHANGED
-    """Format a single question with optional feedback"""
-    feedback_html = ""
-    if show_feedback and user_answer:  # <<< CHANGED: gate feedback on show_feedback
-        correct = (user_answer == q.get('answer', ''))
-        
-        if correct:
-            feedback_html = (
-                "<p style='color: #4CAF50; font-weight: bold; margin-top: 10px;'>"
-                "✅ Correct!</p>"
-            )
+def format_single_question(q, q_num, user_answer=None, show_feedback=False):
+    """Format a single question as Markdown (LaTeX-friendly)."""
+    stem = q["stem"]
+    opts = q["options"]
+    difficulty = q.get("difficulty", "Medium")
+
+    md = []
+    md.append(f"### Question {q_num}\n")
+    md.append(f"**{stem}**\n")
+
+    # Options as a bulleted list
+    md.append("")
+    md.append(f"- A: {opts['A']}")
+    md.append(f"- B: {opts['B']}")
+    md.append(f"- C: {opts['C']}")
+    md.append(f"- D: {opts['D']}")
+    md.append("")
+
+    if show_feedback and user_answer:
+        correct_letter = q.get("answer", "")
+        if user_answer == correct_letter:
+            md.append("✅ **Correct!**")
         else:
-            feedback_html = (
-                "<p style='color: #f44336; font-weight: bold; margin-top: 10px;'>"
-                f"❌ Incorrect! Correct: {q.get('answer', 'N/A')}</p>"
-            )
-        
-        # Add explanation
-        explanation = q.get('explanation', 'No explanation provided.')
-        feedback_html += (
-            "<p style='color: #666; font-size: 0.9em; margin-top: 5px;'>"
-            f"<em>Explanation: {explanation}</em></p>"
-        )
-        
-        # Add citations if available
+            md.append(f"❌ **Incorrect.** Correct answer: **{correct_letter}**")
+
+        explanation = q.get("explanation", "No explanation provided.")
+        # Explanation may contain LaTeX like $\\sin x$, etc.
+        md.append("")
+        md.append(f"> **Explanation:** {explanation}")
+
         if q.get("citations"):
-            citations = ', '.join(q['citations'])
-            feedback_html += (
-                "<p style='color: #666; font-size: 0.85em; margin-top: 5px;'>"
-                f"<em>Citations: {citations}</em></p>"
-            )
-    
-    html = f"""
-    <div style='border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px;'>
-        <h4>Question {q_num}</h4>
-        <p><strong>{q['stem']}</strong></p>
-        <ul style='list-style-type: none; padding-left: 0;'>
-            <li>A: {q['options']['A']}</li>
-            <li>B: {q['options']['B']}</li>
-            <li>C: {q['options']['C']}</li>
-            <li>D: {q['options']['D']}</li>
-        </ul>
-        {feedback_html}
-        <p style='color: #666; font-size: 0.9em; margin-top: 10px;'><em>Difficulty: {q.get('difficulty', 'Medium')}</em></p>
-    </div>
-    """
-    return html
+            citations = ", ".join(q["citations"])
+            md.append(f"> *Citations:* {citations}")
+
+    md.append("")
+    md.append(f"*Difficulty: {difficulty}*")
+
+    return "\n".join(md)
+
 
 def build_adaptive_pool(subject: str, topic: str, per_level: int = 5) -> List[Dict[str, Any]]:
     """
@@ -1027,12 +1019,13 @@ with gr.Blocks() as demo:
         answer_radios = []
         
         # Keep a single HTML for loading/initial state
-        questions_html = gr.HTML("### Questions will appear here")
+        questions_html = gr.Markdown("### Questions will appear here")
         
         # Create question blocks where each question HTML is followed by its radio button
         for i in range(10):
-            q_html = gr.HTML("", visible=False)
-            question_htmls.append(q_html)
+            q_md = gr.Markdown("", visible=False)
+            question_htmls.append(q_md)
+
             
             q_radio = gr.Radio(
                 choices=[],
@@ -1151,7 +1144,7 @@ with gr.Blocks() as demo:
 
         adaptive_theta_box = gr.Textbox(label="Current Ability (θ)", interactive=False)
 
-        adaptive_question_html = gr.HTML("Question will appear here")
+        adaptive_question_html = gr.Markdown("Question will appear here")
         adaptive_answer_radio = gr.Radio(
             choices=[],
             label="Your Answer",
