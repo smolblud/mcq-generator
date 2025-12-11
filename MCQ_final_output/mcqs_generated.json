@@ -1,156 +1,47 @@
 [
   {
-    "stem": "A vector characterized by zero magnitude and an arbitrary direction is known as a:",
+    "stem": "If a physical equation is given as X = Y + Z/W, and the dimensions of Y are [MLT⁻²] and W are [T], what must be the dimensions of Z for the equation to be dimensionally homogeneous, assuming X, Y, and Z/W represent quantities that can be added?",
     "options": {
-      "A": "Unit vector",
-      "B": "Position vector",
-      "C": "Null vector",
-      "D": "Rectangular component"
-    },
-    "answer": "C",
-    "explanation": "A null vector is defined as a vector with zero magnitude and an arbitrary direction.",
-    "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
-  },
-  {
-    "stem": "If a point P is located at (3, 4) with respect to the origin, the magnitude of its position vector is:",
-    "options": {
-      "A": "3 units",
-      "B": "4 units",
-      "C": "5 units",
-      "D": "7 units"
-    },
-    "answer": "C",
-    "explanation": "The magnitude of a position vector r = ai + bj is given by r = √(a² + b²). For P(3,4), r = √(3² + 4²) = √(9 + 16) = √25 = 5 units.",
-    "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
-  },
-  {
-    "stem": "A vector A has a magnitude of 20 N and makes an angle of 60° with the horizontal. Its horizontal component (A_x) will be:",
-    "options": {
-      "A": "10 N",
-      "B": "17.32 N",
-      "C": "20 N",
-      "D": "0 N"
-    },
-    "answer": "A",
-    "explanation": "The horizontal component of a vector A is given by A_x = A cosθ. Here, A = 20 N and θ = 60°. So, A_x = 20 * cos(60°) = 20 * 0.5 = 10 N.",
-    "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
-  },
-  {
-    "stem": "When the product of two vectors results in a scalar quantity, this product is called a:",
-    "options": {
-      "A": "Vector product",
-      "B": "Scalar product",
-      "C": "Cross product",
-      "D": "Null product"
+      "A": "[MLT⁻³]",
+      "B": "[MLT⁻¹]",
+      "C": "[ML²T⁻²]",
+      "D": "[MLT⁻²]"
     },
     "answer": "B",
-    "explanation": "The context states, 'When the product of two vectors gives us scalar quantity, such product is called scalar product, mathematically given as: A · B = A Bcosθ.'",
+    "explanation": "For an equation to be dimensionally homogeneous, all terms added or subtracted must have the same dimensions. Therefore, the dimensions of Y must be equal to the dimensions of Z/W. Given [Y] = [MLT⁻²] and [W] = [T], we have [Z]/[W] = [MLT⁻²]. Solving for [Z], we get [Z] = [MLT⁻²] × [W] = [MLT⁻²] × [T] = [MLT⁻¹].",
     "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
+      "v3-11-physics-book-2025_Physical Quantities and Measurements"
+    ],
+    "difficulty": "Hard"
   },
   {
-    "stem": "The product of two vectors that yields a vector quantity is known as a:",
+    "stem": "Which of the following scenarios best exemplifies a sound estimation of a physical quantity as described in the context?",
     "options": {
-      "A": "Scalar product",
-      "B": "Dot product",
-      "C": "Vector product",
-      "D": "Component product"
-    },
-    "answer": "C",
-    "explanation": "The context states, 'When the product of two vectors gives us vector quantity, such product is called vector product, mathematically given as: A x B = A Bsinθ n̂.'",
-    "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
-  },
-  {
-    "stem": "Which of the following statements is true regarding the vector product of two vectors A and B?",
-    "options": {
-      "A": "A x B = B x A",
-      "B": "A x B = - (B x A)",
-      "C": "A x B = 0",
-      "D": "A x B = 1"
+      "A": "Randomly guessing the height of a building without any visual reference or prior knowledge.",
+      "B": "Using a known object's height (e.g., a person) as a reference to approximate the height of a building, then applying a simple scaling factor based on visual comparison.",
+      "C": "Calculating the exact current in a circuit using precise measurements from an ammeter and voltmeter.",
+      "D": "Attempting to determine the number of houses a power plant could power by arbitrarily picking a large number."
     },
     "answer": "B",
-    "explanation": "The context explicitly states, 'A x B is not same as B x A. According to right hand rule, the direction of A x B is pointing upward given by n̂ and the direction of B x A is pointing downward given by -n̂.' This implies A x B = - (B x A).",
+    "explanation": "The context defines estimation as 'a rough educated guess of the value of a physical quantity by using prior experience and sound physical reasoning.' It also states that 'Estimation does not mean guessing a formula or a number at random' and suggests 'anything can be a ruler' for estimating length. Option B aligns with using prior experience (known height) and sound physical reasoning (scaling factor) to make an educated guess, unlike random guessing (A, D) or precise measurement (C).",
     "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
+      "v3-11-physics-book-2025_Physical Quantities and Measurements"
+    ],
+    "difficulty": "Hard"
   },
   {
-    "stem": "If two vectors A and B are parallel to each other, their vector product (A x B) will be a:",
+    "stem": "Five students measure the time for a ball to fall, obtaining 6.2 s, 6.0 s, 6.4 s, 6.1 s, and 5.8 s. Based on the context, which statement about these measurements and uncertainty is most accurate?",
     "options": {
-      "A": "Maximum value",
-      "B": "Scalar quantity",
-      "C": "Null vector",
-      "D": "Unit vector"
+      "A": "The variation in readings indicates that the stopwatches used were fundamentally flawed and unsuitable for the experiment.",
+      "B": "The inherent uncertainty in these results can be completely eliminated by averaging the readings.",
+      "C": "The spread in the recorded times is an expected characteristic of quantitative observations, reflecting the unavoidable uncertainty present in all measurements.",
+      "D": "To achieve a perfectly precise measurement, the students should have used a single, highly accurate digital timer instead of multiple stopwatches."
     },
     "answer": "C",
-    "explanation": "The context states, 'Vector product of two parallel or anti-parallel vectors is null vector (a null vector has zero magnitude and arbitrary direction). i.e., A x B = AB sin 0° n̂ = 0.'",
+    "explanation": "The context explicitly states, 'Justify why all measurements contain some uncertainty.' and 'Define and explain the term uncertainty.' The variation (spread) in multiple readings is a direct manifestation of this unavoidable uncertainty. Averaging can reduce the impact of random errors but does not eliminate all uncertainty (B). The variation does not necessarily imply flawed instruments (A), but rather the inherent limitations of measurement. Even a single, highly accurate instrument would still have some uncertainty (D).",
     "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
-  },
-  {
-    "stem": "The vector product of unit vectors i and j (i x j) is equal to:",
-    "options": {
-      "A": "0",
-      "B": "1",
-      "C": "k",
-      "D": "-k"
-    },
-    "answer": "C",
-    "explanation": "For mutually perpendicular unit vectors, the context shows i x j = k.",
-    "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
-  },
-  {
-    "stem": "What is the dot product of two mutually perpendicular unit vectors, such as i · j?",
-    "options": {
-      "A": "0",
-      "B": "1",
-      "C": "k",
-      "D": "-k"
-    },
-    "answer": "A",
-    "explanation": "The scalar product A · B = AB cosθ. For unit vectors, A=1, B=1. For mutually perpendicular vectors, θ = 90°. So, i · j = (1)(1)cos(90°) = 1 * 0 = 0. This is also implied by the short question 2.2 asking to find dot product of unit vectors at 90°.",
-    "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
-  },
-  {
-    "stem": "For which angle between two vectors A and B is the magnitude of their dot product equal to the magnitude of their cross product, i.e., |A · B| = |A x B|?",
-    "options": {
-      "A": "30°",
-      "B": "45°",
-      "C": "60°",
-      "D": "90°"
-    },
-    "answer": "B",
-    "explanation": "We need |AB cosθ| = |AB sinθ|. This simplifies to |cosθ| = |sinθ|. This condition is met when θ = 45° (since cos 45° = sin 45° = 1/√2). This is directly from example question 6 in the context.",
-    "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
-  },
-  {
-    "stem": "If the magnitude of the cross product between two vectors is √3 times the magnitude of their dot product, what is the angle between them?",
-    "options": {
-      "A": "30°",
-      "B": "45°",
-      "C": "60°",
-      "D": "90°"
-    },
-    "answer": "C",
-    "explanation": "Given |A x B| = √3 |A · B|. This means |AB sinθ| = √3 |AB cosθ|. Assuming A and B are non-zero, we can divide by AB: |sinθ| = √3 |cosθ|. Dividing by |cosθ| (assuming cosθ ≠ 0), we get |tanθ| = √3. The angle for which tanθ = √3 is 60°. This is directly from Numerical Problem 2.1 in the context.",
-    "citations": [
-      "v3-11-physics-book-2025_Vectors"
-    ]
+      "v3-11-physics-book-2025_Physical Quantities and Measurements"
+    ],
+    "difficulty": "Hard"
   }
 ]
