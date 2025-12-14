@@ -1,47 +1,77 @@
 [
   {
-    "stem": "If a physical equation is given as X = Y + Z/W, and the dimensions of Y are [MLT⁻²] and W are [T], what must be the dimensions of Z for the equation to be dimensionally homogeneous, assuming X, Y, and Z/W represent quantities that can be added?",
+    "stem": "In projectile motion, assuming no air resistance, how do the horizontal and vertical components of velocity behave?",
     "options": {
-      "A": "[MLT⁻³]",
-      "B": "[MLT⁻¹]",
-      "C": "[ML²T⁻²]",
-      "D": "[MLT⁻²]"
-    },
-    "answer": "B",
-    "explanation": "For an equation to be dimensionally homogeneous, all terms added or subtracted must have the same dimensions. Therefore, the dimensions of Y must be equal to the dimensions of Z/W. Given [Y] = [MLT⁻²] and [W] = [T], we have [Z]/[W] = [MLT⁻²]. Solving for [Z], we get [Z] = [MLT⁻²] × [W] = [MLT⁻²] × [T] = [MLT⁻¹].",
-    "citations": [
-      "v3-11-physics-book-2025_Physical Quantities and Measurements"
-    ],
-    "difficulty": "Hard"
-  },
-  {
-    "stem": "Which of the following scenarios best exemplifies a sound estimation of a physical quantity as described in the context?",
-    "options": {
-      "A": "Randomly guessing the height of a building without any visual reference or prior knowledge.",
-      "B": "Using a known object's height (e.g., a person) as a reference to approximate the height of a building, then applying a simple scaling factor based on visual comparison.",
-      "C": "Calculating the exact current in a circuit using precise measurements from an ammeter and voltmeter.",
-      "D": "Attempting to determine the number of houses a power plant could power by arbitrarily picking a large number."
-    },
-    "answer": "B",
-    "explanation": "The context defines estimation as 'a rough educated guess of the value of a physical quantity by using prior experience and sound physical reasoning.' It also states that 'Estimation does not mean guessing a formula or a number at random' and suggests 'anything can be a ruler' for estimating length. Option B aligns with using prior experience (known height) and sound physical reasoning (scaling factor) to make an educated guess, unlike random guessing (A, D) or precise measurement (C).",
-    "citations": [
-      "v3-11-physics-book-2025_Physical Quantities and Measurements"
-    ],
-    "difficulty": "Hard"
-  },
-  {
-    "stem": "Five students measure the time for a ball to fall, obtaining 6.2 s, 6.0 s, 6.4 s, 6.1 s, and 5.8 s. Based on the context, which statement about these measurements and uncertainty is most accurate?",
-    "options": {
-      "A": "The variation in readings indicates that the stopwatches used were fundamentally flawed and unsuitable for the experiment.",
-      "B": "The inherent uncertainty in these results can be completely eliminated by averaging the readings.",
-      "C": "The spread in the recorded times is an expected characteristic of quantitative observations, reflecting the unavoidable uncertainty present in all measurements.",
-      "D": "To achieve a perfectly precise measurement, the students should have used a single, highly accurate digital timer instead of multiple stopwatches."
+      "A": "Both horizontal and vertical components remain constant.",
+      "B": "The horizontal component changes, while the vertical component remains constant.",
+      "C": "The horizontal component remains constant, while the vertical component changes.",
+      "D": "Both horizontal and vertical components change."
     },
     "answer": "C",
-    "explanation": "The context explicitly states, 'Justify why all measurements contain some uncertainty.' and 'Define and explain the term uncertainty.' The variation (spread) in multiple readings is a direct manifestation of this unavoidable uncertainty. Averaging can reduce the impact of random errors but does not eliminate all uncertainty (B). The variation does not necessarily imply flawed instruments (A), but rather the inherent limitations of measurement. Even a single, highly accurate instrument would still have some uncertainty (D).",
+    "explanation": "The context states, 'In projectile motion horizontal component of velocity remains constant, while the vertical component of velocity changes.'",
     "citations": [
-      "v3-11-physics-book-2025_Physical Quantities and Measurements"
+      "v3-11-physics-book-2025_Translatory Motion"
     ],
-    "difficulty": "Hard"
+    "difficulty": "Medium"
+  },
+  {
+    "stem": "Which of the following statements accurately describes an inelastic collision?",
+    "options": {
+      "A": "Both momentum and kinetic energy are conserved.",
+      "B": "Momentum is conserved, but kinetic energy is not conserved.",
+      "C": "Kinetic energy is conserved, but momentum is not conserved.",
+      "D": "Neither momentum nor kinetic energy is conserved."
+    },
+    "answer": "B",
+    "explanation": "The context defines an inelastic collision as one 'in which the momentum is conserved but kinetic energy is not conserved.'",
+    "citations": [
+      "v3-11-physics-book-2025_Translatory Motion"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "stem": "According to the law of conservation of momentum, what is true for an isolated system of interacting particles?",
+    "options": {
+      "A": "The total kinetic energy is conserved.",
+      "B": "The total momentum is conserved.",
+      "C": "The total potential energy is conserved.",
+      "D": "Both kinetic energy and momentum are conserved."
+    },
+    "answer": "B",
+    "explanation": "The context states, 'The law of conservation of momentum states, the total momentum of an isolated system of interacting particles is conserved.'",
+    "citations": [
+      "v3-11-physics-book-2025_Translatory Motion"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "stem": "At which point in a projectile's parabolic path are the velocity and acceleration vectors perpendicular to each other?",
+    "options": {
+      "A": "The launch point",
+      "B": "The highest point",
+      "C": "The landing point",
+      "D": "Nowhere along the path"
+    },
+    "answer": "B",
+    "explanation": "The context explicitly states, 'A projectile thrown upward moves in its parabolic path, the velocity and acceleration vectors for the projectile are perpendicular to each other at: B. the highest point'.",
+    "citations": [
+      "v3-11-physics-book-2025_Translatory Motion"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "stem": "A projectile is launched with an initial speed of 21.8 m/s at an angle of 35° above the horizontal. What is its time of flight?",
+    "options": {
+      "A": "7.98 s",
+      "B": "45.6 s",
+      "C": "2.55 s",
+      "D": "21.8 s"
+    },
+    "answer": "C",
+    "explanation": "Problem 3.4 in the context asks to determine the time of flight for these parameters and provides the answer: '(Ans: 2.55 s, 7.98 m, 45.6 m)'. The time of flight is 2.55 s.",
+    "citations": [
+      "v3-11-physics-book-2025_Translatory Motion"
+    ],
+    "difficulty": "Medium"
   }
 ]

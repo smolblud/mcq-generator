@@ -495,6 +495,7 @@ def main():
                     blueprint_dict[line] = blueprint_dict.get(line, 0) + 1
             
             coverage = calculate_topic_coverage(items_df, blueprint_dict)
+            coverage.to_csv(os.path.join(args.out, "topic_coverage.csv"), index=False)
             
             # Generate Report
             mean_p = summary['p_value'].mean()

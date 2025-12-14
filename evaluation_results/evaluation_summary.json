@@ -1,0 +1,8 @@
+{
+  "faithfulness": 0.6853333333333333,
+  "average_adaptive_gain": 0.0,
+  "estimated_latency_sec": 1500.0,
+  "estimated_cost_usd": 15.0,
+  "total_mcqs": 30,
+  "total_responses": 1500
+}

@@ -1,0 +1,53 @@
+topic,actual_count,expected_count,coverage_pct,status
+Alternating Current,0,1,0.0,Missing 1
+Analytical Geometry,5,1,500.0,Excess 4
+Complex Numbers,5,1,500.0,Excess 4
+Cosmology,0,1,0.0,Missing 1
+Differential Equations,0,1,0.0,Missing 1
+Diffraction and Interference,0,1,0.0,Missing 1
+Division of Polynomials,0,1,0.0,Missing 1
+Earth's Climate,0,1,0.0,Missing 1
+Electric Potential and Capacitor,0,1,0.0,Missing 1
+Electricity,0,1,0.0,Missing 1
+Electrostatics,0,1,0.0,Missing 1
+Extended Reasoning and Analogies,5,1,500.0,Excess 4
+Fluid Mechanics,0,1,0.0,Missing 1
+Functions and Graphs,0,1,0.0,Missing 1
+Fundamental Laws of Trigonometry,0,1,0.0,Missing 1
+Graphics and Data Analysis,0,1,0.0,Missing 1
+Gravitation,0,1,0.0,Missing 1
+Heat and Thermodynamics,0,1,0.0,Missing 1
+Integration,0,1,0.0,Missing 1
+Kinematics of Motion in a Straight Line,5,1,500.0,Excess 4
+"Limit, Continuity and Derivative",0,1,0.0,Missing 1
+"Literal Comprehension: Same Idea, Different Words",0,1,0.0,Missing 1
+Magnetism,0,1,0.0,Missing 1
+Making the Leap: From Concrete to Abstract,0,1,0.0,Missing 1
+Mathematical Induction and Binomial Theorem,0,1,0.0,Missing 1
+Matrices and Determinants,5,1,500.0,Excess 4
+Medical Imaging,0,1,0.0,Missing 1
+Nature of Science: A Debate,0,1,0.0,Missing 1
+Nuclear Physics,0,1,0.0,Missing 1
+Paired Passages,0,1,0.0,Missing 1
+Particle Physics,0,1,0.0,Missing 1
+Permutation and Combination,0,1,0.0,Missing 1
+Physical Quantities and Measurements,0,1,0.0,Missing 1
+Physics of Solids,0,1,0.0,Missing 1
+Quantum Physics,0,1,0.0,Missing 1
+Reading for Function,0,1,0.0,Missing 1
+Reasonable Inferences,0,1,0.0,Missing 1
+Relativity,0,1,0.0,Missing 1
+Rhetorical Strategy,0,1,0.0,Missing 1
+Rotational and Circular Motion,0,1,0.0,Missing 1
+Sequences and Series,5,1,500.0,Excess 4
+Simple Harmonic Motion,0,1,0.0,Missing 1
+Statistical Mechanics and Thermodynamics,0,1,0.0,Missing 1
+Supporting Evidence,0,1,0.0,Missing 1
+The Big Picture,0,1,0.0,Missing 1
+Tone and Attitude,0,1,0.0,Missing 1
+Translatory Motion,0,1,0.0,Missing 1
+Trigonometric Functions,0,1,0.0,Missing 1
+Vectors,0,2,0.0,Missing 2
+Vocabulary in Context,0,1,0.0,Missing 1
+Waves,0,1,0.0,Missing 1
+Work and Kinetic Energy,0,1,0.0,Missing 1

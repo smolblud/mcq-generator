@@ -1,0 +1,52 @@
+Vectors: 2
+Physical Quantities and Measurements: 1
+Translatory Motion: 1
+Rotational and Circular Motion: 1
+Work and Kinetic Energy: 1
+Fluid Mechanics: 1
+Physics of Solids: 1
+Heat and Thermodynamics: 1
+Waves: 1
+Electrostatics: 1
+Electricity: 1
+Magnetism: 1
+Relativity: 1
+Particle Physics: 1
+Gravitation: 1
+Statistical Mechanics and Thermodynamics: 1
+Simple Harmonic Motion: 1
+Diffraction and Interference: 1
+Electric Potential and Capacitor: 1
+Alternating Current: 1
+Quantum Physics: 1
+Nuclear Physics: 1
+Cosmology: 1
+Earth's Climate: 1
+Medical Imaging: 1
+Nature of Science: A Debate: 1
+Complex Numbers: 1
+Matrices and Determinants: 1
+Sequences and Series: 1
+Division of Polynomials: 1
+Permutation and Combination: 1
+Mathematical Induction and Binomial Theorem: 1
+Fundamental Laws of Trigonometry: 1
+Trigonometric Functions: 1
+Functions and Graphs: 1
+Limit, Continuity and Derivative: 1
+Integration: 1
+Differential Equations: 1
+Kinematics of Motion in a Straight Line: 1
+Analytical Geometry: 1
+Vocabulary in Context: 1
+Making the Leap: From Concrete to Abstract: 1
+The Big Picture: 1
+Supporting Evidence: 1
+Literal Comprehension: Same Idea, Different Words: 1
+Reasonable Inferences: 1
+Extended Reasoning and Analogies: 1
+Reading for Function: 1
+Tone and Attitude: 1
+Rhetorical Strategy: 1
+Paired Passages: 1
+Graphics and Data Analysis: 1

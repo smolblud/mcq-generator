@@ -1,0 +1,485 @@
+[
+  {
+    "stem": "Which of the following best describes the first major form of extended reasoning questions on the SAT?",
+    "options": {
+      "A": "They primarily rephrase information explicitly stated in the passage from a different angle.",
+      "B": "They ask how a figure discussed in the passage would likely respond to a hypothetical situation not detailed in the text.",
+      "C": "They require identifying a scenario that is 'most similar to' one described in a short section of the passage.",
+      "D": "They focus on identifying literal comprehension points that are accompanied by supporting evidence questions."
+    },
+    "answer": "B",
+    "explanation": "The text states that the first type of extended reasoning question 'asks you to use the information from the passage to determine how a figure discussed in the passage would mostly likely respond to a hypothetical situation - that is, one not discussed in the passage.'",
+    "citations": [
+      "the-complete-guide-to-sat-reading_compress_General_Extended Reasoning and Analogies"
+    ],
+    "difficulty": "Hard",
+    "topic": "Extended Reasoning and Analogies"
+  },
+  {
+    "stem": "Regarding analogy questions, a specific type of extended reasoning, which statement is most accurate according to the provided text?",
+    "options": {
+      "A": "They are a major concern for test-takers due to their consistent appearance on every exam.",
+      "B": "They are essentially assumption questions taken one step further, requiring application of underlying logic to a new situation.",
+      "C": "They ask test-takers to identify an answer containing a scenario that is 'most analogous to' a described passage scenario.",
+      "D": "They are a common form of inference question, making explicit what the passage implies without extending reasoning beyond it."
+    },
+    "answer": "C",
+    "explanation": "The text defines analogy questions as those 'which ask you to identify the answer containing a scenario that is “most analogous to,” “most similar to,” or “most like,” the scenario described in a short section of the passage.' It also notes they 'do not appear on every exam and should therefore not be a major concern.'",
+    "citations": [
+      "the-complete-guide-to-sat-reading_compress_General_Extended Reasoning and Analogies"
+    ],
+    "difficulty": "Hard",
+    "topic": "Extended Reasoning and Analogies"
+  },
+  {
+    "stem": "A student encounters an SAT inference question that requires them to determine the author's broader philosophical stance based on a character's emotional reaction, a leap far beyond the character's immediate feeling. According to the text, why would this likely be an incorrect approach for most SAT inference questions, and how does it relate to extended reasoning?",
+    "options": {
+      "A": "Most SAT inferences require only making explicit what the passage implies, whereas extended reasoning might involve such larger leaps.",
+      "B": "This represents a literal comprehension question, which is distinct from any form of inference on the SAT.",
+      "C": "Such a question is a common fallacy for extended reasoning, which strictly limits inferences to direct rephrasing.",
+      "D": "The SAT primarily tests pronoun-antecedent agreement, making broader philosophical inferences irrelevant."
+    },
+    "answer": "A",
+    "explanation": "The text states that 'inferences on the SAT are much smaller than the kinds of inferences you may be accustomed to making in English class' and that 'the only thing that you can infer is that the character is not happy.' However, it also notes that extended reasoning questions 'require you to extend your reasoning beyond the passage itself,' implying they involve larger inferences than typical SAT questions, making the 'larger leap' plausible only in the context of extended reasoning, not 'most' inferences.",
+    "citations": [
+      "the-complete-guide-to-sat-reading_compress_General_Reasonable Inferences",
+      "the-complete-guide-to-sat-reading_compress_General_Extended Reasoning and Analogies"
+    ],
+    "difficulty": "Hard",
+    "topic": "Extended Reasoning and Analogies"
+  },
+  {
+    "stem": "When tackling an extended reasoning question that asks how a figure would respond to a hypothetical situation, a test-taker selects an option that 'could be true based on the information in the passage' but lacks sufficient evidence to confirm its actual truth. According to the text, this choice is most likely an example of what type of error?",
+    "options": {
+      "A": "A correct answer that makes a slightly larger leap, as is characteristic of extended reasoning.",
+      "B": "A literal comprehension error, failing to grasp the explicit meaning of the lines.",
+      "C": "A fallacy of speculation, where the information is insufficient to judge its veracity.",
+      "D": "An accurate rephrasing of implied information, common in the vast majority of inference questions."
+    },
+    "answer": "C",
+    "explanation": "The text describes a common fallacy as 'speculation: that is, an answer could be true based on the information in the passage, but there isn’t enough information to judge whether it is actually true.' This applies directly to an answer that sounds plausible but lacks sufficient support.",
+    "citations": [
+      "the-complete-guide-to-sat-reading_compress_General_Fallacies and Incorrect Answers",
+      "the-complete-guide-to-sat-reading_compress_General_Extended Reasoning and Analogies"
+    ],
+    "difficulty": "Hard",
+    "topic": "Extended Reasoning and Analogies"
+  },
+  {
+    "stem": "Which statement accurately differentiates extended reasoning questions from the 'vast majority' of inference questions on the SAT?",
+    "options": {
+      "A": "Extended reasoning questions are always accompanied by supporting evidence questions, which simplifies their resolution.",
+      "B": "The vast majority of inference questions require extending reasoning beyond the passage, while extended reasoning questions focus on literal comprehension.",
+      "C": "Extended reasoning questions necessitate applying passage information to situations or scenarios *not explicitly discussed*, unlike most inferences which rephrase or make explicit implied information.",
+      "D": "The vast majority of inference questions are concerned with identifying scenarios 'most analogous to' a passage section, a task not found in extended reasoning."
+    },
+    "answer": "C",
+    "explanation": "The text states that the 'vast majority of inference questions... either rephrase the information... or directly state information that the passage implies,' whereas extended reasoning questions 'require you to extend your reasoning beyond the passage itself' to 'hypothetical situation[s] - that is, one not discussed in the passage' or to identify 'most analogous to' scenarios.",
+    "citations": [
+      "the-complete-guide-to-sat-reading_compress_General_Extended Reasoning and Analogies",
+      "the-complete-guide-to-sat-reading_compress_General_Reasonable Inferences"
+    ],
+    "difficulty": "Hard",
+    "topic": "Extended Reasoning and Analogies"
+  },
+  {
+    "stem": "Given a triangle with vertices A(6, 0), B(0, 6), and O(0, 0). If the circumcenter is G(3, 3) and the orthocenter is O(0, 0), what is the distance between the centroid and the orthocenter, given that the circumcenter, centroid, and orthocenter are collinear?",
+    "options": {
+      "A": "√2",
+      "B": "2√2",
+      "C": "3√2",
+      "D": "4√2"
+    },
+    "answer": "B",
+    "explanation": "The centroid P of a triangle with vertices (x1,y1), (x2,y2), (x3,y3) is ((x1+x2+x3)/3, (y1+y2+y3)/3). For A(6,0), B(0,6), O(0,0), the centroid P = ((6+0+0)/3, (0+6+0)/3) = (2,2). The orthocenter is O(0,0). The distance between the centroid P(2,2) and the orthocenter O(0,0) is OP = √((2-0)² + (2-0)²) = √(4+4) = √8 = 2√2. The context explicitly states that for these points, OP = 2√2.",
+    "citations": [
+      "v2-12-maths-book-2025_Analytical Geometry"
+    ],
+    "difficulty": "Hard",
+    "topic": "Analytical Geometry"
+  },
+  {
+    "stem": "Determine the joint equation of the lines passing through the origin and perpendicular to the lines represented by the equation `2x² - 7xy + 6y² = 0`.",
+    "options": {
+      "A": "6x² + 7xy + 2y² = 0",
+      "B": "6x² - 7xy + 2y² = 0",
+      "C": "2x² + 7xy + 6y² = 0",
+      "D": "2x² - 7xy - 6y² = 0"
+    },
+    "answer": "A",
+    "explanation": "First, factorize the given equation: `2x² - 7xy + 6y² = 0` => `(2x - 3y)(x - 2y) = 0`. The individual lines are `2x - 3y = 0` (slope `m1 = 2/3`) and `x - 2y = 0` (slope `m2 = 1/2`). The slopes of lines perpendicular to these are `m1_perp = -3/2` and `m2_perp = -2`. The equations of these perpendicular lines passing through the origin are `y = (-3/2)x` (i.e., `3x + 2y = 0`) and `y = -2x` (i.e., `2x + y = 0`). The joint equation is `(3x + 2y)(2x + y) = 0`, which expands to `6x² + 3xy + 4xy + 2y² = 0` => `6x² + 7xy + 2y² = 0`. This problem is similar to problem 5 in the context.",
+    "citations": [
+      "v2-12-maths-book-2025_Analytical Geometry"
+    ],
+    "difficulty": "Hard",
+    "topic": "Analytical Geometry"
+  },
+  {
+    "stem": "For what value of `k` will the lines represented by the joint equation `(k-1)x² + 3xy + (k+1)y² = 0` be perpendicular to each other?",
+    "options": {
+      "A": "k = 0",
+      "B": "k = 1",
+      "C": "k = -1",
+      "D": "k = 2"
+    },
+    "answer": "A",
+    "explanation": "For a joint equation `Ax² + Bxy + Cy² = 0` to represent perpendicular lines, the condition `A + C = 0` must be satisfied. In the given equation, `A = (k-1)` and `C = (k+1)`. Therefore, `(k-1) + (k+1) = 0` => `2k = 0` => `k = 0`. This condition is implied by problem 4 in the context, which asks to show lines are at a right angle.",
+    "citations": [
+      "v2-12-maths-book-2025_Analytical Geometry"
+    ],
+    "difficulty": "Hard",
+    "topic": "Analytical Geometry"
+  },
+  {
+    "stem": "Determine the value of `m` for which the three lines `x - y = 1`, `4x + y = 5`, and `(2m-5)x - my = 3` are concurrent.",
+    "options": {
+      "A": "m = 11/45",
+      "B": "m = 45/11",
+      "C": "m = 5/11",
+      "D": "m = 11/5"
+    },
+    "answer": "B",
+    "explanation": "First, find the intersection point of the first two lines:\n1. `x - y = 1`\n2. `4x + y = 5`\nAdding (1) and (2) gives `5x = 6`, so `x = 6/5`. Substitute `x = 6/5` into (1): `6/5 - y = 1` => `y = 6/5 - 1 = 1/5`. The intersection point is `(6/5, 1/5)`. For the three lines to be concurrent, this point must lie on the third line `(2m-5)x - my = 3`. Substitute `x = 6/5` and `y = 1/5`: `(2m-5)(6/5) - m(1/5) = 3`. Multiply by 5 to clear denominators: `6(2m-5) - m = 15` => `12m - 30 - m = 15` => `11m = 45` => `m = 45/11`. This problem is similar to Example 8 and problem 8 in the context.",
+    "citations": [
+      "v2-12-maths-book-2025_Analytical Geometry"
+    ],
+    "difficulty": "Hard",
+    "topic": "Analytical Geometry"
+  },
+  {
+    "stem": "Calculate the area of the triangle bounded by the lines represented by the joint equation `x² - xy - 6y² = 0` and the line `x - y + 3 = 0`.",
+    "options": {
+      "A": "15/2 square units",
+      "B": "15/4 square units",
+      "C": "9/2 square units",
+      "D": "9/4 square units"
+    },
+    "answer": "B",
+    "explanation": "First, factorize the joint equation `x² - xy - 6y² = 0` to find the individual lines: `(x - 3y)(x + 2y) = 0`. This gives two lines: `l1: x - 3y = 0` and `l2: x + 2y = 0`. Both `l1` and `l2` pass through the origin `(0,0)`, which is the first vertex of the triangle, `V1 = (0,0)`. Next, find the intersection points of `l1` and `l2` with the third line `l3: x - y + 3 = 0`.\n1. Intersection of `l1 (x = 3y)` and `l3`: Substitute `x = 3y` into `x - y + 3 = 0` => `3y - y + 3 = 0` => `2y = -3` => `y = -3/2`. Then `x = 3(-3/2) = -9/2`. So, `V2 = (-9/2, -3/2)`.\n2. Intersection of `l2 (x = -2y)` and `l3`: Substitute `x = -2y` into `x - y + 3 = 0` => `-2y - y + 3 = 0` => `-3y = -3` => `y = 1`. Then `x = -2(1) = -2`. So, `V3 = (-2, 1)`.\nThe area of a triangle with vertices `(0,0)`, `(x2,y2)`, and `(x3,y3)` is `(1/2) |x2y3 - x3y2|`. Area = `(1/2) |(-9/2)(1) - (-2)(-3/2)|` = `(1/2) |(-9/2) - (3)|` = `(1/2) |(-9/2) - (6/2)|` = `(1/2) |-15/2|` = `15/4` square units. This problem is similar to problem 10 in the context.",
+    "citations": [
+      "v2-12-maths-book-2025_Analytical Geometry"
+    ],
+    "difficulty": "Hard",
+    "topic": "Analytical Geometry"
+  },
+  {
+    "stem": "Khalid deposits Rs. 100,000 into his account initially, and then each month he deposits Rs. 10,000 more than the month before. If the price of the car he is saving for is Rs. 1,260,000, how many months will it take Khalid to reach his goal?",
+    "options": {
+      "A": "8 months",
+      "B": "9 months",
+      "C": "10 months",
+      "D": "12 months"
+    },
+    "answer": "B",
+    "explanation": "This is an arithmetic series problem. The first term (a) is Rs. 100,000 and the common difference (d) is Rs. 10,000. The sum (S_n) required is Rs. 1,260,000. Using the formula for the sum of an arithmetic series, S_n = n/2 * [2a + (n-1)d]:\n1,260,000 = n/2 * [2(100,000) + (n-1)10,000]\n2,520,000 = n * [200,000 + 10,000n - 10,000]\n2,520,000 = n * [190,000 + 10,000n]\nDividing by 10,000:\n252 = n * [19 + n]\nn^2 + 19n - 252 = 0\nFactoring the quadratic equation: (n + 28)(n - 9) = 0\nSince n must be positive, n = 9 months.",
+    "citations": [
+      "v3-11-maths-book-2025_Sequences and Series"
+    ],
+    "difficulty": "Hard",
+    "topic": "Sequences and Series"
+  },
+  {
+    "stem": "Find the sum to infinity of the following series: 4 + 10/2 + 25/4 + ...",
+    "options": {
+      "A": "16",
+      "B": "8",
+      "C": "20",
+      "D": "The sum does not exist"
+    },
+    "answer": "D",
+    "explanation": "This is a geometric series. The first term (a) is 4. The common ratio (r) is found by dividing the second term by the first term: r = (10/2) / 4 = 5 / 4. For a geometric series to have a sum to infinity, the absolute value of the common ratio must be less than 1 (|r| < 1). In this case, |5/4| = 1.25, which is greater than 1. Therefore, the series diverges, and its sum to infinity does not exist.",
+    "citations": [
+      "v3-11-maths-book-2025_Sequences and Series"
+    ],
+    "difficulty": "Hard",
+    "topic": "Sequences and Series"
+  },
+  {
+    "stem": "Given that `7, 4, 1, ...` is an arithmetic sequence, find the 17th term of the corresponding Harmonic Progression (H.P.).",
+    "options": {
+      "A": "1/41",
+      "B": "-1/41",
+      "C": "41",
+      "D": "-41"
+    },
+    "answer": "B",
+    "explanation": "To find the 17th term of a Harmonic Progression (H.P.), we first find the 17th term of its corresponding Arithmetic Progression (A.P.).\nThe given A.P. is `7, 4, 1, ...`\nThe first term (a) = 7.\nThe common difference (d) = 4 - 7 = -3.\nThe formula for the nth term of an A.P. is a_n = a + (n-1)d.\nFor the 17th term of the A.P.: a_17 = 7 + (17-1)(-3) = 7 + 16(-3) = 7 - 48 = -41.\nThe nth term of an H.P. is the reciprocal of the nth term of its corresponding A.P.\nTherefore, the 17th term of the H.P. is 1/(-41) = -1/41.",
+    "citations": [
+      "v3-11-maths-book-2025_Sequences and Series"
+    ],
+    "difficulty": "Hard",
+    "topic": "Sequences and Series"
+  },
+  {
+    "stem": "How many terms of the sequence `18, 15, 12, ...` are needed to give a sum of 45?",
+    "options": {
+      "A": "up to 7th",
+      "B": "up to 10th",
+      "C": "up to 6th",
+      "D": "up to 5th"
+    },
+    "answer": "B",
+    "explanation": "This is an arithmetic sequence with the first term (a) = 18 and common difference (d) = 15 - 18 = -3. We need to find 'n' such that the sum S_n = 45.\nUsing the formula S_n = n/2 * [2a + (n-1)d]:\n45 = n/2 * [2(18) + (n-1)(-3)]\n90 = n * [36 - 3n + 3]\n90 = n * [39 - 3n]\n90 = 39n - 3n^2\nRearranging into a quadratic equation: 3n^2 - 39n + 90 = 0\nDivide by 3: n^2 - 13n + 30 = 0\nFactoring the quadratic equation: (n - 3)(n - 10) = 0\nThis gives two possible values for n: n = 3 or n = 10.\nBoth 3 terms (18+15+12 = 45) and 10 terms (18+15+12+9+6+3+0-3-6-9 = 45) result in a sum of 45. Given the options, 'up to 10th' is the correct choice.",
+    "citations": [
+      "v3-11-maths-book-2025_Sequences and Series"
+    ],
+    "difficulty": "Hard",
+    "topic": "Sequences and Series"
+  },
+  {
+    "stem": "If `a, b, c` are in an Arithmetic Progression (A.P.), then `3^a, 3^b, 3^c` are in which type of progression?",
+    "options": {
+      "A": "Geometric Progression (G.P.)",
+      "B": "Harmonic Progression (H.P.)",
+      "C": "Arithmetic Progression (A.P.)",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": "If `a, b, c` are in an Arithmetic Progression, then the common difference is constant, meaning `b - a = c - b`, which simplifies to `2b = a + c`.\nFor `3^a, 3^b, 3^c` to be in a Geometric Progression, the ratio of consecutive terms must be constant, or the square of the middle term must equal the product of the other two terms: `(3^b)^2 = 3^a * 3^c`.\nUsing exponent rules, this becomes `3^(2b) = 3^(a+c)`.\nFor this equality to hold, the exponents must be equal: `2b = a + c`.\nSince we established that `2b = a + c` is true if `a, b, c` are in A.P., it follows that `3^a, 3^b, 3^c` are in a Geometric Progression.",
+    "citations": [
+      "v3-11-maths-book-2025_Sequences and Series"
+    ],
+    "difficulty": "Hard",
+    "topic": "Sequences and Series"
+  },
+  {
+    "stem": "Given that (x + iy)^2 = 7 + 24i, where x and y are real numbers, determine the possible values for x and y.",
+    "options": {
+      "A": "x=3, y=4 or x=-3, y=-4",
+      "B": "x=4, y=3 or x=-4, y=-3",
+      "C": "x=5, y=2 or x=-5, y=-2",
+      "D": "x=6, y=1 or x=-6, y=-1"
+    },
+    "answer": "B",
+    "explanation": "From the context, if z = x+iy, then Re(z^2) = x^2 - y^2 and Im(z^2) = 2xy. Given (x+iy)^2 = 7 + 24i, we equate the real and imaginary parts:\n1) x^2 - y^2 = 7\n2) 2xy = 24 => xy = 12 => y = 12/x\nSubstitute (2) into (1):\nx^2 - (12/x)^2 = 7\nx^2 - 144/x^2 = 7\nMultiply by x^2: x^4 - 144 = 7x^2 => x^4 - 7x^2 - 144 = 0.\nLet u = x^2. Then u^2 - 7u - 144 = 0. Factoring gives (u - 16)(u + 9) = 0.\nSince x is real, x^2 must be non-negative, so x^2 = 16. This yields x = 4 or x = -4.\nIf x = 4, then y = 12/4 = 3.\nIf x = -4, then y = 12/(-4) = -3.\nThus, the possible pairs (x, y) are (4, 3) and (-4, -3).",
+    "citations": [
+      "[v3-11-maths-book-2025_Complex Numbers]"
+    ],
+    "difficulty": "Hard",
+    "topic": "Complex Numbers"
+  },
+  {
+    "stem": "If (x + iy)^-1 = (3 - 4i) / 25, where x and y are real numbers, find the values of x and y.",
+    "options": {
+      "A": "x=3, y=4",
+      "B": "x=4, y=3",
+      "C": "x=3, y=-4",
+      "D": "x=-3, y=4"
+    },
+    "answer": "A",
+    "explanation": "From the context, if z = x+iy, then Re(z^-1) = x/(x^2+y^2) and Im(z^-1) = -y/(x^2+y^2). Given (x+iy)^-1 = (3 - 4i) / 25, we can write this as (3/25) + i(-4/25).\nEquating the real and imaginary parts:\n1) x / (x^2+y^2) = 3/25\n2) -y / (x^2+y^2) = -4/25 => y / (x^2+y^2) = 4/25\nLet x = 3k and y = 4k for some real number k. Then x^2+y^2 = (3k)^2 + (4k)^2 = 9k^2 + 16k^2 = 25k^2.\nSubstitute these into equation (1): (3k) / (25k^2) = 3/25.\nAssuming k ≠ 0, we simplify to 3 / (25k) = 3/25, which implies k = 1.\nTherefore, x = 3(1) = 3 and y = 4(1) = 4.",
+    "citations": [
+      "[v3-11-maths-book-2025_Complex Numbers]"
+    ],
+    "difficulty": "Hard",
+    "topic": "Complex Numbers"
+  },
+  {
+    "stem": "Let z1 = 2 + i and z2 = 1 - 2i. Find the real part of (z1 + z2)^2.",
+    "options": {
+      "A": "7",
+      "B": "8",
+      "C": "9",
+      "D": "10"
+    },
+    "answer": "B",
+    "explanation": "First, find the sum z1 + z2:\nz1 + z2 = (2 + i) + (1 - 2i) = (2 + 1) + (1 - 2)i = 3 - i.\nLet Z = 3 - i. We need to find Re(Z^2).\nFrom the context, if Z = x + iy, then Re(Z^2) = x^2 - y^2.\nHere, x = 3 and y = -1.\nRe((3 - i)^2) = (3)^2 - (-1)^2 = 9 - 1 = 8.",
+    "citations": [
+      "[v3-11-maths-book-2025_Complex Numbers]"
+    ],
+    "difficulty": "Hard",
+    "topic": "Complex Numbers"
+  },
+  {
+    "stem": "If (x + iy)(1 + i) = 2 + 4i, where x and y are real numbers, determine the values of x and y.",
+    "options": {
+      "A": "x=1, y=3",
+      "B": "x=3, y=1",
+      "C": "x=2, y=2",
+      "D": "x=4, y=-2"
+    },
+    "answer": "B",
+    "explanation": "First, expand the left side of the equation:\n(x + iy)(1 + i) = x(1 + i) + iy(1 + i) = x + xi + iy + i^2y.\nSince i^2 = -1, this becomes x + xi + iy - y. Grouping real and imaginary parts: (x - y) + i(x + y).\nNow, equate this to the right side of the given equation:\n(x - y) + i(x + y) = 2 + 4i.\nAccording to the condition for equality of two complex numbers, their real parts must be equal, and their imaginary parts must be equal.\n1) x - y = 2\n2) x + y = 4\nAdding equation (1) and (2): (x - y) + (x + y) = 2 + 4 => 2x = 6 => x = 3.\nSubstitute x = 3 into equation (2): 3 + y = 4 => y = 1.\nThus, x = 3 and y = 1.",
+    "citations": [
+      "[v3-11-maths-book-2025_Complex Numbers]"
+    ],
+    "difficulty": "Hard",
+    "topic": "Complex Numbers"
+  },
+  {
+    "stem": "Given that |(x + iy)^2 + (3 + 4i)| = 0, where x and y are real numbers, find the possible values for x and y.",
+    "options": {
+      "A": "x=1, y=-2 or x=-1, y=2",
+      "B": "x=2, y=-1 or x=-2, y=1",
+      "C": "x=1, y=2 or x=-1, y=-2",
+      "D": "x=2, y=1 or x=-2, y=-1"
+    },
+    "answer": "A",
+    "explanation": "From the context, the theorem states that |z| = 0 if and only if z = 0. Therefore, if |(x + iy)^2 + (3 + 4i)| = 0, it must be that:\n(x + iy)^2 + (3 + 4i) = 0\n(x + iy)^2 = -(3 + 4i) = -3 - 4i\nFrom the context, if z = x+iy, then Re(z^2) = x^2 - y^2 and Im(z^2) = 2xy.\nEquating the real and imaginary parts:\n1) x^2 - y^2 = -3\n2) 2xy = -4 => xy = -2 => y = -2/x\nSubstitute (2) into (1): x^2 - (-2/x)^2 = -3 => x^2 - 4/x^2 = -3.\nMultiply by x^2: x^4 - 4 = -3x^2 => x^4 + 3x^2 - 4 = 0.\nLet u = x^2. Then u^2 + 3u - 4 = 0. Factoring gives (u + 4)(u - 1) = 0.\nSince x is real, x^2 must be non-negative, so x^2 = 1. This yields x = 1 or x = -1.\nIf x = 1, then y = -2/1 = -2.\nIf x = -1, then y = -2/(-1) = 2.\nThus, the possible pairs (x, y) are (1, -2) and (-1, 2).",
+    "citations": [
+      "[v3-11-maths-book-2025_Complex Numbers]"
+    ],
+    "difficulty": "Hard",
+    "topic": "Complex Numbers"
+  },
+  {
+    "stem": "A particle P moves along the x-axis with acceleration a = (4t - 9) m/s² for t > 0. When t = 1, its velocity is -3 m/s. Which of the following statements is true regarding the particle's motion?",
+    "options": {
+      "A": "The minimum velocity is -6.125 m/s, and the particle is instantaneously at rest at t = 0.5 s and t = 4 s.",
+      "B": "The minimum velocity is -6.125 m/s, and the particle is instantaneously at rest at t = 1 s and t = 3 s.",
+      "C": "The minimum velocity is -4.5 m/s, and the particle is instantaneously at rest at t = 0.5 s and t = 4 s.",
+      "D": "The minimum velocity is -6.125 m/s, and the particle is instantaneously at rest only at t = 4 s."
+    },
+    "answer": "A",
+    "explanation": "First, integrate the acceleration function a(t) = 4t - 9 to find the velocity function v(t). \nv(t) = ∫(4t - 9) dt = 2t² - 9t + C.\nGiven v(1) = -3: 2(1)² - 9(1) + C = -3 => 2 - 9 + C = -3 => -7 + C = -3 => C = 4.\nSo, v(t) = 2t² - 9t + 4.\n\nTo find the minimum velocity, set the acceleration a(t) = 0:\n4t - 9 = 0 => t = 9/4 = 2.25 s.\nSubstitute t = 2.25 into v(t):\nv_min = v(2.25) = 2(2.25)² - 9(2.25) + 4 = 2(5.0625) - 20.25 + 4 = 10.125 - 20.25 + 4 = -6.125 m/s.\n\nTo find when the particle is instantaneously at rest, set v(t) = 0:\n2t² - 9t + 4 = 0.\nFactoring the quadratic equation: (2t - 1)(t - 4) = 0.\nThis gives t = 1/2 = 0.5 s or t = 4 s.\nTherefore, the minimum velocity is -6.125 m/s, and the particle is instantaneously at rest at t = 0.5 s and t = 4 s.",
+    "citations": [
+      "[v2-12-maths-book-2025_Kinematics of Motion in a Straight Line]"
+    ],
+    "difficulty": "Hard",
+    "topic": "Kinematics of Motion in a Straight Line"
+  },
+  {
+    "stem": "A particle moves along a line such that its position is S = 2t³ - 9t² + 12t - 4, for t ≥ 0. What is the total distance travelled by the particle in the time interval [0, 4]?",
+    "options": {
+      "A": "28 m",
+      "B": "34 m",
+      "C": "30 m",
+      "D": "38 m"
+    },
+    "answer": "B",
+    "explanation": "First, find the velocity function v(t) by differentiating the position function S(t):\nv(t) = dS/dt = d/dt (2t³ - 9t² + 12t - 4) = 6t² - 18t + 12.\n\nNext, find the times when the particle changes direction (i.e., when v(t) = 0):\n6t² - 18t + 12 = 0\nt² - 3t + 2 = 0\n(t - 1)(t - 2) = 0\nSo, the particle changes direction at t = 1 s and t = 2 s. Both times are within the interval [0, 4].\n\nNow, calculate the position of the particle at t = 0, t = 1, t = 2, and t = 4:\nS(0) = 2(0)³ - 9(0)² + 12(0) - 4 = -4 m\nS(1) = 2(1)³ - 9(1)² + 12(1) - 4 = 2 - 9 + 12 - 4 = 1 m\nS(2) = 2(2)³ - 9(2)² + 12(2) - 4 = 16 - 36 + 24 - 4 = 0 m\nS(4) = 2(4)³ - 9(4)² + 12(4) - 4 = 128 - 144 + 48 - 4 = 28 m\n\nFinally, calculate the total distance travelled by summing the absolute displacements between these points:\nDistance = |S(1) - S(0)| + |S(2) - S(1)| + |S(4) - S(2)|\nDistance = |1 - (-4)| + |0 - 1| + |28 - 0|\nDistance = |5| + |-1| + |28|\nDistance = 5 + 1 + 28 = 34 m.",
+    "citations": [
+      "[v2-12-maths-book-2025_Kinematics of Motion in a Straight Line]"
+    ],
+    "difficulty": "Hard",
+    "topic": "Kinematics of Motion in a Straight Line"
+  },
+  {
+    "stem": "A car starts from rest and moves along the x-axis. Its acceleration `a` m/s² is given by `a(t) = t - 3` for `0 ≤ t ≤ 8` and `a(t) = 0` for `t > 8`. What is the time it takes for the car to reach its maximum speed, and what is its displacement from the starting point at `t = 10` seconds?",
+    "options": {
+      "A": "Maximum speed reached at t = 3 s; Displacement at t = 10 s is 16/3 m.",
+      "B": "Maximum speed reached at t = 8 s; Displacement at t = 10 s is 16/3 m.",
+      "C": "Maximum speed reached at t = 8 s; Displacement at t = 10 s is 8 m.",
+      "D": "Maximum speed reached at t = 3 s; Displacement at t = 10 s is 8 m."
+    },
+    "answer": "B",
+    "explanation": "The car starts from rest, so v(0) = 0 and S(0) = 0.\n\nFor `0 ≤ t ≤ 8`:\nVelocity: v(t) = ∫a(t) dt = ∫(t - 3) dt = t²/2 - 3t + C1. Since v(0) = 0, C1 = 0. So, v(t) = t²/2 - 3t.\nTo find maximum speed in this interval, we check critical points (where a(t)=0) and endpoints.\na(t) = t - 3 = 0 => t = 3 s. At t=3, v(3) = (3)²/2 - 3(3) = 4.5 - 9 = -4.5 m/s. This is a minimum velocity (maximum speed in the negative direction).\nAt endpoints: v(0) = 0. v(8) = (8)²/2 - 3(8) = 32 - 24 = 8 m/s.\nSo, the maximum speed in this interval is 8 m/s at t = 8 s.\n\nFor `t > 8`:\nAcceleration a(t) = 0, so velocity is constant. v(t) = v(8) = 8 m/s.\nTherefore, the car reaches its maximum speed of 8 m/s at t = 8 s, and maintains this speed for t > 8.\n\nNow, for displacement S(t):\nFor `0 ≤ t ≤ 8`:\nS(t) = ∫v(t) dt = ∫(t²/2 - 3t) dt = t³/6 - 3t²/2 + C2. Since S(0) = 0, C2 = 0. So, S(t) = t³/6 - 3t²/2.\nPosition at t = 8 s: S(8) = (8)³/6 - 3(8)²/2 = 512/6 - 3(64)/2 = 256/3 - 96 = (256 - 288)/3 = -32/3 m.\n\nFor `t > 8`:\nS(t) = ∫v(t) dt = ∫8 dt = 8t + C3.\nUsing S(8) = -32/3: -32/3 = 8(8) + C3 => -32/3 = 64 + C3 => C3 = -32/3 - 192/3 = -224/3.\nSo, S(t) = 8t - 224/3 for t > 8.\n\nDisplacement at t = 10 s:\nS(10) = 8(10) - 224/3 = 80 - 224/3 = (240 - 224)/3 = 16/3 m.\n\nThus, the maximum speed is reached at t = 8 s, and the displacement at t = 10 s is 16/3 m.",
+    "citations": [
+      "[v2-12-maths-book-2025_Kinematics of Motion in a Straight Line]"
+    ],
+    "difficulty": "Hard",
+    "topic": "Kinematics of Motion in a Straight Line"
+  },
+  {
+    "stem": "A particle P moves along the x-axis. At time t seconds, its velocity is v = (3t² - 4t + 3) m/s. When t = 0, P is at the origin O. What is the distance of P from O when P is moving with minimum velocity?",
+    "options": {
+      "A": "38/27 m",
+      "B": "2/3 m",
+      "C": "1 m",
+      "D": "0 m"
+    },
+    "answer": "A",
+    "explanation": "First, find the time when the particle is moving with minimum velocity. Minimum velocity occurs when the acceleration a(t) = dv/dt = 0.\nv(t) = 3t² - 4t + 3\na(t) = dv/dt = 6t - 4.\nSet a(t) = 0: 6t - 4 = 0 => 6t = 4 => t = 4/6 = 2/3 s.\n\nNext, find the position function S(t) by integrating the velocity function. Given that P is at the origin O when t = 0, S(0) = 0.\nS(t) = ∫v(t) dt = ∫(3t² - 4t + 3) dt = t³ - 2t² + 3t + C.\nSince S(0) = 0: (0)³ - 2(0)² + 3(0) + C = 0 => C = 0.\nSo, S(t) = t³ - 2t² + 3t.\n\nFinally, find the distance of P from O at the time of minimum velocity (t = 2/3 s):\nS(2/3) = (2/3)³ - 2(2/3)² + 3(2/3)\nS(2/3) = 8/27 - 2(4/9) + 2\nS(2/3) = 8/27 - 8/9 + 2\nTo combine these, find a common denominator (27):\nS(2/3) = 8/27 - (8*3)/(9*3) + (2*27)/27\nS(2/3) = 8/27 - 24/27 + 54/27\nS(2/3) = (8 - 24 + 54)/27 = 38/27 m.\nThe distance from O is |S(2/3)| = 38/27 m.",
+    "citations": [
+      "[v2-12-maths-book-2025_Kinematics of Motion in a Straight Line]"
+    ],
+    "difficulty": "Hard",
+    "topic": "Kinematics of Motion in a Straight Line"
+  },
+  {
+    "stem": "A particle P moves along the x-axis. Its acceleration is `a = (4t - 8)` m/s². Given that `v = 6` m/s when `t = 0`, what is the distance between the two points where P is instantaneously at rest?",
+    "options": {
+      "A": "4/3 m",
+      "B": "8/3 m",
+      "C": "2 m",
+      "D": "0 m"
+    },
+    "answer": "B",
+    "explanation": "First, integrate the acceleration function a(t) = 4t - 8 to find the velocity function v(t).\nv(t) = ∫(4t - 8) dt = 2t² - 8t + C.\nGiven that v = 6 m/s when t = 0: 2(0)² - 8(0) + C = 6 => C = 6.\nSo, the velocity function is v(t) = 2t² - 8t + 6.\n\nNext, find the times when the particle is instantaneously at rest by setting v(t) = 0:\n2t² - 8t + 6 = 0\nDivide by 2: t² - 4t + 3 = 0\nFactor the quadratic equation: (t - 1)(t - 3) = 0\nSo, the particle is instantaneously at rest at t = 1 s and t = 3 s.\n\nNow, integrate the velocity function to find the position function S(t). We can assume S(0) = 0 for the initial position to define the points.\nS(t) = ∫v(t) dt = ∫(2t² - 8t + 6) dt = (2/3)t³ - 4t² + 6t + D.\nAssuming S(0) = 0: (2/3)(0)³ - 4(0)² + 6(0) + D = 0 => D = 0.\nSo, the position function is S(t) = (2/3)t³ - 4t² + 6t.\n\nCalculate the positions of the particle at the times it is at rest:\nAt t = 1 s: S(1) = (2/3)(1)³ - 4(1)² + 6(1) = 2/3 - 4 + 6 = 2/3 + 2 = 8/3 m.\nAt t = 3 s: S(3) = (2/3)(3)³ - 4(3)² + 6(3) = (2/3)(27) - 4(9) + 18 = 18 - 36 + 18 = 0 m.\n\nThe distance between these two points is the absolute difference of their positions:\nDistance = |S(3) - S(1)| = |0 - 8/3| = 8/3 m.",
+    "citations": [
+      "[v2-12-maths-book-2025_Kinematics of Motion in a Straight Line]"
+    ],
+    "difficulty": "Hard",
+    "topic": "Kinematics of Motion in a Straight Line"
+  },
+  {
+    "stem": "Given a 3x3 matrix A such that |A| = 5. If matrix B is obtained from A by first interchanging Row 1 and Row 2, then multiplying Column 3 by -2, and finally adding 3 times Row 1 to Row 3, what is the determinant of B?",
+    "options": {
+      "A": "-10",
+      "B": "10",
+      "C": "-30",
+      "D": "30"
+    },
+    "answer": "B",
+    "explanation": "1. Interchanging two rows of a matrix changes the sign of its determinant. So, after interchanging Row 1 and Row 2, the determinant becomes -|A| = -5. [v3-11-maths-book-2025_Matrices and Determinants]\n2. Multiplying a column by a scalar k multiplies the determinant by k. So, multiplying Column 3 by -2 changes the determinant to (-2) * (-5) = 10. [v3-11-maths-book-2025_Matrices and Determinants]\n3. Adding a multiple of one row to another row does not change the value of the determinant. Therefore, adding 3 times Row 1 to Row 3 does not alter the determinant. [v3-11-maths-book-2025_Matrices and Determinants] \nThus, the final determinant of B is 10.",
+    "citations": [
+      "v3-11-maths-book-2025_Matrices and Determinants"
+    ],
+    "difficulty": "Hard",
+    "topic": "Matrices and Determinants"
+  },
+  {
+    "stem": "Consider a 3x3 matrix A where the elements of the first row are a, b, c. If the second row is (a+x), (b+x), (c+x) and the third row is (a-y), (b-y), (c-y), what is the determinant of A?",
+    "options": {
+      "A": "abc",
+      "B": "xyc",
+      "C": "0",
+      "D": "(a+b+c)(x-y)"
+    },
+    "answer": "C",
+    "explanation": "Let the matrix be A = [[a, b, c], [a+x, b+x, c+x], [a-y, b-y, c-y]].\nPerform the row operation R2 -> R2 - R1. This operation does not change the determinant. The matrix becomes:\nA' = [[a, b, c], [x, x, x], [a-y, b-y, c-y]].\nNext, perform the row operation R3 -> R3 - R1. This operation also does not change the determinant. The matrix becomes:\nA'' = [[a, b, c], [x, x, x], [-y, -y, -y]].\nNow, factor out 'x' from the second row and '-y' from the third row. This multiplies the determinant by x and -y respectively. The matrix becomes:\nA''' = x * (-y) * [[a, b, c], [1, 1, 1], [1, 1, 1]].\nSince the second and third rows of A''' are identical, its determinant is 0. [v3-11-maths-book-2025_Matrices and Determinants]\nTherefore, |A| = x * (-y) * 0 = 0.",
+    "citations": [
+      "v3-11-maths-book-2025_Matrices and Determinants"
+    ],
+    "difficulty": "Hard",
+    "topic": "Matrices and Determinants"
+  },
+  {
+    "stem": "Let A be a 3x3 matrix. If a matrix B is formed by multiplying the first row of A by 2, the second row by 3, and the third row by 4, such that two rows of B become identical, what is the determinant of A?",
+    "options": {
+      "A": "24",
+      "B": "1/24",
+      "C": "0",
+      "D": "Cannot be determined without more information."
+    },
+    "answer": "C",
+    "explanation": "Let |A| be the determinant of matrix A. If a matrix B is formed by multiplying each element of a row by a non-zero scalar k, then |B| = k|A|. If multiple rows are multiplied by different scalars, the determinant is multiplied by the product of these scalars. [v3-11-maths-book-2025_Matrices and Determinants]\nIn this case, |B| = (2 * 3 * 4) * |A| = 24 * |A|.\nThe problem states that two rows of B become identical. According to the properties of determinants, if any two rows (or columns) of a square matrix are identical, then the value of the determinant is zero. [v3-11-maths-book-2025_Matrices and Determinants]\nTherefore, |B| = 0.\nSubstituting this into the equation: 0 = 24 * |A|.\nThis implies |A| = 0.",
+    "citations": [
+      "v3-11-maths-book-2025_Matrices and Determinants"
+    ],
+    "difficulty": "Hard",
+    "topic": "Matrices and Determinants"
+  },
+  {
+    "stem": "Given a matrix A = [[a, b, c], [0, d, e], [0, 0, f]]. If a new matrix B is formed by interchanging the first and third rows of A, and then multiplying the second column by 5, what is the determinant of B?",
+    "options": {
+      "A": "-5adf",
+      "B": "5adf",
+      "C": "-5def",
+      "D": "5abc"
+    },
+    "answer": "A",
+    "explanation": "1.  Matrix A is an upper triangular matrix (all elements below the main diagonal are zero). The determinant of such a matrix is the product of its diagonal elements. So, |A| = a * d * f = adf. [v3-11-maths-book-2025_Matrices and Determinants]\n2.  Interchanging the first and third rows of A changes the sign of the determinant. Let A' be the matrix after this operation. Then |A'| = -|A| = -adf. [v3-11-maths-book-2025_Matrices and Determinants]\n3.  Multiplying the second column of A' by 5 multiplies its determinant by 5. Let B be the final matrix. So, |B| = 5 * |A'| = 5 * (-adf) = -5adf. [v3-11-maths-book-2025_Matrices and Determinants]",
+    "citations": [
+      "v3-11-maths-book-2025_Matrices and Determinants"
+    ],
+    "difficulty": "Hard",
+    "topic": "Matrices and Determinants"
+  },
+  {
+    "stem": "If a + b + c = 0, and a matrix M is given by:\nM = [[a, b, c],\n     [b, c, a],\n     [c, a, b]]\nWhat is the determinant of M?",
+    "options": {
+      "A": "abc",
+      "B": "a^3 + b^3 + c^3 - 3abc",
+      "C": "0",
+      "D": "(a+b+c)(ab+bc+ca)"
+    },
+    "answer": "C",
+    "explanation": "Consider performing the column operation C1 -> C1 + C2 + C3. This operation does not change the value of the determinant. [v3-11-maths-book-2025_Matrices and Determinants]\nThe new first column will have elements:\n(a + b + c)\n(b + c + a)\n(c + a + b)\nGiven that a + b + c = 0, all elements in the new first column become 0. \nSo, the matrix M' after the operation will have its first column as [0, 0, 0]^T. \nA determinant of a matrix with an entire column (or row) of zeros is 0. This is demonstrated in Example 23 where a similar row operation leads to a row of zeros, resulting in a zero determinant. [v3-11-maths-book-2025_Matrices and Determinants]\nTherefore, |M| = 0.",
+    "citations": [
+      "v3-11-maths-book-2025_Matrices and Determinants"
+    ],
+    "difficulty": "Hard",
+    "topic": "Matrices and Determinants"
+  }
+]
