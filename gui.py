@@ -234,6 +234,64 @@ def get_modern_header(page_num, start_idx, end_idx, total, submitted=False):
     )
 
 
+def ensure_pool_for_next_step(session):
+    """
+    Checks if the adaptive pool has available questions for the user's current Theta.
+    If not, generates a small batch (3) of specific difficulty and appends to pool.
+    """
+    theta = session.get("theta", 0.0)
+    pool = session.get("mcq_pool", [])
+    asked_ids = set(session.get("asked_ids", []))
+    subject = session.get("subject")
+    topic = session.get("topic")
+
+    # 1. Determine required difficulty based on Theta
+    if theta > 1.0:
+        needed_diff = "Hard"
+    elif theta < -1.0:
+        needed_diff = "Easy"
+    else:
+        needed_diff = "Medium"
+
+    # 2. Check availability
+    # Count how many unasked questions of this difficulty exist
+    available_count = 0
+    for i, q in enumerate(pool):
+        if i not in asked_ids and q.get("difficulty") == needed_diff:
+            available_count += 1
+    
+    # 3. Refill if empty
+    if available_count == 0:
+        print(f"[ADAPTIVE] Pool exhausted for {needed_diff} (Theta: {theta:.2f}). Refilling...")
+        
+        try:
+            # Generate small batch (3 questions) to minimize wait time
+            new_qs = generate_mcqs_for_topic(
+                subject, 
+                topic, 
+                n_questions=3, 
+                difficulty=needed_diff
+            )
+            
+            if new_qs:
+                # Add metadata and append to pool
+                for q in new_qs:
+                    q_norm = dict(q)
+                    q_norm.setdefault("topic", topic)
+                    q_norm.setdefault("difficulty", needed_diff)
+                    pool.append(q_norm)
+                
+                # Update session
+                session["mcq_pool"] = pool
+                print(f"[ADAPTIVE] Added {len(new_qs)} new {needed_diff} questions.")
+            else:
+                print("[ADAPTIVE] Failed to generate refill questions.")
+                
+        except Exception as e:
+            print(f"[ADAPTIVE] Error refilling pool: {e}")
+
+    return session
+
 def build_adaptive_pool(subject: str, topic: str, per_level: int = 5) -> List[Dict[str, Any]]:
     """
     Build a mixed-difficulty pool of MCQs for adaptive mode:
@@ -325,138 +383,104 @@ def start_adaptive_session_ui(selected_topic_str, num_steps):
         gr.update(choices=options_list, value=None, interactive=True),
         theta_text,
     )
-
 def adaptive_next_step_ui(session, selected_option):
-    """Handle one step of the adaptive session: evaluate answer, update theta, move to next."""
+    """Handle one step of the adaptive session."""
     if not session or session.get("mode") != "adaptive":
-        return (
-            "Start the adaptive quiz first.",
-            session,
-            "<p>No question.</p>",
-            gr.update(choices=[], value=None, interactive=False),
-            "",
-        )
+        return "Start the adaptive quiz first.", session, "<p>No question.</p>", gr.update(choices=[], value=None, interactive=False), ""
 
-    pool = session.get("mcq_pool", [])
-    if not pool:
-        return (
-            "No MCQ pool found. Please restart the adaptive quiz.",
-            session,
-            "<p>No question.</p>",
-            gr.update(choices=[], value=None, interactive=False),
-            "",
-        )
-
+    # ... [Keep existing variable extraction logic] ...
     theta = float(session.get("theta", 0.0))
     topics_asked = dict(session.get("topics_asked", {}))
     asked_ids = set(session.get("asked_ids", []))
     idx = int(session.get("current_idx", 0))
     steps_done = int(session.get("steps_done", 0))
     max_steps = int(session.get("max_steps", 10))
+    pool = session.get("mcq_pool", []) # Get current pool
 
+    # 1. Check if Finished (Max Steps Reached)
     if steps_done >= max_steps:
-        msg = f"Adaptive session already finished. Final θ = {theta:.2f}"
-        return (
-            msg,
-            session,
-            "<p>Session completed.</p>",
-            gr.update(choices=[], value=None, interactive=False),
-            f"{theta:.2f}",
-        )
+        msg = f"Adaptive session finished. Final θ = {theta:.2f}"
+        return msg, session, "<div style='padding:20px'><b>Session Completed.</b></div>", gr.update(visible=False), f"{theta:.2f}"
 
-    # Current question
+    # 2. Evaluate Previous Answer
     q = pool[idx]
-    topic = q.get("topic", "misc")
-    diff = q.get("difficulty", "Medium")
-
-    # Extract user's answer letter
+    # ... [Keep your existing answer checking logic] ...
     if selected_option:
         answer_letter = selected_option.split(":")[0].strip()
     else:
         answer_letter = None
-
+    
     correct = bool(answer_letter and answer_letter == q.get("answer"))
-    explanation = q.get("explanation", "No explanation provided.")
-
-    # Update theta and bookkeeping
+    explanation = q.get("explanation", "No explanation.")
+    
+    # 3. Update Theta
     theta = update_theta_simple(theta, correct)
-    topics_asked[topic] = topics_asked.get(topic, 0) + 1
+    session["theta"] = theta # Update session immediately
+    
     steps_done += 1
-
-    # Record history
-    session_history = list(session.get("history", []))
-    session_history.append(
-        {
-            "step": steps_done,
-            "idx": idx,
-            "topic": topic,
-            "difficulty": diff,
-            "stem": q.get("stem"),
-            "student_answer": answer_letter,
-            "correct_answer": q.get("answer"),
-            "student_correct": correct,
-            "theta_after": theta,
-        }
-    )
-
-    # Update session object
-    session["theta"] = theta
-    session["topics_asked"] = topics_asked
-    session["asked_ids"] = list(asked_ids)
-    session["history"] = session_history
     session["steps_done"] = steps_done
-
-    # If finished after this step
+    
+    # ... [Keep History Recording Logic] ...
+    session_history = list(session.get("history", []))
+    session_history.append({
+        "step": steps_done, "idx": idx, "stem": q.get("stem"),
+        "student_answer": answer_letter, "correct": correct, "theta": theta
+    })
+    session["history"] = session_history
+    
+    # 4. Check for End of Quiz AGAIN (in case this was the last step)
     if steps_done >= max_steps:
-        msg = (
-            f"{'✅ Correct' if correct else '❌ Incorrect'} | "
-            f"θ = {theta:.2f} | Step {steps_done}/{max_steps}\n\n"
-            f"Explanation: {explanation}\n\n"
-            "Adaptive session complete."
-        )
-        # Show the same question with feedback
-        q_html = format_single_question(q, steps_done, answer_letter, show_feedback=True)
-        return (
-            msg,
-            session,
-            q_html,
-            gr.update(choices=[], value=selected_option, interactive=False),
-            f"{theta:.2f}",
-        )
+         # Show feedback for last question
+         q_html = format_single_question(q, steps_done, answer_letter, show_feedback=True)
+         msg = f"{'✅ Correct' if correct else '❌ Incorrect'} | Final θ = {theta:.2f}"
+         return msg, session, q_html, gr.update(visible=False), f"{theta:.2f}"
 
-    # Otherwise: pick next question
+    # ============================================================
+    # NEW: Refill Pool if needed BEFORE selecting next
+    # ============================================================
     asked_ids.add(idx)
-    session["asked_ids"] = list(asked_ids)
+    session["asked_ids"] = list(asked_ids) # Update asked list so refill knows what's used
+    
+    # This checks theta, sees if we have questions, generates if missing
+    session = ensure_pool_for_next_step(session) 
+    
+    # Refresh pool variable after refill
+    pool = session["mcq_pool"] 
+    # ============================================================
 
+    # 5. Select Next Question
     pick = select_next_mcq(pool, theta, topics_asked, asked_ids)
+    
+    if not pick:
+        # Emergency fallback if generation failed
+        return "Error: No suitable questions found and generation failed.", session, "", gr.update(), f"{theta:.2f}"
+
     new_idx = pick["index"]
     new_q = pick["mcq"]
     session["current_idx"] = new_idx
 
+    # 6. Format Output
     next_step_num = steps_done + 1
-    q_html = format_single_question(new_q, next_step_num, user_answer=None, show_feedback=False)
-    options_list = [
-        f"A: {new_q['options']['A']}",
-        f"B: {new_q['options']['B']}",
-        f"C: {new_q['options']['C']}",
-        f"D: {new_q['options']['D']}",
-    ]
-
+    
+    # Show Feedback for PREVIOUS question + New Question
+    # We can't show both easily in one block without custom HTML, 
+    # so standard UI flow usually clears screen or shows a status message.
+    
     msg = (
-        f"{'✅ Correct' if correct else '❌ Incorrect'} | "
-        f"θ = {theta:.2f} | Step {steps_done}/{max_steps}\n\n"
-        f"Explanation: {explanation}\n\n"
-        f"Next question: Step {next_step_num}/{max_steps}."
+        f"Step {steps_done}: {'✅ Correct' if correct else '❌ Incorrect'}\n"
+        f"Difficulty adjusted based on performance (θ={theta:.2f})"
     )
+    
+    q_html = format_single_question(new_q, next_step_num, user_answer=None, show_feedback=False)
+    options_list = [f"{k}: {v}" for k, v in new_q['options'].items()]
 
     return (
         msg,
         session,
         q_html,
-        gr.update(choices=options_list, value=None, interactive=True),
+        gr.update(choices=options_list, value=None, interactive=True, visible=True),
         f"{theta:.2f}",
     )
-
 
 # (format_questions_page is unused in UI, but update it for consistency)
 def format_questions_page(questions, page_num, user_answers, questions_per_page=10):
