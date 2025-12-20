@@ -302,6 +302,78 @@ def generate_mcqs_for_topic(
     return questions
 
 
+
+# -----------------------------
+# NEW: Subject-wise Generation
+# -----------------------------
+
+def get_topics_for_subject(subject: str) -> List[str]:
+    """Return a list of unique topics for a given subject from the blueprint."""
+    df = load_topic_blueprint()
+    # Filter by subject (case-insensitive)
+    topics = df[df["subject"].str.strip().str.lower() == subject.strip().lower()]["topic"].unique()
+    return [str(t).strip() for t in topics]
+
+def generate_mcqs_for_subject(
+    subject: str,
+    n_questions: int,
+    difficulty: str = "Medium"
+) -> List[Dict[str, Any]]:
+    """
+    Generate MCQs for a specific subject by selecting random topics 
+    within that subject.
+    """
+    all_topics = get_topics_for_subject(subject)
+    
+    if not all_topics:
+        print(f"[WARN] No topics found for subject: {subject}")
+        return []
+
+    # Strategy: Don't pick 1 question from 10 topics (too much context switching).
+    # Instead, aim for ~3-5 questions per topic to utilize context window better.
+    questions_per_topic_target = 3
+    
+    # Calculate how many topics we need to reach n_questions
+    num_topics_needed = max(1, int(np.ceil(n_questions / questions_per_topic_target)))
+    
+    # Select random topics (without replacement if possible)
+    if num_topics_needed > len(all_topics):
+        selected_topics = np.random.choice(all_topics, num_topics_needed, replace=True)
+    else:
+        selected_topics = np.random.choice(all_topics, num_topics_needed, replace=False)
+
+    print(f"[INFO] Selected topics for {subject}: {selected_topics}")
+
+    all_questions = []
+    questions_remaining = n_questions
+
+    for i, topic in enumerate(selected_topics):
+        if questions_remaining <= 0:
+            break
+        
+        # Distribute remaining questions roughly evenly
+        topics_left = len(selected_topics) - i
+        # Simple integer division distribution
+        n_for_this = int(np.ceil(questions_remaining / topics_left))
+        
+        print(f"[INFO] Generating {n_for_this} MCQs for {subject} - {topic}")
+        
+        qs = generate_mcqs_for_topic(
+            subject=subject,
+            topic=topic,
+            n_questions=n_for_this,
+            difficulty=difficulty
+        )
+        
+        all_questions.extend(qs)
+        questions_remaining = n_questions - len(all_questions)
+
+    # Scramble the final list so questions from the same topic aren't strictly adjacent
+    random.shuffle(all_questions)
+    
+    # Trim to exact number requested
+    return all_questions[:n_questions]
+
 # -----------------------------
 # Main generator: 30 random MCQs from blueprint
 # -----------------------------

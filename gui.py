@@ -4,6 +4,7 @@ from typing import List, Dict, Any
 from pathlib import Path
 from mcq_generator import (
     generate_mcqs_for_topic,
+    generate_mcqs_for_subject,
     load_topic_blueprint
 )
 from metrics import generate_metrics_summary, plot_metrics
@@ -32,6 +33,11 @@ def load_all_topics():
             topics.append(key)
     return topics
 
+def load_all_subjects():
+    """Load unique subjects from blueprint"""
+    df = load_topic_blueprint()
+    return sorted(df["subject"].unique().tolist())
+
 
 def format_topics_for_display(topics):
     """Format topics as a list of strings for dropdown/selection"""
@@ -49,67 +55,77 @@ def get_topic_from_selection(selected_topic_str):
 # ------------------------
 # Generate MCQs for selected topic
 # ------------------------
-def generate_mcqs_for_selected_topic(
-    selected_topic_str,
+def generate_mcqs_ui_wrapper(
+    mode,               # "By Topic" or "By Subject"
+    selected_subject,   # For Subject Mode
+    selected_topic_str, # For Topic Mode
     num_questions,
-    difficulty  # 👈 NEW
+    difficulty
 ):
-    """Generate MCQs for a selected topic"""
-    if not selected_topic_str:
-        return "Please select a topic first.", []
+    """
+    Unified entry point for generating MCQs based on mode.
+    Returns: (status_msg, list_of_questions)
+    """
+    num_q = int(num_questions) if num_questions else 5
     
-    subject, topic = get_topic_from_selection(selected_topic_str)
-    if not subject or not topic:
-        return "Invalid topic selection.", []
-    
-    try:
-        num_q = int(num_questions) if num_questions else 5
-        print(f"[GUI] Generating {num_q} MCQs for {subject} - {topic} at difficulty {difficulty}")
+    # --- SUBJECT MODE ---
+    if mode == "By Subject":
+        if not selected_subject:
+            return "Please select a Subject.", []
         
-        questions = generate_mcqs_for_topic(
-            subject,
-            topic,
-            n_questions=num_q,
-            difficulty=difficulty,  # 👈 pass it through
-        )
-        
-        if not questions:
-            print(f"[GUI] WARNING: Empty questions list returned for {subject} - {topic}")
-            return (
-                f"No MCQs generated for {subject} - {topic}. Try a different topic or check the context.",
-                []
+        try:
+            print(f"[GUI] Generating {num_q} MCQs for Subject: {selected_subject}")
+            questions = generate_mcqs_for_subject(
+                selected_subject, 
+                n_questions=num_q, 
+                difficulty=difficulty
             )
-        
-        # (rest of your validation / saving logic stays the same)
-        valid_questions = []
-        for i, q in enumerate(questions):
-            if not isinstance(q, dict):
-                print(f"[GUI] WARNING: Question {i} is not a dict, skipping")
-                continue
-            if "stem" not in q or "options" not in q:
-                print(f"[GUI] WARNING: Question {i} missing required fields (stem or options), skipping")
-                continue
-            valid_questions.append(q)
-        
-        if not valid_questions:
-            print(f"[GUI] WARNING: No valid questions after validation")
-            return (
-                f"No valid MCQs generated for {subject} - {topic}. The LLM may have returned invalid format.",
-                []
-            )
-        
-        out_file = Path(MCQ_FOLDER) / "mcqs_generated.json"
-        with open(out_file, "w", encoding="utf-8") as f:
-            json.dump(valid_questions, f, indent=2, ensure_ascii=False)
-        
-        print(f"[GUI] Successfully saved {len(valid_questions)} MCQs to {out_file}")
-        return f"Generated {len(valid_questions)} MCQs for {subject} - {topic}", valid_questions
-    except Exception as e:
-        import traceback
-        error_msg = f"Error generating MCQs: {str(e)}\n{traceback.format_exc()}"
-        print(f"[GUI] Exception: {error_msg}")
-        return error_msg, []
+            context_label = selected_subject
+        except Exception as e:
+            import traceback
+            return f"Error: {str(e)}\n{traceback.format_exc()}", []
 
+    # --- TOPIC MODE ---
+    else: 
+        if not selected_topic_str:
+            return "Please select a Topic.", []
+        
+        subject, topic = get_topic_from_selection(selected_topic_str)
+        if not subject or not topic:
+            return "Invalid topic selection.", []
+            
+        try:
+            print(f"[GUI] Generating {num_q} MCQs for {subject} - {topic}")
+            questions = generate_mcqs_for_topic(
+                subject,
+                topic,
+                n_questions=num_q,
+                difficulty=difficulty,
+            )
+            context_label = f"{subject} - {topic}"
+        except Exception as e:
+            import traceback
+            return f"Error: {str(e)}\n{traceback.format_exc()}", []
+
+    # --- VALIDATION (Common) ---
+    if not questions:
+        return f"No MCQs generated for {context_label}.", []
+
+    valid_questions = []
+    for i, q in enumerate(questions):
+        if not isinstance(q, dict): continue
+        if "stem" not in q or "options" not in q: continue
+        valid_questions.append(q)
+    
+    if not valid_questions:
+        return f"No valid MCQs format received for {context_label}.", []
+    
+    # Save to file
+    out_file = Path(MCQ_FOLDER) / "mcqs_generated.json"
+    with open(out_file, "w", encoding="utf-8") as f:
+        json.dump(valid_questions, f, indent=2, ensure_ascii=False)
+    
+    return f"Generated {len(valid_questions)} MCQs for {context_label}", valid_questions
 
 
 # ------------------------
@@ -475,144 +491,89 @@ def update_answer(session, question_idx, selected_option):
 # ------------------------
 # Start quiz / Generate MCQs with progress updates
 # ------------------------
-def start_quiz_ui(selected_topic, num_questions, difficulty):
-    # Show loading message immediately
-    loading_msg = "🔄 Generating MCQs... This may take 30-60 seconds. Please wait..."
+def start_quiz_ui(mode, subject_input, topic_input, num_questions, difficulty):
+    # Yield loading state
     loading_html = (
-        "<div style='padding: 40px; text-align: center; background: #f5f5f5; "
-        "border-radius: 10px;'><h3>🔄 Generating MCQs...</h3>"
-        "<p style='font-size: 1.1em;'>Please wait while we generate your questions.</p>"
-        "<p style='color: #666;'>This may take 30-60 seconds depending on the number of questions.</p></div>"
+        "<div style='padding: 40px; text-align: center; background: #f5f5f5; border-radius: 10px;'>"
+        "<h3>🔄 Generating MCQs...</h3>"
+        "<p>Please wait while we retrieve content and generate questions.</p></div>"
     )
-    
-    # Yield initial loading state to show immediately
     yield (
-        loading_msg,
+        "Generating...",
         {},
-        loading_html,  # Show in main questions_html
+        loading_html,
         gr.update(visible=False),
         gr.update(visible=False),
         gr.update(value="Generating..."),
-        *([gr.update(visible=False)] * 10),  # Hide question HTMLs
-        *([gr.update(visible=False)] * 10)   # Hide radio buttons
+        *([gr.update(visible=False)] * 10),
+        *([gr.update(visible=False)] * 10)
     )
     
-    # Generate MCQs (this is the blocking operation)
-    try:
-        msg, questions = generate_mcqs_for_selected_topic(
-            selected_topic,
-            num_questions,
-            difficulty,  # 👈 pass through
-        )
-    except Exception as e:
-        error_html = f"<div style='padding: 20px; color: red;'><h3>❌ Error</h3><p>{str(e)}</p></div>"
-        yield (
-            f"Error: {str(e)}",
-            {},
-            error_html,
-            gr.update(visible=False),
-            gr.update(visible=False),
-            gr.update(value="Error"),
-            *([gr.update(visible=False)] * 10),
-            *([gr.update(visible=False)] * 10)
-        )
-        return
+    # Generate
+    msg, questions = generate_mcqs_ui_wrapper(
+        mode, subject_input, topic_input, num_questions, difficulty
+    )
     
     if not questions:
-        error_html = "<div style='padding: 20px;'><p>No questions found.</p></div>"
+        error_html = f"<div style='padding: 20px; color: red;'><p>{msg}</p></div>"
         yield (
-            msg,
-            {},
-            error_html,
-            gr.update(visible=False),
-            gr.update(visible=False),
-            gr.update(value=""),
-            *([gr.update(visible=False)] * 10),
-            *([gr.update(visible=False)] * 10)
+            msg, {}, error_html,
+            gr.update(visible=False), gr.update(visible=False), gr.update(value="Error"),
+            *([gr.update(visible=False)] * 10), *([gr.update(visible=False)] * 10)
         )
         return
 
+    # Initialize Session
     session = {
         "questions": questions,
         "current_page": 0,
-        "history": [],
-        "theta": 0.0,
         "questions_per_page": 10,
         "user_answers": {},
-        "submitted": False  # <<< NEW
+        "submitted": False
     }
 
-    total_pages = (len(questions) + session["questions_per_page"] - 1) // session["questions_per_page"]
-    
-    prev_btn_visible = False  # First page, no previous
-    next_btn_visible = total_pages > 1  # Show next if more than one page
-    
-    # Create question HTMLs and radio updates for first page
+    # Render First Page
+    total_pages = (len(questions) + 9) // 10
     start_idx = 0
-    end_idx = min(session["questions_per_page"], len(questions))
-    page_questions = questions[start_idx:end_idx]
+    end_idx = min(10, len(questions))
     
     question_html_updates = []
     radio_updates = []
     
-    page_header = (
-        f"<div style='margin-bottom: 20px;'>"
-        f"<strong>Page 1 (Questions {start_idx + 1}-{end_idx} of {len(questions)})"
-        f"</strong></div>"
-    )
+    header = f"<div style='margin-bottom: 20px;'><strong>Page 1 of {total_pages}</strong></div>"
     
-    for i in range(session["questions_per_page"]):
-        if i < len(page_questions):
-            q = page_questions[i]
-            q_num = start_idx + i + 1
-            q_id = f"q_{start_idx + i}"
-            user_answer = session["user_answers"].get(q_id, None)
+    for i in range(10):
+        if i < len(questions):
+            q = questions[i]
+            q_num = i + 1
             
-            # No feedback yet (submitted=False)
-            q_html = page_header if i == 0 else ""
-            q_html += format_single_question(q, q_num, user_answer, show_feedback=False)
+            q_html = header if i == 0 else ""
+            q_html += format_single_question(q, q_num, show_feedback=False)
+            
+            opts = [f"{k}: {v}" for k, v in q['options'].items()]
+            
             question_html_updates.append(gr.update(value=q_html, visible=True))
-            
-            options_list = [
-                f"A: {q['options']['A']}",
-                f"B: {q['options']['B']}",
-                f"C: {q['options']['C']}",
-                f"D: {q['options']['D']}"
-            ]
-            selected_value = None
-            if user_answer:
-                for opt in options_list:
-                    if opt.startswith(user_answer + ":"):
-                        selected_value = opt
-                        break
-            
-            radio_updates.append(
-                gr.update(
-                    choices=options_list,
-                    label=f"Select your answer for Question {q_num}",
-                    value=selected_value,
-                    visible=True,
-                    interactive=True
-                )
-            )
+            radio_updates.append(gr.update(
+                choices=opts,
+                label=f"Answer Q{q_num}",
+                value=None,
+                visible=True,
+                interactive=True
+            ))
         else:
             question_html_updates.append(gr.update(value="", visible=False))
-            radio_updates.append(
-                gr.update(choices=[], label="", visible=False, interactive=False)
-            )
-    
-    # Yield final result - hide main questions_html, show individual question blocks
+            radio_updates.append(gr.update(visible=False))
+            
     yield (
         msg,
         session,
-        gr.update(visible=False),  # Hide main questions_html
-        gr.update(visible=prev_btn_visible),
-        gr.update(visible=next_btn_visible),
+        gr.update(visible=False), # Hide main text
+        gr.update(visible=False), # Prev
+        gr.update(visible=(total_pages > 1)), # Next
         gr.update(value=f"Page 1 of {total_pages}"),
         *question_html_updates,
         *radio_updates
     )
-
 
 # ------------------------
 # Pagination functions
@@ -822,7 +783,7 @@ def prev_page_ui(session):
 
 
 # ------------------------
-# NEW: Submit Quiz
+# Submit Quiz
 # ------------------------
 def submit_quiz_ui(session):  # <<< NEW
     """
@@ -979,141 +940,122 @@ def generate_metrics_ui():
 # Load topics on startup
 all_topics = load_all_topics()
 topic_options = format_topics_for_display(all_topics)
+all_subjects = load_all_subjects() # Load subjects
 
 with gr.Blocks() as demo:
-    gr.Markdown("## 🎯 Adaptive MCQ Quiz System (RAG + LLM)")
+    gr.Markdown("## 🎯 Adaptive MCQ Quiz System")
 
-    with gr.Tab("Quiz"):
-        gr.Markdown("### Select a topic and generate MCQs")
+    with gr.Tab("Quiz Generator"):
+        gr.Markdown("### Generate Questions")
         
-        with gr.Row():
-            topic_dropdown = gr.Dropdown(
-                choices=topic_options,
-                label="Select Topic",
-                value=None,
-                interactive=True
-            )
-            num_q = gr.Number(
-                value=5,
-                label="Number of Questions",
-                minimum=1,
-                maximum=20
-            )
-            difficulty_dd = gr.Dropdown(              # 👈 NEW
-                choices=["Easy", "Medium", "Hard"],
-                value="Medium",
-                label="Difficulty",
-                interactive=True
-            )
-        
-        start_btn = gr.Button("Generate MCQs", variant="primary")
-
-        msg_box = gr.Textbox(label="System Message", interactive=False)
-        session_state = gr.State()
-
-        # Page indicator
-        page_indicator = gr.Textbox(label="Page Info", interactive=False)
-        
-        # Questions display - create question blocks with HTML and radio buttons grouped together
-        question_htmls = []
-        answer_radios = []
-        
-        # Keep a single HTML for loading/initial state
-        questions_html = gr.Markdown("### Questions will appear here")
-        
-        # Create question blocks where each question HTML is followed by its radio button
-        for i in range(10):
-            q_md = gr.Markdown("", visible=False)
-            question_htmls.append(q_md)
-
+        # --- SELECTION AREA ---
+        with gr.Group():
+            with gr.Row():
+                mode_radio = gr.Radio(
+                    choices=["By Topic", "By Subject"],
+                    value="By Topic",
+                    label="Generation Mode"
+                )
             
-            q_radio = gr.Radio(
-                choices=[],
-                label="",
-                visible=False,
-                interactive=False
-            )
-            answer_radios.append(q_radio)
-        
-        # Pagination + Submit controls
-        with gr.Row():
-            prev_btn = gr.Button("◀ Previous Page", variant="secondary", visible=False)
-            submit_btn = gr.Button("Submit Quiz", variant="primary", visible=True)  # <<< NEW
-            next_btn = gr.Button("Next Page ▶", variant="secondary", visible=False)
+            # Use columns to swap visibility without layout jumping too much
+            with gr.Row():
+                topic_dropdown = gr.Dropdown(
+                    choices=topic_options,
+                    label="Select Topic",
+                    visible=True,
+                    interactive=True
+                )
+                subject_dropdown = gr.Dropdown(
+                    choices=all_subjects,
+                    label="Select Subject",
+                    visible=False, # Hidden by default
+                    interactive=True
+                )
+            
+            with gr.Row():
+                num_q_input = gr.Number(value=5, label="Num Questions", minimum=1, maximum=30)
+                diff_input = gr.Dropdown(choices=["Easy", "Medium", "Hard"], value="Medium", label="Difficulty")
+                
+            gen_btn = gr.Button("🚀 Generate MCQs", variant="primary")
 
-        # --- Click handlers ---
-        start_btn.click(
-        start_quiz_ui,
-        inputs=[topic_dropdown, num_q, difficulty_dd],  # 👈 NEW argument
-        outputs=[msg_box, session_state, questions_html, prev_btn, next_btn, page_indicator] + question_htmls + answer_radios
+        # --- TOGGLE VISIBILITY ---
+        def toggle_inputs(mode):
+            if mode == "By Topic":
+                return gr.update(visible=True), gr.update(visible=False)
+            else:
+                return gr.update(visible=False), gr.update(visible=True)
+
+        mode_radio.change(toggle_inputs, inputs=[mode_radio], outputs=[topic_dropdown, subject_dropdown])
+
+        # --- QUIZ DISPLAY AREA ---
+        msg_box = gr.Textbox(label="Status", interactive=False)
+        session_state = gr.State()
+        page_info = gr.Textbox(label="Page Info", interactive=False)
+        
+        # Container for layout
+        questions_container = gr.Markdown("### Questions appear here") # Placeholder
+        
+        # 10 Static Slots
+        q_htmls = [gr.Markdown(visible=False) for _ in range(10)]
+        q_radios = [gr.Radio(visible=False) for _ in range(10)]
+        
+        with gr.Row():
+            btn_prev = gr.Button("◀ Prev", visible=False)
+            btn_submit = gr.Button("Submit Quiz", visible=True)
+            btn_next = gr.Button("Next ▶", visible=False)
+
+        # --- EVENT HANDLERS ---
+        
+        gen_btn.click(
+            start_quiz_ui,
+            inputs=[mode_radio, subject_dropdown, topic_dropdown, num_q_input, diff_input],
+            outputs=[msg_box, session_state, questions_container, btn_prev, btn_next, page_info] + q_htmls + q_radios
         )
 
-
-        prev_btn.click(
+        # Pagination & Submit (using your existing functions)
+        btn_prev.click(
             prev_page_ui,
             inputs=[session_state],
-            outputs=[session_state, questions_html, prev_btn, next_btn, page_indicator] + question_htmls + answer_radios
+            outputs=[session_state, questions_container, btn_prev, btn_next, page_info] + q_htmls + q_radios
         )
-
-        next_btn.click(
+        btn_next.click(
             next_page_ui,
             inputs=[session_state],
-            outputs=[session_state, questions_html, prev_btn, next_btn, page_indicator] + question_htmls + answer_radios
+            outputs=[session_state, questions_container, btn_prev, btn_next, page_info] + q_htmls + q_radios
         )
-
-        submit_btn.click(  # <<< NEW
+        btn_submit.click(
             submit_quiz_ui,
             inputs=[session_state],
-            outputs=[msg_box, session_state, questions_html, prev_btn, next_btn, page_indicator] + question_htmls + answer_radios
+            outputs=[msg_box, session_state, questions_container, btn_prev, btn_next, page_info] + q_htmls + q_radios
         )
-        
-        # Update session and display feedback when radio buttons change
-        def make_radio_handler(idx):
-            def handler(session, value):
-                if not session or "questions" not in session:
-                    return session, *([gr.update()] * 10)  # Return updates for all question HTMLs
-                try:
-                    questions_per_page = session.get("questions_per_page", 10)
-                    current_page = session.get("current_page", 0)
-                    submitted = session.get("submitted", False)
-                    question_idx = f"q_{current_page * questions_per_page + idx}"
-                    updated_session = update_answer(session, question_idx, value)
-                    
-                    # Update the specific question HTML
-                    start_idx = current_page * questions_per_page
-                    q = updated_session["questions"][start_idx + idx]
-                    q_num = start_idx + idx + 1
-                    user_answer = updated_session.get("user_answers", {}).get(question_idx, None)
-                    
-                    # Only show feedback after submission
-                    page_header = (
-                        f"<div style='margin-bottom: 20px;'>"
-                        f"<strong>Page {current_page + 1}</strong></div>"
-                    ) if idx == 0 else ""
-                    updated_q_html = page_header + format_single_question(
-                        q, q_num, user_answer, show_feedback=submitted
-                    )
-                    
-                    html_updates = []
-                    for i in range(10):
-                        if i == idx:
-                            html_updates.append(gr.update(value=updated_q_html, visible=True))
-                        else:
-                            html_updates.append(gr.update())
-                    
-                    return updated_session, *html_updates
-                except Exception as e:
-                    print(f"[GUI] Error in radio handler: {e}")
-                    return session, *([gr.update()] * 10)
-            return handler
-        
-        for i, radio in enumerate(answer_radios):
-            radio.change(
-                make_radio_handler(i),
-                inputs=[session_state, radio],
-                outputs=[session_state] + question_htmls
-            )
 
+        # Radio change logic (capturing answers)
+        def make_radio_handler(idx):
+            def handler(session, val):
+                # Similar logic to your existing update_answer wrapper
+                # Need to update specific HTML to show feedback if submitted, 
+                # but basically just saves answer
+                if not session: return session, *[gr.update() for _ in range(10)]
+                
+                # Update session
+                qs_per_page = session.get("questions_per_page", 10)
+                curr_page = session.get("current_page", 0)
+                abs_idx = curr_page * qs_per_page + idx
+                qid = f"q_{abs_idx}"
+                
+                if val:
+                    ans = val.split(":")[0].strip()
+                    if "user_answers" not in session: session["user_answers"] = {}
+                    session["user_answers"][qid] = ans
+                
+                # If we want immediate feedback or just keep state, return session
+                # We also need to return updates for all 10 HTML blocks to satisfy Gradio outputs
+                # For simplicity, we just return the session and no visual updates until page change/submit
+                return session
+            return handler
+
+        for i, r in enumerate(q_radios):
+            r.change(make_radio_handler(i), inputs=[session_state, r], outputs=[session_state])
     with gr.Tab("Metrics"):
         metrics_btn = gr.Button("Generate Metrics")
         out_text = gr.Textbox()
