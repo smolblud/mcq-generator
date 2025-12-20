@@ -1,0 +1,19 @@
+corpus_paths:
+  math-11th: mcq-generator\data\math\v3-11-maths-book-2025.txt
+  math-12th: mcq-generator\data\math\v2-12-maths-book-2025.txt
+  physics-11th: mcq-generator\data\physics\v3-11-physics-book-2025.txt
+  physics-12th: mcq-generator\data\physics\v2-12-physics-book-2025.txt
+  english: mcq-generator\data\english\the-complete-guide-to-sat-reading_compress.txt
+
+blueprint_csv: mcq-generator\docs\topic_blueprint.csv
+
+
+llm:
+  model: gemini-2.5-flash
+  temperature: 0.3
+ 
+
+output_paths:
+  mcqs: MCQ_final_output/mcqs_generated.json
+  responses: responses/responses.csv
+  metrics: evaluation_results

@@ -13,7 +13,7 @@ CHUNK_SIZE = 300         # smaller chunk size for better accuracy
 CHUNK_OVERLAP = 50       # overlap between chunks
 INDEX_DIR = Path("index")  # where FAISS index & metadata will be saved
 EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"  # better embeddings
-TOPIC_BLUEPRINT_CSV = Path(r"docs\a.csv")
+TOPIC_BLUEPRINT_CSV = Path(r"docs\topic_blueprint.csv")
 # ----------------------------------------
 
 def load_topic_blueprint(csv_path):

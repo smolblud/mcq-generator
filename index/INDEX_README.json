@@ -1,0 +1,20 @@
+{
+  "index_version": "index_v1_2025-12-20",
+  "creation_date": "2025-12-20T16:00:00",
+  "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+  "chunk_size": 300,
+  "chunk_overlap": 50,
+  "total_chunks": 0,
+  "topic_blueprint": "docs/topic_blueprint.csv",
+  "data_dir": "data/",
+  "faiss_index_file": "faiss_index.bin",
+  "metadata_file": "metadata.json",
+  "rebuild_instructions": [
+    "1. Ensure all text files are in the 'data/' folder structured by subject (e.g., math/, physics/, english/).",
+    "2. Ensure the topic blueprint CSV exists at 'docs/topic_blueprint.csv'.",
+    "3. Install dependencies: pip install -r requirements.txt",
+    "4. Run 'python index_builder.py' to rebuild the FAISS index and metadata.",
+    "5. The index and metadata will be recreated in the 'index/' folder."
+  ],
+  "notes": "The 'total_chunks' field can be updated after running the preprocessing step to reflect the actual number of chunks created."
+}

@@ -1,76 +1,46 @@
 [
   {
-    "stem": "According to the properties of inverse functions, if f and g are inverses of each other, how do their graphs relate?",
+    "stem": "Which of the following is an example of a qualitative observation?",
     "options": {
-      "A": "Their graphs are identical.",
-      "B": "Their graphs are reflections of each other on the x-axis.",
-      "C": "Their graphs are reflections of each other on the y-axis.",
-      "D": "Their graphs are reflections of each other on the line y = x."
-    },
-    "answer": "D",
-    "explanation": "The context states: 'If f and g are inverses of each other then their graphs will make reflections of each other on the line y = x.'",
-    "citations": [
-      "v2-12-maths-book-2025_Functions and Graphs"
-    ],
-    "difficulty": "Medium"
-  },
-  {
-    "stem": "If a point (3, 0) is on the graph of a one-to-one function f(x) = 3 - 4x, which point must be on the graph of its inverse function f⁻¹(x)?",
-    "options": {
-      "A": "(3, 0)",
-      "B": "(0, 3)",
-      "C": "(-3, 0)",
-      "D": "(0, -3)"
-    },
-    "answer": "B",
-    "explanation": "The context specifies that 'If the point (a, b) is on the graph of f(x) then the point (b, a) is on the graph of f⁻¹(x).' For the given function f(x) = 3 - 4x, the example explicitly shows that if (3, 0) is on the graph of f(x), then (0, 3) is on the graph of f⁻¹(x).",
-    "citations": [
-      "v2-12-maths-book-2025_Functions and Graphs"
-    ],
-    "difficulty": "Medium"
-  },
-  {
-    "stem": "What is the necessary and sufficient condition for a function f to have an inverse function?",
-    "options": {
-      "A": "f is a linear function.",
-      "B": "f is a continuous function.",
-      "C": "f is a one-to-one function.",
-      "D": "f is a function whose graph passes through the origin."
+      "A": "The mass of the object is 5 kg.",
+      "B": "The water temperature is 25°C.",
+      "C": "The color of the object is red.",
+      "D": "The car traveled a distance of 100 meters."
     },
     "answer": "C",
-    "explanation": "The context explicitly states: 'The function f has an inverse function if and only if f is a one to one function.'",
+    "explanation": "Qualitative observations have no associated numbers and deal with facts observable with our five senses, such as colors, shapes, and textures. 'The color of the object is red' fits this description, while the other options include numbers, making them quantitative observations or measurements.",
     "citations": [
-      "v2-12-maths-book-2025_Functions and Graphs"
+      "v3-11-physics-book-2025_Physical Quantities and Measurements"
     ],
     "difficulty": "Medium"
   },
   {
-    "stem": "Consider the graph of y = |x|. Which of the following describes the transformation to obtain the graph of y = |x - 2|?",
+    "stem": "According to the provided text, what is an estimation of a physical quantity?",
     "options": {
-      "A": "A horizontal shift 2 units to the left.",
-      "B": "A horizontal shift 2 units to the right.",
-      "C": "A vertical shift 2 units up.",
-      "D": "A vertical shift 2 units down."
+      "A": "A precise measurement obtained with advanced instruments.",
+      "B": "A random guess of a number without any reasoning.",
+      "C": "A rough educated guess using prior experience and sound physical reasoning.",
+      "D": "A calculation that yields an exact value for a quantity."
     },
-    "answer": "B",
-    "explanation": "The context provides examples of transformations, including y=|x| and y=|x-2|. A transformation of the form f(x-c) results in a horizontal shift to the right by c units.",
+    "answer": "C",
+    "explanation": "The text defines an estimation as 'a rough educated guess of the value of a physical quantity by using prior experience and sound physical reasoning,' and explicitly states that 'Estimation does not mean guessing a formula or a number at random.'",
     "citations": [
-      "v2-12-maths-book-2025_Functions and Graphs"
+      "v3-11-physics-book-2025_Physical Quantities and Measurements"
     ],
     "difficulty": "Medium"
   },
   {
-    "stem": "How does the graph of y = 2√x compare to the graph of the base function y = √x?",
+    "stem": "What does the dimension of a physical quantity primarily denote?",
     "options": {
-      "A": "It is a horizontal stretch of y = √x.",
-      "B": "It is a vertical stretch of y = √x.",
-      "C": "It is a horizontal shift of y = √x.",
-      "D": "It is a vertical shift of y = √x."
+      "A": "Its numerical value.",
+      "B": "Its qualitative nature.",
+      "C": "Its SI base unit.",
+      "D": "Its level of precision."
     },
     "answer": "B",
-    "explanation": "The context lists y=√x and y=2√x as functions to be graphed using transformations. Multiplying the entire function by a constant greater than 1, such as 2 in this case (i.e., y = a * f(x) where a > 1), results in a vertical stretch.",
+    "explanation": "The text states, 'Dimension denotes the qualitative nature of a physical quantity.' For example, length, width, and height all share the same dimension [L] because they have the same qualitative nature.",
     "citations": [
-      "v2-12-maths-book-2025_Functions and Graphs"
+      "v3-11-physics-book-2025_Physical Quantities and Measurements"
     ],
     "difficulty": "Medium"
   }

@@ -1085,11 +1085,7 @@ with gr.Blocks() as demo:
         for i, r in enumerate(q_radios):
             r.change(make_radio_handler(i), inputs=[session_state, r], outputs=[session_state])
             
-    with gr.Tab("Metrics"):
-        metrics_btn = gr.Button("Generate Metrics")
-        out_text = gr.Textbox()
-        out_json = gr.JSON()
-        metrics_btn.click(generate_metrics_ui, outputs=[out_text, out_json])
+   
 
     with gr.Tab("Adaptive Quiz"):
         gr.Markdown("### Adaptive MCQ Quiz (Interactive, topic-based)")
