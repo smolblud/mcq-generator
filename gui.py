@@ -659,7 +659,7 @@ def start_quiz_ui(mode, subject_input, topic_input, num_questions, difficulty):
     for i in range(10):
         if i < len(questions):
             q = questions[i]
-            q_num = i + 1
+            q_num = i + 1   
             
 # Attach header to first question block
 
@@ -1115,7 +1115,7 @@ with gr.Blocks() as demo:
 
         adaptive_theta_box = gr.Textbox(label="Current Ability (θ)", interactive=False)
 
-        adaptive_question_html = gr.Markdown("Question will appear here")
+        adaptive_question_html = gr.HTML("Question will appear here")
         adaptive_answer_radio = gr.Radio(
             choices=[],
             label="Your Answer",
