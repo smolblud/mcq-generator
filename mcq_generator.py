@@ -26,6 +26,14 @@ TOPIC_BLUEPRINT_CSV = Path("docs/topic_blueprint.csv")
 
 EMBED_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
 GEMINI_MODEL_NAME = "gemini-2.5-flash"
+# -----------------------------
+# Reproducibility
+# -----------------------------
+
+GLOBAL_SEED = 42
+
+random.seed(GLOBAL_SEED)
+np.random.seed(GLOBAL_SEED)
 
 # Total MCQs to generate (global)
 TOTAL_QUESTIONS = 30
@@ -77,7 +85,11 @@ def iter_random_unique_topics(df: pd.DataFrame):
     Yield (subject, topic) pairs in random order, without repetition.
     """
     # Shuffle rows
-    df_shuffled = df.sample(frac=1.0, random_state=None).reset_index(drop=True)
+    df_shuffled = df.sample(
+    frac=1.0,
+    random_state=GLOBAL_SEED
+).reset_index(drop=True)
+
     seen = set()
     for _, row in df_shuffled.iterrows():
         key = (str(row["subject"]).strip(), str(row["topic"]).strip())

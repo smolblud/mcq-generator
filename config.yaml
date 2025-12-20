@@ -12,6 +12,7 @@ llm:
   model: gemini-2.5-flash
   temperature: 0.3
  
+embedding_model: sentence-transformers/all-mpnet-base-v2
 
 output_paths:
   mcqs: MCQ_final_output/mcqs_generated.json
