@@ -1,76 +1,46 @@
 [
   {
-    "stem": "In projectile motion, assuming no air resistance, how do the horizontal and vertical components of velocity behave?",
+    "stem": "Which of the following statements accurately describes a quantitative observation in physics?",
     "options": {
-      "A": "Both horizontal and vertical components remain constant.",
-      "B": "The horizontal component changes, while the vertical component remains constant.",
-      "C": "The horizontal component remains constant, while the vertical component changes.",
-      "D": "Both horizontal and vertical components change."
+      "A": "It deals with facts observable with the five senses, such as colors and shapes.",
+      "B": "It has no associated numbers and focuses on sensory details.",
+      "C": "It includes numbers and is also referred to as a measurement.",
+      "D": "It is an observation like 'water keeps its level'."
     },
     "answer": "C",
-    "explanation": "The context states, 'In projectile motion horizontal component of velocity remains constant, while the vertical component of velocity changes.'",
+    "explanation": "The context states that 'A quantitative observation includes numbers, and is also called a measurement.' Options A, B, and D describe qualitative observations.",
     "citations": [
-      "v3-11-physics-book-2025_Translatory Motion"
+      "v3-11-physics-book-2025_Physical Quantities and Measurements"
     ],
     "difficulty": "Medium"
   },
   {
-    "stem": "Which of the following statements accurately describes an inelastic collision?",
+    "stem": "According to the provided text, what is the fundamental nature of an estimation of a physical quantity?",
     "options": {
-      "A": "Both momentum and kinetic energy are conserved.",
-      "B": "Momentum is conserved, but kinetic energy is not conserved.",
-      "C": "Kinetic energy is conserved, but momentum is not conserved.",
-      "D": "Neither momentum nor kinetic energy is conserved."
-    },
-    "answer": "B",
-    "explanation": "The context defines an inelastic collision as one 'in which the momentum is conserved but kinetic energy is not conserved.'",
-    "citations": [
-      "v3-11-physics-book-2025_Translatory Motion"
-    ],
-    "difficulty": "Medium"
-  },
-  {
-    "stem": "According to the law of conservation of momentum, what is true for an isolated system of interacting particles?",
-    "options": {
-      "A": "The total kinetic energy is conserved.",
-      "B": "The total momentum is conserved.",
-      "C": "The total potential energy is conserved.",
-      "D": "Both kinetic energy and momentum are conserved."
-    },
-    "answer": "B",
-    "explanation": "The context states, 'The law of conservation of momentum states, the total momentum of an isolated system of interacting particles is conserved.'",
-    "citations": [
-      "v3-11-physics-book-2025_Translatory Motion"
-    ],
-    "difficulty": "Medium"
-  },
-  {
-    "stem": "At which point in a projectile's parabolic path are the velocity and acceleration vectors perpendicular to each other?",
-    "options": {
-      "A": "The launch point",
-      "B": "The highest point",
-      "C": "The landing point",
-      "D": "Nowhere along the path"
-    },
-    "answer": "B",
-    "explanation": "The context explicitly states, 'A projectile thrown upward moves in its parabolic path, the velocity and acceleration vectors for the projectile are perpendicular to each other at: B. the highest point'.",
-    "citations": [
-      "v3-11-physics-book-2025_Translatory Motion"
-    ],
-    "difficulty": "Medium"
-  },
-  {
-    "stem": "A projectile is launched with an initial speed of 21.8 m/s at an angle of 35° above the horizontal. What is its time of flight?",
-    "options": {
-      "A": "7.98 s",
-      "B": "45.6 s",
-      "C": "2.55 s",
-      "D": "21.8 s"
+      "A": "It is a precise calculation based on extensive data.",
+      "B": "It is a random guess of a number or formula without prior experience.",
+      "C": "It is a rough educated guess using prior experience and sound physical reasoning.",
+      "D": "It is a method primarily used to derive new physical formulas."
     },
     "answer": "C",
-    "explanation": "Problem 3.4 in the context asks to determine the time of flight for these parameters and provides the answer: '(Ans: 2.55 s, 7.98 m, 45.6 m)'. The time of flight is 2.55 s.",
+    "explanation": "The text defines an estimation as 'a rough educated guess of the value of a physical quantity by using prior experience and sound physical reasoning.' It also clarifies that 'Estimation does not mean guessing a formula or a number at random.'",
     "citations": [
-      "v3-11-physics-book-2025_Translatory Motion"
+      "v3-11-physics-book-2025_Physical Quantities and Measurements"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "stem": "How is the dimension of a physical quantity typically represented according to the provided text?",
+    "options": {
+      "A": "By a lowercase letter enclosed in parentheses ( ).",
+      "B": "By a capital letter enclosed in square brackets [ ].",
+      "C": "By a numerical value followed by its unit.",
+      "D": "By a symbol without any specific enclosure."
+    },
+    "answer": "B",
+    "explanation": "The context explicitly states, 'Dimension of a physical quantity is often represented by capital letter enclosed in square brackets [ ].'",
+    "citations": [
+      "v3-11-physics-book-2025_Physical Quantities and Measurements"
     ],
     "difficulty": "Medium"
   }

@@ -132,43 +132,106 @@ def generate_mcqs_ui_wrapper(
 # Format a single question for display
 # ------------------------
 def format_single_question(q, q_num, user_answer=None, show_feedback=False):
-    """Format a single question as Markdown (LaTeX-friendly)."""
+    """Format a single question as a clean HTML Card."""
     stem = q["stem"]
-    opts = q["options"]
     difficulty = q.get("difficulty", "Medium")
+    
+    # Difficulty Color Logic
+    diff_color = "#3b82f6" # Blue (Medium)
+    if difficulty == "Easy": diff_color = "#10b981" # Green
+    if difficulty == "Hard": diff_color = "#ef4444" # Red
 
-    md = []
-    md.append(f"### Question {q_num}\n")
-    md.append(f"**{stem}**\n")
+    # 1. Main Card Container
+    # We use rgba backgrounds to look good in both Dark and Light mode
+    html = f"""
+    <div style="
+        border: 1px solid #e5e7eb40; 
+        border-radius: 12px; 
+        padding: 20px; 
+        background: rgba(255,255,255,0.03); 
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+        font-family: 'Segoe UI', sans-serif;
+    ">
+        <!-- Header: Question Number & Badge -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span style="
+                font-weight: 700; 
+                color: #9ca3af; 
+                text-transform: uppercase; 
+                font-size: 0.85rem; 
+                letter-spacing: 0.05em;
+            ">
+                QUESTION {q_num}
+            </span>
+            <span style="
+                background-color: {diff_color}20; 
+                color: {diff_color}; 
+                padding: 4px 10px; 
+                border-radius: 99px; 
+                font-size: 0.75rem; 
+                font-weight: 700;
+                border: 1px solid {diff_color}40;
+            ">
+                {difficulty.upper()}
+            </span>
+        </div>
+        
+        <!-- Question Stem -->
+        <div style="
+            font-size: 1.15rem; 
+            font-weight: 500; 
+            line-height: 1.6; 
+            margin-bottom: 10px;
+        ">
+            {stem}
+        </div>
+    """
 
-    # Options as a bulleted list
-    md.append("")
-    md.append(f"- A: {opts['A']}")
-    md.append(f"- B: {opts['B']}")
-    md.append(f"- C: {opts['C']}")
-    md.append(f"- D: {opts['D']}")
-    md.append("")
-
+    # 2. Feedback Section (Only if submitted)
     if show_feedback and user_answer:
         correct_letter = q.get("answer", "")
-        if user_answer == correct_letter:
-            md.append("✅ **Correct!**")
-        else:
-            md.append(f"❌ **Incorrect.** Correct answer: **{correct_letter}**")
-
+        is_correct = (user_answer == correct_letter)
+        
+        status_color = "#10b981" if is_correct else "#ef4444"
+        status_text = "✅ Correct Answer" if is_correct else f"❌ Incorrect. Correct answer: {correct_letter}"
+        bg_color = f"{status_color}15" # 15% opacity
+        
         explanation = q.get("explanation", "No explanation provided.")
-        # Explanation may contain LaTeX like $\\sin x$, etc.
-        md.append("")
-        md.append(f"> **Explanation:** {explanation}")
-
+        
+        html += f"""
+        <div style="
+            margin-top: 15px; 
+            padding: 15px; 
+            background-color: {bg_color}; 
+            border-left: 4px solid {status_color}; 
+            border-radius: 4px;
+        ">
+            <div style="font-weight: bold; color: {status_color}; margin-bottom: 5px;">
+                {status_text}
+            </div>
+            <div style="font-size: 0.95rem; opacity: 0.9;">
+                <strong>Explanation:</strong> {explanation}
+            </div>
+        """
         if q.get("citations"):
-            citations = ", ".join(q["citations"])
-            md.append(f"> *Citations:* {citations}")
+            html += f"""
+            <div style="margin-top: 8px; font-size: 0.85rem; opacity: 0.6; font-style: italic;">
+                Source: {', '.join(q['citations'])}
+            </div>
+            """
+        html += "</div>"
 
-    md.append("")
-    md.append(f"*Difficulty: {difficulty}*")
+    html += "</div>"
+    return html
 
-    return "\n".join(md)
+def get_modern_header(page_num, start_idx, end_idx, total, submitted=False):
+    sub_text = " (Submitted)" if submitted else ""
+    return (
+        f"<div style='margin:  20px; padding: 15px;'>"
+        f"<strong>Page {page_num + 1} (Questions {start_idx + 1}-{end_idx})"
+        f" — Submitted</strong></div>"
+    )
 
 
 def build_adaptive_pool(subject: str, topic: str, per_level: int = 5) -> List[Dict[str, Any]]:
@@ -406,9 +469,29 @@ def format_questions_page(questions, page_num, user_answers, questions_per_page=
         return "No questions on this page."
     
     html = (
-        f"<div style='margin-bottom: 20px;'>"
-        f"<strong>Page {page_num + 1} (Questions {start_idx + 1}-{end_idx} of {len(questions)})"
-        f"</strong></div>"
+        f"<div style='"
+        f"display: flex; align-items: center; justify-content: space-between; "
+        f"background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; "
+        f"padding: 10px 16px; margin-bottom: 20px; font-family: sans-serif;'>"
+        
+        # Left side: The Page Badge
+        f"  <div style='display: flex; align-items: center; gap: 12px;'>"
+        f"    <span style='"
+        f"      background-color: #2563eb; color: white; padding: 4px 12px; "
+        f"      border-radius: 9999px; font-size: 0.85rem; font-weight: 600; "
+        f"      letter-spacing: 0.025em; box-shadow: 0 1px 2px rgba(0,0,0,0.1);'>"
+        f"      PAGE {page_num + 1}"
+        f"    </span>"
+        f"    <span style='color: #374151; font-weight: 600; font-size: 0.95rem;'>"
+        f"      Questions {start_idx + 1} — {end_idx}"
+        f"    </span>"
+        f"  </div>"
+
+        # Right side: Total Count (Subtle)
+        f"  <div style='color: #6b7280; font-size: 0.85rem; font-weight: 500;'>"
+        f"    Total: {len(questions)}"
+        f"  </div>"
+        f"</div>"
     )
     
     # Default: no feedback unless you pass show_feedback=True
@@ -492,12 +575,14 @@ def update_answer(session, question_idx, selected_option):
 # Start quiz / Generate MCQs with progress updates
 # ------------------------
 def start_quiz_ui(mode, subject_input, topic_input, num_questions, difficulty):
-    # Yield loading state
+    # Yield loading state (Hide groups initially)
     loading_html = (
         "<div style='padding: 40px; text-align: center; background: #f5f5f5; border-radius: 10px;'>"
         "<h3>🔄 Generating MCQs...</h3>"
         "<p>Please wait while we retrieve content and generate questions.</p></div>"
     )
+    
+    # OUTPUTS: msg, session, main_html, prev, next, page_info, 10 GROUPS, 10 HTMLS, 10 RADIOS
     yield (
         "Generating...",
         {},
@@ -505,8 +590,9 @@ def start_quiz_ui(mode, subject_input, topic_input, num_questions, difficulty):
         gr.update(visible=False),
         gr.update(visible=False),
         gr.update(value="Generating..."),
-        *([gr.update(visible=False)] * 10),
-        *([gr.update(visible=False)] * 10)
+        *([gr.update(visible=False)] * 10), # Hide Groups
+        *([gr.update(visible=False)] * 10), # Hide HTMLs
+        *([gr.update(visible=False)] * 10)  # Hide Radios
     )
     
     # Generate
@@ -519,7 +605,9 @@ def start_quiz_ui(mode, subject_input, topic_input, num_questions, difficulty):
         yield (
             msg, {}, error_html,
             gr.update(visible=False), gr.update(visible=False), gr.update(value="Error"),
-            *([gr.update(visible=False)] * 10), *([gr.update(visible=False)] * 10)
+            *([gr.update(visible=False)] * 10),
+            *([gr.update(visible=False)] * 10),
+            *([gr.update(visible=False)] * 10)
         )
         return
 
@@ -537,30 +625,35 @@ def start_quiz_ui(mode, subject_input, topic_input, num_questions, difficulty):
     start_idx = 0
     end_idx = min(10, len(questions))
     
+    group_updates = []
     question_html_updates = []
     radio_updates = []
     
-    header = f"<div style='margin-bottom: 20px;'><strong>Page 1 of {total_pages}</strong></div>"
+    # Create Modern Header
+    header_html = get_modern_header(1, start_idx+1, end_idx, len(questions))
     
     for i in range(10):
         if i < len(questions):
             q = questions[i]
             q_num = i + 1
             
-            q_html = header if i == 0 else ""
+# Attach header to first question block
+
             q_html += format_single_question(q, q_num, show_feedback=False)
             
             opts = [f"{k}: {v}" for k, v in q['options'].items()]
             
+            group_updates.append(gr.update(visible=True)) # SHOW GROUP
             question_html_updates.append(gr.update(value=q_html, visible=True))
             radio_updates.append(gr.update(
                 choices=opts,
-                label=f"Answer Q{q_num}",
+                label=f"Select Answer",
                 value=None,
                 visible=True,
                 interactive=True
             ))
         else:
+            group_updates.append(gr.update(visible=False)) # HIDE GROUP
             question_html_updates.append(gr.update(value="", visible=False))
             radio_updates.append(gr.update(visible=False))
             
@@ -571,6 +664,7 @@ def start_quiz_ui(mode, subject_input, topic_input, num_questions, difficulty):
         gr.update(visible=False), # Prev
         gr.update(visible=(total_pages > 1)), # Next
         gr.update(value=f"Page 1 of {total_pages}"),
+        *group_updates,
         *question_html_updates,
         *radio_updates
     )
@@ -579,24 +673,21 @@ def start_quiz_ui(mode, subject_input, topic_input, num_questions, difficulty):
 # Pagination functions
 # ------------------------
 def next_page_ui(session):
-    """Navigate to next page"""
-    if session is None or session == {}:
+    """Updates Groups, HTML, and Radios for the current page"""
+    if not session or "questions" not in session:
         return (
-            session,
-            "<p>Click 'Generate MCQs' first.</p>",
-            gr.update(visible=False),
-            gr.update(visible=False),
-            gr.update(value=""),
+            session, gr.update(), gr.update(), gr.update(), gr.update(),
+            *([gr.update(visible=False)] * 10),
             *([gr.update(visible=False)] * 10),
             *([gr.update(visible=False)] * 10)
-        )
+        )   
     
     questions = session["questions"]
     questions_per_page = session.get("questions_per_page", 10)
     user_answers = session.get("user_answers", {})
     total_pages = (len(questions) + questions_per_page - 1) // questions_per_page
     current_page = session["current_page"]
-    submitted = session.get("submitted", False)  # <<< NEW
+    submitted = session.get("submitted", False)
     
     if current_page < total_pages - 1:
         session["current_page"] += 1
@@ -605,18 +696,15 @@ def next_page_ui(session):
         prev_btn_visible = True
         next_btn_visible = new_page < total_pages - 1
         
-        # Create question HTMLs and radio updates
         start_idx = new_page * questions_per_page
         end_idx = min(start_idx + questions_per_page, len(questions))
         page_questions = questions[start_idx:end_idx]
         
+        group_updates = [] 
         question_html_updates = []
         radio_updates = []
-        page_header = (
-            f"<div style='margin-bottom: 20px;'>"
-            f"<strong>Page {new_page + 1} (Questions {start_idx + 1}-{end_idx} of {len(questions)})"
-            f"</strong></div>"
-        )
+        
+        header_html = get_modern_header(new_page+1, start_idx+1, end_idx, len(questions), submitted)
         
         for i in range(questions_per_page):
             if i < len(page_questions):
@@ -625,18 +713,10 @@ def next_page_ui(session):
                 q_id = f"q_{start_idx + i}"
                 user_answer = user_answers.get(q_id, None)
                 
-                q_html = page_header if i == 0 else ""
-                q_html += format_single_question(
-                    q, q_num, user_answer, show_feedback=submitted
-                )
-                question_html_updates.append(gr.update(value=q_html, visible=True))
+                q_html = header_html if i == 0 else ""
+                q_html += format_single_question(q, q_num, user_answer, show_feedback=submitted)
                 
-                options_list = [
-                    f"A: {q['options']['A']}",
-                    f"B: {q['options']['B']}",
-                    f"C: {q['options']['C']}",
-                    f"D: {q['options']['D']}"
-                ]
+                options_list = [f"{k}: {v}" for k, v in q['options'].items()]
                 selected_value = None
                 if user_answer:
                     for opt in options_list:
@@ -644,20 +724,19 @@ def next_page_ui(session):
                             selected_value = opt
                             break
                 
-                radio_updates.append(
-                    gr.update(
-                        choices=options_list,
-                        label=f"Select your answer for Question {q_num}",
-                        value=selected_value,
-                        visible=True,
-                        interactive=not submitted  # lock after submit
-                    )
-                )
+                group_updates.append(gr.update(visible=True))
+                question_html_updates.append(gr.update(value=q_html, visible=True))
+                radio_updates.append(gr.update(
+                    choices=options_list,
+                    label=f"Select Answer",
+                    value=selected_value,
+                    visible=True,
+                    interactive=not submitted
+                ))
             else:
+                group_updates.append(gr.update(visible=False))
                 question_html_updates.append(gr.update(value="", visible=False))
-                radio_updates.append(
-                    gr.update(choices=[], label="", visible=False, interactive=False)
-                )
+                radio_updates.append(gr.update(visible=False))
         
         return (
             session,
@@ -665,30 +744,18 @@ def next_page_ui(session):
             gr.update(visible=prev_btn_visible),
             gr.update(visible=next_btn_visible),
             gr.update(value=f"Page {new_page + 1} of {total_pages}"),
+            *group_updates,
             *question_html_updates,
             *radio_updates
         )
-    
-    return (
-        session,
-        gr.update(visible=False),
-        gr.update(visible=False),
-        gr.update(visible=True),
-        gr.update(value=f"Page {current_page + 1} of {total_pages}"),
-        *([gr.update(visible=False)] * 10),
-        *([gr.update(visible=False)] * 10)
-    )
-
+    return (session, *([gr.update()] * 34)) # No change fallback
 
 def prev_page_ui(session):
     """Navigate to previous page"""
-    if session is None or session == {}:
+    if not session or "questions" not in session:
         return (
-            session,
-            "<p>Click 'Generate MCQs' first.</p>",
-            gr.update(visible=False),
-            gr.update(visible=False),
-            gr.update(value=""),
+            session, gr.update(), gr.update(), gr.update(), gr.update(),
+            *([gr.update(visible=False)] * 10),
             *([gr.update(visible=False)] * 10),
             *([gr.update(visible=False)] * 10)
         )
@@ -698,7 +765,7 @@ def prev_page_ui(session):
     user_answers = session.get("user_answers", {})
     total_pages = (len(questions) + questions_per_page - 1) // questions_per_page
     current_page = session["current_page"]
-    submitted = session.get("submitted", False)  # <<< NEW
+    submitted = session.get("submitted", False)
     
     if current_page > 0:
         session["current_page"] -= 1
@@ -707,18 +774,15 @@ def prev_page_ui(session):
         prev_btn_visible = new_page > 0
         next_btn_visible = True
         
-        # Create question HTMLs and radio updates
         start_idx = new_page * questions_per_page
         end_idx = min(start_idx + questions_per_page, len(questions))
         page_questions = questions[start_idx:end_idx]
         
+        group_updates = [] 
         question_html_updates = []
         radio_updates = []
-        page_header = (
-            f"<div style='margin-bottom: 20px;'>"
-            f"<strong>Page {new_page + 1} (Questions {start_idx + 1}-{end_idx} of {len(questions)})"
-            f"</strong></div>"
-        )
+        
+        header_html = get_modern_header(new_page+1, start_idx+1, end_idx, len(questions), submitted)
         
         for i in range(questions_per_page):
             if i < len(page_questions):
@@ -727,18 +791,10 @@ def prev_page_ui(session):
                 q_id = f"q_{start_idx + i}"
                 user_answer = user_answers.get(q_id, None)
                 
-                q_html = page_header if i == 0 else ""
-                q_html += format_single_question(
-                    q, q_num, user_answer, show_feedback=submitted
-                )
-                question_html_updates.append(gr.update(value=q_html, visible=True))
+                q_html = header_html if i == 0 else ""
+                q_html += format_single_question(q, q_num, user_answer, show_feedback=submitted)
                 
-                options_list = [
-                    f"A: {q['options']['A']}",
-                    f"B: {q['options']['B']}",
-                    f"C: {q['options']['C']}",
-                    f"D: {q['options']['D']}"
-                ]
+                options_list = [f"{k}: {v}" for k, v in q['options'].items()]
                 selected_value = None
                 if user_answer:
                     for opt in options_list:
@@ -746,20 +802,19 @@ def prev_page_ui(session):
                             selected_value = opt
                             break
                 
-                radio_updates.append(
-                    gr.update(
-                        choices=options_list,
-                        label=f"Select your answer for Question {q_num}",
-                        value=selected_value,
-                        visible=True,
-                        interactive=not submitted  # lock after submit
-                    )
-                )
+                group_updates.append(gr.update(visible=True))
+                question_html_updates.append(gr.update(value=q_html, visible=True))
+                radio_updates.append(gr.update(
+                    choices=options_list,
+                    label=f"Select Answer",
+                    value=selected_value,
+                    visible=True,
+                    interactive=not submitted
+                ))
             else:
+                group_updates.append(gr.update(visible=False))
                 question_html_updates.append(gr.update(value="", visible=False))
-                radio_updates.append(
-                    gr.update(choices=[], label="", visible=False, interactive=False)
-                )
+                radio_updates.append(gr.update(visible=False))
         
         return (
             session,
@@ -767,76 +822,44 @@ def prev_page_ui(session):
             gr.update(visible=prev_btn_visible),
             gr.update(visible=next_btn_visible),
             gr.update(value=f"Page {new_page + 1} of {total_pages}"),
+            *group_updates,
             *question_html_updates,
             *radio_updates
         )
-    
-    return (
-        session,
-        gr.update(visible=False),
-        gr.update(visible=False),
-        gr.update(visible=True),
-        gr.update(value=f"Page {current_page + 1} of {total_pages}"),
-        *([gr.update(visible=False)] * 10),
-        *([gr.update(visible=False)] * 10)
-    )
+    return (session, *([gr.update()] * 34))
 
 
 # ------------------------
 # Submit Quiz
 # ------------------------
-def submit_quiz_ui(session):  # <<< NEW
-    """
-    Submit quiz:
-    - Ensure all questions are answered.
-    - If yes: mark submitted, compute score, and show feedback.
-    """
+def submit_quiz_ui(session):
     if session is None or session == {}:
-        # Same shape as start_quiz outputs: msg, session, questions_html, prev, next, page, 10 htmls, 10 radios
+        # Must return 36 items (6 fixed + 30 dynamic)
         return (
             "Please generate MCQs first.",
-            session,
-            gr.update(),  # questions_html unchanged
-            gr.update(),
-            gr.update(),
-            gr.update(),
-            *([gr.update()] * 10),
-            *([gr.update()] * 10)
+            session, gr.update(), gr.update(), gr.update(), gr.update(),
+            *([gr.update()] * 30) # <--- Ensured 30 updates here
         )
 
     questions = session.get("questions", [])
     user_answers = session.get("user_answers", {})
     total_questions = len(questions)
 
-    # Check if all questions are answered
+    # Check for missing answers
     missing = [i + 1 for i in range(total_questions) if f"q_{i}" not in user_answers]
     if missing:
         missing_str = ", ".join(map(str, missing))
-        msg = (
-            "Please answer all questions before submitting. "
-            f"Missing answers for Question(s): {missing_str}"
-        )
-        # Do not change layout, just update message
+        msg = f"Please answer all questions. Missing: {missing_str}"
+        # Must return 36 items
         return (
             msg,
-            session,
-            gr.update(),
-            gr.update(),
-            gr.update(),
-            gr.update(),
-            *([gr.update()] * 10),
-            *([gr.update()] * 10)
+            session, gr.update(), gr.update(), gr.update(), gr.update(),
+            *([gr.update()] * 30) # <--- Ensured 30 updates here
         )
 
-    # All answered: mark submitted
+    # Mark submitted
     session["submitted"] = True
-
-    # Compute score
-    correct_count = 0
-    for i, q in enumerate(questions):
-        qid = f"q_{i}"
-        if user_answers.get(qid) == q.get("answer"):
-            correct_count += 1
+    correct_count = sum(1 for i,q in enumerate(questions) if user_answers.get(f"q_{i}")==q.get("answer"))
 
     msg = f"✅ Quiz submitted! Your score: {correct_count} / {total_questions}"
 
@@ -848,14 +871,12 @@ def submit_quiz_ui(session):  # <<< NEW
     end_idx = min(start_idx + questions_per_page, len(questions))
     page_questions = questions[start_idx:end_idx]
 
+    # Lists for the 3 dynamic components
+    group_updates = []
     question_html_updates = []
     radio_updates = []
 
-    page_header = (
-        f"<div style='margin-bottom: 20px;'>"
-        f"<strong>Page {current_page + 1} (Questions {start_idx + 1}-{end_idx} of {len(questions)})"
-        f" — Submitted</strong></div>"
-    )
+    header_html = get_modern_header(current_page+1, start_idx+1, end_idx, len(questions), True)
 
     for i in range(questions_per_page):
         if i < len(page_questions):
@@ -864,18 +885,10 @@ def submit_quiz_ui(session):  # <<< NEW
             qid = f"q_{start_idx + i}"
             user_answer = user_answers.get(qid)
 
-            q_html = page_header if i == 0 else ""
-            q_html += format_single_question(
-                q, q_num, user_answer, show_feedback=True
-            )
-            question_html_updates.append(gr.update(value=q_html, visible=True))
+            q_html = header_html if i == 0 else ""
+            q_html += format_single_question(q, q_num, user_answer, show_feedback=True)
 
-            options_list = [
-                f"A: {q['options']['A']}",
-                f"B: {q['options']['B']}",
-                f"C: {q['options']['C']}",
-                f"D: {q['options']['D']}"
-            ]
+            options_list = [f"{k}: {v}" for k, v in q['options'].items()]
             selected_value = None
             if user_answer:
                 for opt in options_list:
@@ -883,37 +896,37 @@ def submit_quiz_ui(session):  # <<< NEW
                         selected_value = opt
                         break
 
-            # Lock radios after submission
-            radio_updates.append(
-                gr.update(
-                    choices=options_list,
-                    label=f"Select your answer for Question {q_num}",
-                    value=selected_value,
-                    visible=True,
-                    interactive=False
-                )
-            )
+            # Add updates for all 3 lists
+            group_updates.append(gr.update(visible=True))
+            question_html_updates.append(gr.update(value=q_html, visible=True))
+            radio_updates.append(gr.update(
+                choices=options_list,
+                label=f"Select Answer",
+                value=selected_value,
+                visible=True,
+                interactive=False
+            ))
         else:
+            # Hide empty slots
+            group_updates.append(gr.update(visible=False))
             question_html_updates.append(gr.update(value="", visible=False))
-            radio_updates.append(
-                gr.update(choices=[], label="", visible=False, interactive=False)
-            )
+            radio_updates.append(gr.update(visible=False))
 
     prev_btn_visible = current_page > 0
     next_btn_visible = current_page < (total_pages - 1)
 
+    # RETURN ALL 3 LISTS
     return (
         msg,
         session,
-        gr.update(visible=False),  # questions_html stays hidden
+        gr.update(visible=False),
         gr.update(visible=prev_btn_visible),
         gr.update(visible=next_btn_visible),
-        gr.update(value=f"Page {current_page + 1} of {total_pages} (Submitted)"),
-        *question_html_updates,
-        *radio_updates
+        gr.update(value=f"Page {current_page + 1} of {total_pages}"),
+        *group_updates,          # <--- 1. Groups (10 items)
+        *question_html_updates,  # <--- 2. HTMLs (10 items)
+        *radio_updates           # <--- 3. Radios (10 items)
     )
-
-
 # ------------------------
 # Metrics
 # ------------------------
@@ -994,68 +1007,59 @@ with gr.Blocks() as demo:
         
         # Container for layout
         questions_container = gr.Markdown("### Questions appear here") # Placeholder
+
+        # --- NEW LAYOUT: Capture Groups ---
+        q_groups = []
+        q_htmls = []
+        q_radios = []
         
-        # 10 Static Slots
-        q_htmls = [gr.Markdown(visible=False) for _ in range(10)]
-        q_radios = [gr.Radio(visible=False) for _ in range(10)]
+        with gr.Column(): 
+            for i in range(10):
+                # Initialize invisible
+                with gr.Group(visible=False) as g: 
+                    m = gr.HTML(visible=False)
+                    r = gr.Radio(visible=False, label="Select Answer")
+                    q_groups.append(g)
+                    q_htmls.append(m)
+                    q_radios.append(r)
         
         with gr.Row():
             btn_prev = gr.Button("◀ Prev", visible=False)
             btn_submit = gr.Button("Submit Quiz", visible=True)
             btn_next = gr.Button("Next ▶", visible=False)
 
-        # --- EVENT HANDLERS ---
-        
+        # --- OUTPUT LIST (Common for all buttons) ---
+        # Order: msg, session, main_html, prev, next, page_info, GROUPS, HTMLS, RADIOS
+        ui_outputs = [msg_box, session_state, questions_container, btn_prev, btn_next, page_info] + q_groups + q_htmls + q_radios
+
         gen_btn.click(
             start_quiz_ui,
             inputs=[mode_radio, subject_dropdown, topic_dropdown, num_q_input, diff_input],
-            outputs=[msg_box, session_state, questions_container, btn_prev, btn_next, page_info] + q_htmls + q_radios
+            outputs=ui_outputs
         )
 
-        # Pagination & Submit (using your existing functions)
-        btn_prev.click(
-            prev_page_ui,
-            inputs=[session_state],
-            outputs=[session_state, questions_container, btn_prev, btn_next, page_info] + q_htmls + q_radios
-        )
-        btn_next.click(
-            next_page_ui,
-            inputs=[session_state],
-            outputs=[session_state, questions_container, btn_prev, btn_next, page_info] + q_htmls + q_radios
-        )
-        btn_submit.click(
-            submit_quiz_ui,
-            inputs=[session_state],
-            outputs=[msg_box, session_state, questions_container, btn_prev, btn_next, page_info] + q_htmls + q_radios
-        )
+        btn_prev.click(prev_page_ui, inputs=[session_state], outputs=ui_outputs)
+        btn_next.click(next_page_ui, inputs=[session_state], outputs=ui_outputs)
+        btn_submit.click(submit_quiz_ui, inputs=[session_state], outputs=ui_outputs)
 
-        # Radio change logic (capturing answers)
+        # Radio change logic
         def make_radio_handler(idx):
             def handler(session, val):
-                # Similar logic to your existing update_answer wrapper
-                # Need to update specific HTML to show feedback if submitted, 
-                # but basically just saves answer
-                if not session: return session, *[gr.update() for _ in range(10)]
-                
-                # Update session
+                if not session: return session
                 qs_per_page = session.get("questions_per_page", 10)
                 curr_page = session.get("current_page", 0)
                 abs_idx = curr_page * qs_per_page + idx
                 qid = f"q_{abs_idx}"
-                
                 if val:
                     ans = val.split(":")[0].strip()
                     if "user_answers" not in session: session["user_answers"] = {}
                     session["user_answers"][qid] = ans
-                
-                # If we want immediate feedback or just keep state, return session
-                # We also need to return updates for all 10 HTML blocks to satisfy Gradio outputs
-                # For simplicity, we just return the session and no visual updates until page change/submit
                 return session
             return handler
 
         for i, r in enumerate(q_radios):
             r.change(make_radio_handler(i), inputs=[session_state, r], outputs=[session_state])
+            
     with gr.Tab("Metrics"):
         metrics_btn = gr.Button("Generate Metrics")
         out_text = gr.Textbox()
