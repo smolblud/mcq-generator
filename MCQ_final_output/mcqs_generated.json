@@ -1,44 +1,44 @@
 [
   {
-    "stem": "Which of the following statements accurately describes a quantitative observation in physics?",
+    "stem": "Which of the following is an example of a qualitative observation?",
     "options": {
-      "A": "It deals with facts observable with the five senses, such as colors and shapes.",
-      "B": "It has no associated numbers and focuses on sensory details.",
-      "C": "It includes numbers and is also referred to as a measurement.",
-      "D": "It is an observation like 'water keeps its level'."
+      "A": "The mass of the object is 5 kg.",
+      "B": "The water temperature is 25°C.",
+      "C": "The color of the object is red.",
+      "D": "The car traveled a distance of 100 meters."
     },
     "answer": "C",
-    "explanation": "The context states that 'A quantitative observation includes numbers, and is also called a measurement.' Options A, B, and D describe qualitative observations.",
+    "explanation": "Qualitative observations have no associated numbers and deal with facts observable with our five senses, such as colors, shapes, and textures. 'The color of the object is red' fits this description, while the other options include numbers, making them quantitative observations or measurements.",
     "citations": [
       "v3-11-physics-book-2025_Physical Quantities and Measurements"
     ],
     "difficulty": "Medium"
   },
   {
-    "stem": "According to the provided text, what is the fundamental nature of an estimation of a physical quantity?",
+    "stem": "According to the provided text, what is an estimation of a physical quantity?",
     "options": {
-      "A": "It is a precise calculation based on extensive data.",
-      "B": "It is a random guess of a number or formula without prior experience.",
-      "C": "It is a rough educated guess using prior experience and sound physical reasoning.",
-      "D": "It is a method primarily used to derive new physical formulas."
+      "A": "A precise measurement obtained with advanced instruments.",
+      "B": "A random guess of a number without any reasoning.",
+      "C": "A rough educated guess using prior experience and sound physical reasoning.",
+      "D": "A calculation that yields an exact value for a quantity."
     },
     "answer": "C",
-    "explanation": "The text defines an estimation as 'a rough educated guess of the value of a physical quantity by using prior experience and sound physical reasoning.' It also clarifies that 'Estimation does not mean guessing a formula or a number at random.'",
+    "explanation": "The text defines an estimation as 'a rough educated guess of the value of a physical quantity by using prior experience and sound physical reasoning,' and explicitly states that 'Estimation does not mean guessing a formula or a number at random.'",
     "citations": [
       "v3-11-physics-book-2025_Physical Quantities and Measurements"
     ],
     "difficulty": "Medium"
   },
   {
-    "stem": "How is the dimension of a physical quantity typically represented according to the provided text?",
+    "stem": "What does the dimension of a physical quantity primarily denote?",
     "options": {
-      "A": "By a lowercase letter enclosed in parentheses ( ).",
-      "B": "By a capital letter enclosed in square brackets [ ].",
-      "C": "By a numerical value followed by its unit.",
-      "D": "By a symbol without any specific enclosure."
+      "A": "Its numerical value.",
+      "B": "Its qualitative nature.",
+      "C": "Its SI base unit.",
+      "D": "Its level of precision."
     },
     "answer": "B",
-    "explanation": "The context explicitly states, 'Dimension of a physical quantity is often represented by capital letter enclosed in square brackets [ ].'",
+    "explanation": "The text states, 'Dimension denotes the qualitative nature of a physical quantity.' For example, length, width, and height all share the same dimension [L] because they have the same qualitative nature.",
     "citations": [
       "v3-11-physics-book-2025_Physical Quantities and Measurements"
     ],

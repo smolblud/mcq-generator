@@ -639,6 +639,7 @@ def start_quiz_ui(mode, subject_input, topic_input, num_questions, difficulty):
             
 # Attach header to first question block
 
+            q_html = ""
             q_html += format_single_question(q, q_num, show_feedback=False)
             
             opts = [f"{k}: {v}" for k, v in q['options'].items()]
