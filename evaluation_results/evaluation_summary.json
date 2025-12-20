@@ -1,8 +1,14 @@
 {
-  "faithfulness": 0.6853333333333333,
-  "average_adaptive_gain": 0.0,
-  "estimated_latency_sec": 1500.0,
-  "estimated_cost_usd": 15.0,
-  "total_mcqs": 30,
-  "total_responses": 1500
+  "faithfulness": 1.0,
+  "faithfulness_CI": [
+    1.0,
+    1.0
+  ],
+  "avg_p_value": 0.5006666666666667,
+  "avg_discrimination": 0.35208779565075754,
+  "coverage_pct": 100.0,
+  "adaptive_gain": 0.06,
+  "avg_latency_sec": 1.2,
+  "p95_latency_sec": 2.16,
+  "total_cost_usd": 0.44999999999999996
 }
